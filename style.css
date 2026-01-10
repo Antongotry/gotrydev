@@ -972,73 +972,54 @@ body.home .wide-container {
     z-index: 2;
 }
 
-.header-side .hamburger-icon {
-    display: none; /* Hidden by default - dots are visible instead */
+/* Menu icon container - like reference */
+.header-side .hamburger-menu .menu-ic {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.header-side .hamburger-line {
-    width: 18px;
-    height: 1px;
+/* Menu circles - 5 circles arranged in 2x2 grid with one in center */
+.header-side .hamburger-menu .menu-circle {
+    width: 6px;
+    height: 6px;
     background: #1D1D1D;
-    display: block;
-}
-
-/* Logo dots (2x2 grid) - visible by default, spread on click */
-.header-side .hamburger-logo-dots {
+    border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 6px; /* Space between dots */
-    width: 18px; /* Total width: 6px dot + 6px gap + 6px dot = 18px */
-    height: 18px; /* Total height: 6px dot + 6px gap + 6px dot = 18px */
-    align-items: center;
-    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 2;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth animation */
 }
 
-.header-side .hamburger-logo-dots .logo-dot {
-    width: 6px;
-    height: 6px;
-    background: #1D1D1D; /* Dark color */
-    border-radius: 50%;
-    display: block;
-    flex-shrink: 0;
-    position: absolute; /* Absolute for individual positioning */
-    transition: opacity 0.3s ease; /* Smooth fade out */
+/* Initial positions for 5 circles (2x2 grid + center) */
+.header-side .hamburger-menu .menu-circle:nth-child(1) {
+    transform: translate(calc(-50% - 4px), calc(-50% - 4px)); /* Top-left */
 }
 
-/* Initial positions (2x2 grid centered) - dots start close together in center */
-.header-side .hamburger-logo-dots .logo-dot-1 {
-    top: 50%;
-    left: 50%;
-    transform: translate(calc(-50% - 4px), calc(-50% - 4px)); /* Top-left relative to center */
+.header-side .hamburger-menu .menu-circle:nth-child(2) {
+    transform: translate(calc(-50% + 4px), calc(-50% - 4px)); /* Top-right */
 }
 
-.header-side .hamburger-logo-dots .logo-dot-2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(calc(-50% + 4px), calc(-50% - 4px)); /* Top-right relative to center */
+.header-side .hamburger-menu .menu-circle:nth-child(3).menu-cir-ct {
+    transform: translate(-50%, -50%); /* Center */
 }
 
-.header-side .hamburger-logo-dots .logo-dot-3 {
-    top: 50%;
-    left: 50%;
-    transform: translate(calc(-50% - 4px), calc(-50% + 4px)); /* Bottom-left relative to center */
+.header-side .hamburger-menu .menu-circle:nth-child(4) {
+    transform: translate(calc(-50% - 4px), calc(-50% + 4px)); /* Bottom-left */
 }
 
-.header-side .hamburger-logo-dots .logo-dot-4 {
-    top: 50%;
-    left: 50%;
-    transform: translate(calc(-50% + 4px), calc(-50% + 4px)); /* Bottom-right relative to center */
+.header-side .hamburger-menu .menu-circle:nth-child(5) {
+    transform: translate(calc(-50% + 4px), calc(-50% + 4px)); /* Bottom-right */
 }
 
-/* Menu text - hidden by default, appears on hover */
-.header-side .hamburger-menu-text {
+/* Menu text - both hover and active states */
+.header-side .hamburger-menu .header-toggle-txt {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1051,16 +1032,50 @@ body.home .wide-container {
     opacity: 0;
     pointer-events: none;
     z-index: 3;
-    transition: opacity 0.3s ease; /* Smooth fade in */
+    transition: opacity 0.3s ease;
 }
 
-/* Hover state: dots fade out, text appears */
-.header-side .hamburger-menu:hover .hamburger-logo-dots .logo-dot {
-    opacity: 0; /* Dots disappear on hover */
+.header-side .hamburger-menu .header-hover-txt {
+    opacity: 0;
 }
 
-.header-side .hamburger-menu:hover .hamburger-menu-text {
-    opacity: 1; /* Text appears on hover */
+.header-side .hamburger-menu .header-active-txt {
+    opacity: 0;
+}
+
+/* Hover state: circles fade out, "menu" text appears */
+.header-side .hamburger-menu:hover .menu-circle {
+    opacity: 0;
+}
+
+.header-side .hamburger-menu:hover .header-hover-txt {
+    opacity: 1;
+}
+
+.header-side .hamburger-menu:hover .header-active-txt {
+    opacity: 0;
+}
+
+/* Active state (on click): circles fade out, "close" text appears */
+.header-side .hamburger-menu.active .menu-circle {
+    opacity: 0;
+}
+
+.header-side .hamburger-menu.active .header-hover-txt {
+    opacity: 0;
+}
+
+.header-side .hamburger-menu.active .header-active-txt {
+    opacity: 1;
+}
+
+/* If menu is active, hover should still show close */
+.header-side .hamburger-menu.active:hover .header-hover-txt {
+    opacity: 0;
+}
+
+.header-side .hamburger-menu.active:hover .header-active-txt {
+    opacity: 1;
 }
 
 /* Right vertical line on sidebar that goes down from hamburger (starts at 54px from top) */
