@@ -254,11 +254,11 @@ body.home .site-footer {
     height: 100%;
 }
 
-/* Override for home page header - padding handled by margin */
+/* Override for home page header - use padding instead of margin to avoid double spacing */
 body.home .top-nav .wide-container {
-    padding-left: 0; /* No padding - margin handled by header-content-wrapper */
+    padding-left: clamp(40px, 5vw, 120px); /* Padding for spacing after hamburger (header-content-wrapper already has 54px margin) */
     padding-right: clamp(40px, 5vw, 120px);
-    margin-left: clamp(40px, 5vw, 120px); /* Margin instead of padding */
+    margin-left: 0; /* No margin - header-content-wrapper already handles hamburger spacing */
 }
 
 .nav-wrapper {
