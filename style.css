@@ -1836,6 +1836,7 @@ body.home .hero-section {
     flex: 1;
     background: #e5e7eb;
     min-height: 0;
+    margin-top: 8px;
 }
 
 .scroll-dot {
@@ -1847,6 +1848,7 @@ body.home .hero-section {
     position: relative;
     z-index: 2;
     flex-shrink: 0;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-dot-top {
