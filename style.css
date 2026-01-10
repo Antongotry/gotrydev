@@ -1022,13 +1022,13 @@ body.home .wide-container {
 }
 
 .header-side .hamburger-menu:hover div {
-    border: 2px solid #1D1D1D;
-    height: 9px;
+    border: 1.5px solid #1D1D1D; /* Thinner border - was 2px */
+    height: 7px; /* Slightly smaller - was 9px */
     border-radius: 50%;
     margin-left: 0; /* Reset margin - using transform for centering */
     margin-top: 0; /* Reset margin - using transform for centering */
     animation: atom 300ms linear 1;
-    width: 25px; /* Original size from example */
+    width: 22px; /* Slightly smaller - was 25px */
     background: transparent;
     box-sizing: border-box;
     top: 50%; /* Center vertically: 50% of button height (54px) = 27px */
