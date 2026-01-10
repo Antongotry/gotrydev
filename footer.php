@@ -29,7 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
         greetingText.textContent = greeting;
     }
     
-    // Animations removed - no loaded class needed
+    // Page loader - показываем контент после загрузки, если лоадера нет
+    if (!document.querySelector('.page-loader')) {
+        const mainGrid = document.getElementById('main-grid');
+        if (mainGrid) {
+            mainGrid.style.opacity = '1';
+            mainGrid.style.pointerEvents = 'auto';
+        }
+        body.classList.add('loader-complete');
+    }
     
     // Header scroll behavior - DISABLED - header is always static, no changes on scroll
     
