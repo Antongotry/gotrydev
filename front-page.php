@@ -9,8 +9,18 @@ get_header();
 
 <!-- Main Grid Container -->
 <div class="main-grid" id="main-grid">
-    <!-- Left Sidebar with Scroll Indicator -->
+    <!-- Left Sidebar with Hamburger Menu -->
     <div class="header-side" id="header-side">
+        <!-- Hamburger Menu Button (left edge) -->
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
+            <span class="hamburger-icon">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </span>
+            <span class="hamburger-line-right"></span>
+        </button>
+        
         <!-- Scroll Indicator - vertical line with dot at top -->
         <div class="scroll-indicator">
             <div class="scroll-dot scroll-dot-top"></div>

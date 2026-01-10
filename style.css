@@ -1409,13 +1409,12 @@ body.home .top-nav.scrolled {
     padding: 16px 0 0 0;
 }
 
-/* Header divider line */
+/* Header divider line - dark color like reference */
 .header-divider {
     width: 100%;
     height: 1px;
-    background: #e5e7eb;
+    background: #1D1D1D; /* Dark color like reference */
     margin-top: 24px;
-    transition: opacity 0.3s ease;
 }
 
 body.home .top-nav.scrolled .header-divider {
@@ -1812,7 +1811,7 @@ body.home .hero-section .wide-container {
     position: relative;
 }
 
-/* Left Sidebar - 54px width with Scroll Indicator */
+/* Left Sidebar - 54px width with Hamburger Menu and Scroll Indicator */
 .header-side {
     flex: 0 0 54px;
     width: 54px;
@@ -1828,6 +1827,52 @@ body.home .hero-section .wide-container {
     justify-content: flex-start;
     padding-top: 0;
     opacity: 1; /* Always visible - no animation */
+}
+
+/* Hamburger Menu Button - at the very left edge, forms square with right line */
+.hamburger-menu {
+    width: 54px;
+    height: 54px;
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-shrink: 0;
+}
+
+/* Hamburger icon - 3 lines */
+.hamburger-icon {
+    width: 18px;
+    height: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 1px;
+    background: #1D1D1D;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* Right line that forms square with hamburger */
+.hamburger-line-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 54px;
+    background: #1D1D1D;
+    z-index: 1;
 }
 
 /* Scroll Indicator - vertical line with dot at top */
