@@ -1,4 +1,4 @@
-# Игнорировать всё кроме файлов темы
+# Игнорировать всё кроме темы и плагина
 *
 !.gitignore
 !README.md
@@ -12,6 +12,11 @@
 !assets/
 !assets/**
 !USAGE.md
+# Плагин universal-license-manager
+!wp-content/
+!wp-content/plugins/
+!wp-content/plugins/universal-license-manager/
+!wp-content/plugins/universal-license-manager/**
 
 # Системные файлы
 .DS_Store
