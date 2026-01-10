@@ -1024,30 +1024,24 @@ body.home .wide-container {
     border: 2px solid #1D1D1D;
     height: 9px;
     border-radius: 50%;
-    margin-left: -11px;
-    margin-top: -4.5px; /* Center circle: half height to align center with original line center */
+    margin-left: -11px; /* Center: half width (22px / 2 = 11px), but adjust for 25px circle */
+    margin-top: 2px; /* Small offset from top */
     animation: atom 300ms linear 1;
     width: 25px;
+    top: 0px; /* All circles start from top: 0px like in original */
     background: transparent;
-    transform-origin: center center; /* Rotate around center */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(1) {
-    top: 20px; /* Keep original position */
     transform: rotate(-33deg);
-    transform-origin: 50% 50%; /* Center of circle */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(2) {
-    top: 27px; /* Keep original position */
     transform: rotate(90deg);
-    transform-origin: 50% 50%; /* Center of circle */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3) {
-    top: 34px; /* Keep original position */
     transform: rotate(33deg);
-    transform-origin: 50% 50%; /* Center of circle */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3)::before {
