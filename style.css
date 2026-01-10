@@ -468,7 +468,7 @@ body.home .top-nav .header-content-wrapper .wide-container {
    ============================================ */
 
 /* Header - Konpo Style - Simplified: Hamburger (left) | Logo | Spacer | Greeting + Button (right) */
-/* Header - Inside Main Content Area, Fixed at top right of viewport */
+/* Header - At main-grid level, Fixed at top right of viewport */
 body.home .top-nav {
     position: fixed !important; /* Force fixed - NEVER changes */
     top: 0 !important;
@@ -484,7 +484,7 @@ body.home .top-nav {
     min-height: 54px !important;
     max-height: 54px !important;
     transition: none !important; /* No transitions */
-    border-bottom: 1px solid #1D1D1D !important; /* Dark divider line */
+    border: none !important; /* No border - divider line handles it */
     z-index: 1000 !important;
     display: flex !important;
     align-items: center !important; /* Center vertically */
@@ -546,16 +546,15 @@ body.home .top-nav .header-right {
     display: flex; /* Always visible - static */
 }
 
-/* Header divider line - dark color, extends full header width (not full viewport, only main-content area) */
+/* Header divider line - dark color, extends full width including hamburger area (full viewport width) */
 .header-divider {
-    width: 100%; /* Full width of top-nav (which is calc(100vw - 54px)) */
+    width: 100vw; /* Full viewport width - includes hamburger (54px) + header area */
     height: 1px;
     background: #1D1D1D; /* Dark color like reference */
     margin: 0;
     position: absolute;
     bottom: 0; /* Exactly at bottom of 54px header */
-    left: 0; /* Start from left edge of top-nav */
-    right: 0;
+    left: -54px; /* Start from left edge of viewport (54px before header starts) to include hamburger area */
     z-index: 1;
     pointer-events: none; /* Don't interfere with clicks */
 }
@@ -935,16 +934,16 @@ body.home .wide-container {
     opacity: 1; /* Always visible - no animation */
 }
 
-/* Hamburger Menu - Top of Sidebar (54px height) */
+/* Hamburger Menu - Top of Sidebar (54px height) - Only right and top borders */
 .header-side .hamburger-menu {
     width: 54px;
     height: 54px;
     position: relative;
-    border-right: 1px solid #1D1D1D;
-    background: transparent;
+    border-right: 1px solid #1D1D1D; /* Right border to connect with header divider */
     border-top: none;
     border-left: none;
-    border-bottom: 1px solid #1D1D1D;
+    border-bottom: none; /* No bottom border - header divider handles that */
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1027,14 +1026,14 @@ body.home .wide-container {
 
 /* Main Content Area - flex: 1 to fill remaining space */
 /* Main Content Area - Below Header */
-/* Main Content Area - Right Side (Working Area) - Starts after sidebar */
+/* Main Content Area - Right Side (Working Area) - Starts after sidebar and header */
 .main-content {
     flex: 1;
     width: calc(100vw - 54px); /* Full width minus sidebar */
     min-height: 100vh;
     margin-left: 54px; /* Space for sidebar */
-    margin-top: 0; /* No top margin - header is fixed inside */
-    padding-top: 54px; /* Space for fixed header inside main-content */
+    margin-top: 54px; /* Space for fixed header (54px height) */
+    padding-top: 0; /* No padding - margin handles spacing */
     position: relative;
 }
 
