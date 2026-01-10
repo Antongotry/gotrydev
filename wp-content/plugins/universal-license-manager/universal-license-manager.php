@@ -3,7 +3,7 @@
  * Plugin Name: Universal License Manager
  * Plugin URI: https://t.me/notarikon
  * Description: Універсальна система ліцензування для всіх плагінів
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: AntonGotry
  * Author URI: https://t.me/notarikon
  * Text Domain: universal-license-manager
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Константи плагіну
-define('ULM_VERSION', '1.0.0');
+define('ULM_VERSION', '1.0.1'); // Обновлено: тестовая версия для коммита
 define('ULM_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('ULM_PLUGIN_URL', plugin_dir_url(__FILE__));
 
