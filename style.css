@@ -454,6 +454,8 @@ body.home .video-background {
     padding-top: 120px;
     padding-bottom: 80px;
     box-sizing: border-box;
+    position: relative;
+    overflow: visible;
 }
 
 .hero-grid {
