@@ -12,6 +12,7 @@
 !assets/
 !assets/**
 !USAGE.md
+!HOW-TO-COMMIT.md
 # Плагин universal-license-manager
 !wp-content/
 !wp-content/plugins/
