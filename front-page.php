@@ -42,9 +42,9 @@ get_header();
                     </div>
                 </div>
             </div>
-            <!-- Header divider line - positioned at bottom of header-content-wrapper -->
-            <div class="header-divider"></div>
         </div>
+        <!-- Header divider line - positioned at bottom of entire header (top-nav) -->
+        <div class="header-divider"></div>
     </header>
     
     <!-- Left Sidebar - Below Header with Right Line -->
