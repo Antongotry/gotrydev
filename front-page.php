@@ -10,7 +10,7 @@ get_header();
 <!-- Video Background -->
 <div class="video-background" id="video-background">
     <video id="bg-video" autoplay muted loop playsinline webkit-playsinline>
-        <source src="https://antongotry.dev/wp-content/uploads/2026/01/12.mp4" type="video/mp4">
+        <source src="https://antongotry.dev/wp-content/uploads/2026/01/0_Blackhole_Astrophysics_1920x1080.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="video-overlay"></div>
