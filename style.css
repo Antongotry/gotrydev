@@ -14,26 +14,30 @@ Tags: landing, web-development, glassmorphism, modern
    CSS VARIABLES (Custom Properties)
    ============================================ */
 :root {
-    /* Colors - Як на референсі (purple/pink градієнти) */
-    --color-primary: #a855f7;        /* Фіолетовий */
-    --color-secondary: #ec4899;      /* Рожевий */
-    --color-accent: #8b5cf6;         /* Темно-фіолетовий */
-    --color-highlight: #d946ef;      /* Яскравий рожевий */
-    --color-code: #a1a1aa;           /* Приглушений для коду */
+    /* Colors - Спокійна палітра: білий + відтінки чорного */
+    --color-primary: #ffffff;        /* Білий */
+    --color-secondary: #1a1a1a;      /* Темно-сірий (майже чорний) */
+    --color-accent: #2a2a2a;         /* Середньо-сірий */
+    --color-highlight: #f5f5f5;      /* Світло-сірий */
     --color-text: #ffffff;
-    --color-text-muted: rgba(255, 255, 255, 0.8);
-    --color-text-secondary: rgba(255, 255, 255, 0.6);
+    --color-text-muted: rgba(255, 255, 255, 0.85);
+    --color-text-secondary: rgba(255, 255, 255, 0.65);
     --color-text-dark: #1a1a1a;
-    --color-bg-dark: #000000;
+    --color-bg-dark: #0a0a0a;        /* Дуже темний чорний */
     --color-bg-code: #18181b;
-    --color-bg-glass: rgba(255, 255, 255, 0.1);
-    --color-border-glass: rgba(255, 255, 255, 0.2);
     
-    /* Gradients - Як на референсі (purple-to-pink) */
-    --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    --gradient-purple-pink: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #d946ef 100%);
-    --gradient-subtle: linear-gradient(135deg, rgba(168, 85, 247, 0.3) 0%, rgba(236, 72, 153, 0.2) 100%);
-    --gradient-code-bg: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-bg-hover: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-border-hover: rgba(255, 255, 255, 0.3);
+    --glass-blur: 20px;
+    --glass-blur-strong: 40px;
+    
+    /* Gradients - Спокійні, м'які */
+    --gradient-primary: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+    --gradient-subtle: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
     
     /* Typography */
     --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -286,22 +290,27 @@ body.home .video-background {
 .nav-btn {
     padding: 10px 24px;
     border-radius: 20px;
-    background: var(--gradient-purple-pink);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     color: var(--color-text);
+    border: 1px solid var(--glass-border);
     font-size: 14px;
     font-weight: var(--font-weight-semibold);
     text-decoration: none;
     transition: all var(--transition-base);
-    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .nav-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(168, 85, 247, 0.4);
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
-   HERO SECTION (як на референсі)
+   HERO SECTION (як на doscinali)
    ============================================ */
 .hero-section {
     position: relative;
@@ -312,25 +321,29 @@ body.home .video-background {
     align-items: center;
     justify-content: center;
     z-index: 1;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding-top: 80px; /* Для навігації */
 }
 
 .hero-section .container {
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: calc(100svh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 60px 0;
+    box-sizing: border-box;
 }
 
 .hero-main-wrapper {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 60px;
-    align-items: start;
+    align-items: center;
     width: 100%;
-    padding-top: 60px;
+    min-height: auto;
 }
 
 /* Code Background та Lens-effect прибрано для оптимізації */
@@ -341,9 +354,10 @@ body.home .video-background {
 .hero-left-section {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
     position: relative;
     z-index: 10;
+    justify-content: center;
 }
 
 .hero-subtitle {
@@ -364,10 +378,7 @@ body.home .video-background {
 }
 
 .gradient-text {
-    background: var(--gradient-purple-pink);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-primary); /* Білий текст */
     display: inline-block;
 }
 
@@ -383,19 +394,24 @@ body.home .video-background {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: var(--gradient-purple-pink);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-text);
-    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     transition: all var(--transition-base);
     cursor: pointer;
 }
 
 .cta-arrow:hover {
     transform: translateX(4px);
-    box-shadow: 0 6px 24px rgba(168, 85, 247, 0.4);
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
 }
 
 .cta-description {
@@ -405,37 +421,40 @@ body.home .video-background {
     max-width: 400px;
 }
 
-/* Статистичні картки зліва внизу (як на референсі) */
+/* Статистичні картки зліва внизу (glassmorphism як на doscinali) */
 .hero-stats-bottom {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .hero-stat-card-bottom {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 32px 28px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 28px 24px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     transition: all var(--transition-base);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .hero-stat-card-bottom:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
     transform: translateY(-2px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
 }
 
 .stat-number-large {
     font-size: 48px;
     font-weight: var(--font-weight-extrabold);
     line-height: 1;
+    color: var(--color-primary); /* Білий */
 }
 
 .stat-label {
@@ -466,18 +485,24 @@ body.home .video-background {
 }
 
 .hero-info-card {
-    background: #ffffff;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur-strong));
+    -webkit-backdrop-filter: blur(var(--glass-blur-strong));
+    border: 1px solid var(--glass-border);
     border-radius: 24px;
     padding: 0;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     width: 100%;
     max-width: 400px;
-    transition: box-shadow var(--transition-base);
+    transition: all var(--transition-base);
 }
 
 .hero-info-card:hover {
-    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.25);
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 .info-card-image {
@@ -485,7 +510,7 @@ body.home .video-background {
     height: 200px;
     position: relative;
     overflow: hidden;
-    background: var(--gradient-purple-pink);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 }
 
 .info-video {
@@ -500,40 +525,39 @@ body.home .video-background {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .info-budget {
     font-size: 56px;
     font-weight: var(--font-weight-extrabold);
     line-height: 1;
+    color: var(--color-primary); /* Білий */
 }
 
 .info-label {
     font-size: 14px;
     font-weight: var(--font-weight-medium);
-    color: var(--color-text-dark);
+    color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    opacity: 0.6;
 }
 
 .info-divider {
     width: 100%;
     height: 1px;
-    background: rgba(26, 26, 26, 0.1);
+    background: var(--glass-border);
     margin: 8px 0;
     text-align: center;
     font-size: 24px;
-    color: var(--color-text-dark);
-    opacity: 0.3;
+    color: var(--color-text-muted);
 }
 
 .info-text {
     font-size: 14px;
-    color: var(--color-text-dark);
+    color: var(--color-text-secondary);
     line-height: 1.6;
     margin: 0;
-    opacity: 0.8;
 }
 
 .info-avatars {
@@ -552,10 +576,7 @@ body.home .video-background {
 }
 
 .gradient-text {
-    background: var(--gradient-purple-pink);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-primary); /* Білий текст */
     display: inline-block;
 }
 
@@ -684,17 +705,20 @@ body.home .video-background {
 }
 
 .btn-primary {
-    background: transparent;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     color: var(--color-text);
-    border: 2px solid var(--color-text);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     transition: all var(--transition-base);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary:active {
@@ -739,10 +763,20 @@ body.home .video-background {
         padding: 6px 12px;
     }
     
+    .hero-section {
+        height: auto;
+        min-height: auto;
+    }
+    
+    .hero-section .container {
+        min-height: auto;
+        padding: 40px 0;
+    }
+    
     .hero-main-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;
-        padding-top: 40px;
+        align-items: center;
     }
     
     .hero-left-section {
@@ -782,12 +816,19 @@ body.home .video-background {
     
     .hero-section {
         padding-top: 70px;
+        height: auto;
+        min-height: auto;
+    }
+    
+    .hero-section .container {
+        min-height: auto;
+        padding: 40px 0;
     }
     
     .hero-main-wrapper {
         grid-template-columns: 1fr;
         gap: 30px;
-        padding-top: 30px;
+        align-items: center;
     }
     
     .hero-left-section {
