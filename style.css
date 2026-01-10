@@ -254,12 +254,6 @@ body.home .site-footer {
     height: 100%;
 }
 
-/* Override for home page header - full width, no max-width constraint */
-body.home .top-nav .header-content-wrapper .wide-container {
-    max-width: none; /* Remove max-width to prevent white gap */
-    width: 100%;
-}
-
 /* Override for home page header - full width, no max-width, proper padding */
 body.home .top-nav .header-content-wrapper .wide-container {
     width: 100% !important;
