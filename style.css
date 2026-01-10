@@ -1843,25 +1843,7 @@ body.home .hero-section .wide-container {
 }
 
 /* Hamburger Menu Button - Part of Header, Left Edge, 54x54px with Right Border */
-.hamburger-menu {
-    width: 54px;
-    height: 54px;
-    position: relative;
-    background: transparent;
-    border: none;
-    border-right: 1px solid #1D1D1D; /* Right border to form square */
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    flex-shrink: 0;
-    z-index: 2;
-    box-sizing: border-box;
-}
-
-/* Hamburger Menu Button - Part of Header, Left Edge, 54x54px with Right Border */
+/* Hamburger Menu Button - Part of Header, Left Edge, 54x54px with Right Border (scoped to home page only) */
 body.home .hamburger-menu {
     width: 54px;
     height: 54px;
