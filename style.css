@@ -255,18 +255,27 @@ body.home .site-footer {
 }
 
 /* Override for home page header - use padding instead of margin to avoid double spacing */
-body.home .top-nav .wide-container {
-    padding-left: clamp(40px, 5vw, 120px); /* Padding for spacing after hamburger (header-content-wrapper already has 54px margin) */
+/* Override for home page header - full width, no max-width, proper padding */
+body.home .top-nav .header-content-wrapper .wide-container {
+    width: 100%;
+    max-width: none; /* No max-width to prevent white gap on right */
+    padding-left: clamp(40px, 5vw, 120px);
     padding-right: clamp(40px, 5vw, 120px);
-    margin-left: 0; /* No margin - header-content-wrapper already handles hamburger spacing */
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0; /* No margin */
+    margin-right: 0;
+    box-sizing: border-box;
 }
 
 .nav-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end; /* Align to right */
     width: 100%;
-    gap: 40px;
+    gap: 16px;
+    min-width: 0; /* Allow flex shrinking */
+    box-sizing: border-box;
 }
 
 .nav-left {
@@ -1419,16 +1428,41 @@ body.home .top-nav.scrolled {
     padding: 0; /* Same padding */
 }
 
-/* Header content wrapper - everything except hamburger, fixed height */
+/* Logo - right after hamburger, before sidebar line */
+.header-logo {
+    flex-shrink: 0;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(16px, 2vw, 24px); /* Padding around logo */
+    border-right: 1px solid transparent; /* Space for sidebar line */
+}
+
+body.home .header-logo .logo-link {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    text-decoration: none;
+}
+
+body.home .header-logo .logo-img {
+    height: 24px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Header content wrapper - greeting and button, fixed height */
 .header-content-wrapper {
     flex: 1;
-    margin-left: 54px; /* Space for hamburger */
+    margin-left: 0; /* No margin - logo handles spacing */
     padding: 0;
     height: 54px; /* Fixed height to match hamburger */
     display: flex;
     align-items: center;
     box-sizing: border-box;
     position: relative;
+    min-width: 0; /* Allow flex shrinking */
 }
 
 /* Wide container in header - specific styles if needed (already handled by body.home .top-nav .wide-container) */

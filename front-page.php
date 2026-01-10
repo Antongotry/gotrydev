@@ -20,16 +20,17 @@ get_header();
             </span>
         </button>
         
+        <!-- Logo - right after hamburger, before sidebar line -->
+        <div class="header-logo">
+            <a href="/" class="logo-link">
+                <img src="https://antongotry.dev/wp-content/uploads/2026/01/dark-1d-logo.svg" alt="Gotry Logo" class="logo-img">
+            </a>
+        </div>
+        
+        <!-- Header content - greeting and button -->
         <div class="header-content-wrapper">
             <div class="wide-container">
                 <div class="nav-wrapper">
-                    <!-- Left: Logo -->
-                    <div class="nav-left">
-                        <a href="/" class="logo-link">
-                            <img src="https://antongotry.dev/wp-content/uploads/2026/01/dark-1d-logo.svg" alt="Gotry Logo" class="logo-img">
-                        </a>
-                    </div>
-                    
                     <!-- Right: Greeting + Hire Button -->
                     <div class="nav-right">
                         <span class="nav-greeting" id="greeting-text">Добрий вечір!</span>
