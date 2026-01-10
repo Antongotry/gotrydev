@@ -52,4 +52,63 @@
     }, 1000);
 })();
 
-// Додаткові функції будуть додані тут
+// Sticky navigation scroll effect (як на референсі)
+(function() {
+    const topNav = document.getElementById('topNav');
+    if (!topNav) return;
+    
+    function updateNav() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        if (scrollY > 50) {
+            topNav.classList.add('scrolled');
+        } else {
+            topNav.classList.remove('scrolled');
+        }
+    }
+    
+    // Використовуємо Lenis scroll event, якщо доступний
+    if (window.lenis) {
+        window.lenis.on('scroll', updateNav);
+    } else {
+        // Fallback на window scroll
+        window.addEventListener('scroll', updateNav);
+    }
+    
+    // Початкова перевірка
+    updateNav();
+})();
+
+// Smooth scroll для навігаційних посилань
+(function() {
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || !href) return;
+            
+            const target = document.querySelector(href);
+            if (!target) return;
+            
+            e.preventDefault();
+            
+            // Використовуємо Lenis для smooth scroll, якщо доступний
+            if (window.lenis) {
+                window.lenis.scrollTo(target, {
+                    offset: -80, // Враховуємо висоту навігації
+                    duration: 1.2
+                });
+            } else {
+                // Fallback на стандартний scroll
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            
+            // Оновлюємо активний стан навігації
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+})();

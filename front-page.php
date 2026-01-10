@@ -16,65 +16,72 @@ get_header();
     <div class="video-overlay"></div>
 </div>
 
-<!-- Hero Section -->
+<!-- Hero Section (як на референсі) -->
 <section class="hero-section" id="hero">
-    
-    <!-- Hero Content -->
     <div class="container">
-        <div class="hero-grid">
+        <div class="hero-main-wrapper">
             <!-- Ліва частина: Основний контент -->
-            <div class="hero-left">
-                <div class="hero-content-card">
-                    <h1 class="hero-title">
-                        <span class="gradient-text">Перетворюю код</span><br>
-                        у красивий дизайн
-                    </h1>
-                    <p class="hero-description">
-                        Створюю сучасні веб-сайти: від ідеї до запуску.<br>
-                        HTML/CSS/JS, адаптив, швидкість, SEO-база.<br>
-                        Лендинги від <strong>500 $</strong>, термін від <strong>5 днів</strong>.
+            <div class="hero-left-section">
+                <p class="hero-subtitle">Від ідеї до запуску</p>
+                <h1 class="hero-title">
+                    <span class="gradient-text">Перетворюю код</span><br>
+                    у красивий дизайн
+                </h1>
+                
+                <div class="hero-cta-wrapper">
+                    <a href="#contact" class="btn btn-primary" data-analytics="cta-hero-primary">
+                        Отримати безкоштовну консультацію
+                    </a>
+                    <div class="cta-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                    <p class="cta-description">
+                        Залиште заявку зараз і отримайте безкоштовну 30-хвилинну консультацію.
                     </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary" data-analytics="cta-hero-primary">
-                            Отримати розрахунок
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                        <a href="https://t.me/notarikon" class="btn btn-secondary" target="_blank" rel="noopener" data-analytics="cta-hero-telegram">
-                            Написати в Telegram
-                        </a>
+                </div>
+                
+                <!-- Статистичні картки зліва внизу (як на референсі) -->
+                <div class="hero-stats-bottom">
+                    <div class="hero-stat-card-bottom">
+                        <span class="stat-number-large gradient-text">50+</span>
+                        <span class="stat-label">проектів</span>
+                        <p class="stat-description">Реалізовано для клієнтів у 15+ країнах</p>
+                    </div>
+                    <div class="hero-stat-card-bottom">
+                        <span class="stat-number-large gradient-text">30+</span>
+                        <span class="stat-label">послуг</span>
+                        <p class="stat-description">Від дизайну до розробки та SEO</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Права частина: Статистика та додаткові елементи -->
-            <div class="hero-right">
-                <!-- Статистичні картки -->
-                <div class="hero-stats">
-                    <div class="hero-stat-card">
-                        <div class="stat-circle">
-                            <span class="stat-number">50+</span>
-                        </div>
-                        <p class="stat-text">реалізованих<br>проектів</p>
+            <!-- Права частина: Біла картка з інформацією (як на референсі) -->
+            <div class="hero-right-section">
+                <div class="hero-info-card">
+                    <div class="info-card-image">
+                        <!-- Тут буде відео або зображення -->
+                        <video class="info-video" autoplay muted loop playsinline>
+                            <source src="#" type="video/mp4">
+                        </video>
                     </div>
-                    <div class="hero-stat-card">
-                        <div class="stat-circle">
-                            <span class="stat-number">100%</span>
+                    <div class="info-card-content">
+                        <span class="info-budget gradient-text">$500+</span>
+                        <span class="info-label">бюджет проекту</span>
+                        <div class="info-divider">+</div>
+                        <p class="info-text">
+                            Як створити сайт без перевитрат та отримати результат за мінімальний термін.
+                        </p>
+                        <div class="info-avatars">
+                            <span class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=1');"></span>
+                            <span class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=3');"></span>
+                            <span class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=8');"></span>
                         </div>
-                        <p class="stat-text">якість<br>коду</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="hero-scroll-indicator">
-        <span>Scroll</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-        </svg>
     </div>
 </section>
 
