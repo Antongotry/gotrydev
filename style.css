@@ -1029,21 +1029,25 @@ body.home .wide-container {
     animation: atom 300ms linear 1;
     width: 25px;
     background: transparent;
+    transform-origin: center center; /* Rotate around center */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(1) {
     top: 20px; /* Keep original position */
-    transform: rotate(-33deg) translateY(0); /* Add translateY(0) to preserve position during rotation */
+    transform: rotate(-33deg);
+    transform-origin: 50% 50%; /* Center of circle */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(2) {
     top: 27px; /* Keep original position */
-    transform: rotate(90deg) translateY(0);
+    transform: rotate(90deg);
+    transform-origin: 50% 50%; /* Center of circle */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3) {
     top: 34px; /* Keep original position */
-    transform: rotate(33deg) translateY(0);
+    transform: rotate(33deg);
+    transform-origin: 50% 50%; /* Center of circle */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3)::before {
