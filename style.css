@@ -1424,14 +1424,13 @@ body.home .top-nav.scrolled {
     position: relative;
 }
 
-/* Wide container in header - no left padding, margin is handled by header-content-wrapper */
+/* Wide container in header - add left margin for spacing after hamburger */
 body.home .top-nav .header-content-wrapper .wide-container {
-    padding-left: 0; /* No left padding - margin is in header-content-wrapper */
+    padding-left: 0; /* No left padding - handled by margin */
     padding-right: clamp(40px, 5vw, 120px);
     padding-top: 0;
     padding-bottom: 0;
-    margin-left: clamp(40px, 5vw, 120px); /* Left margin instead of padding */
-    width: calc(100% - clamp(40px, 5vw, 120px)); /* Adjust width to account for margin */
+    margin-left: clamp(40px, 5vw, 120px); /* Left margin for spacing after hamburger */
 }
 
 /* No changes on scroll - wrapper stays same size */
