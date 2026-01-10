@@ -145,7 +145,7 @@ body {
 }
 
 body.home {
-    background: transparent;
+    background: #f5f3f7; /* Light purple/grey background like Konpo */
 }
 
 /* Скрываем стандартные header и footer */
@@ -153,36 +153,9 @@ body.home .site-footer {
     display: none !important;
 }
 
-/* Video Background */
+/* Video Background - Hidden for Konpo style */
 .video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    overflow: hidden;
-    background: #210621;
-}
-
-body.home .video-background {
-    z-index: 0;
-}
-
-.video-background video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 1;
-    display: block;
-    opacity: 1;
-    background: transparent;
-    will-change: transform;
-    transform: translateZ(0);
+    display: none;
 }
 
 /* ============================================
