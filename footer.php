@@ -9,7 +9,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('top-nav');
     const greetingText = document.getElementById('greeting-text');
-    const menuToggle = document.getElementById('menu-toggle');
     const mainGrid = document.getElementById('main-grid');
     
     // Dynamic greeting based on time of day
@@ -29,8 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         greetingText.textContent = greeting;
     }
-    
-    // Menu toggle removed - using scroll indicator instead
     
     // Add loaded class to main-grid for animations (when ready to implement)
     if (mainGrid) {

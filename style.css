@@ -1675,21 +1675,22 @@ body.home .top-nav.scrolled .logo-text {
 .project-card-content {
     position: absolute;
     top: 24px;
-    left: 24px;
-    right: 24px;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 8px;
 }
 
+/* Surge card - text in top left */
 .project-card-gradient .project-card-content {
+    left: 24px;
     align-items: flex-start;
 }
 
+/* ComPsych and amp cards - text in top right */
 .project-card-white .project-card-content,
 .project-card-dark .project-card-content {
+    right: 24px;
     align-items: flex-end;
 }
 
