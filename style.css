@@ -1771,7 +1771,8 @@ body.home .hero-section .wide-container {
 }
 
 .project-name-dark {
-    color: #2563eb;
+    color: #1D1D1D;
+    font-weight: 700;
 }
 
 .project-logo-wrapper {
@@ -1788,10 +1789,11 @@ body.home .hero-section .wide-container {
 }
 
 .project-icon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     color: #fff;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    display: block;
 }
 
 /* Responsive - Konpo Style */
