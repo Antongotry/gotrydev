@@ -89,9 +89,11 @@ get_header();
                                 <polyline points="16 20 20 16 16 12"/>
                             </svg>
                         </div>
-                        <p class="card-text">Brands that lead forward.</p>
-                        <div class="card-stat">85%</div>
-                        <p class="card-subtext">Win beyond the market.</p>
+                        <div class="card-content">
+                            <p class="card-text">Brands that lead forward.</p>
+                            <div class="card-stat">85%</div>
+                            <p class="card-subtext">Win beyond the market.</p>
+                        </div>
                     </div>
                     
                     <!-- Dark Card - Closer to center-left -->
@@ -110,11 +112,11 @@ get_header();
             <!-- Right Side: Main Title + Description + Tags -->
             <div class="col-6 col-start-7 hero-right">
                 <!-- Main Title - Right Center/Above Center -->
-                <h2 class="hero-title-large">CREATIVE<br>BRANDING<br>AGENCY.</h2>
+                <h2 class="hero-title-large">WEB<br>DEVELOPMENT<br>STUDIO.</h2>
                 
                 <!-- Description with Arrow Icon -->
                 <div class="hero-description-wrapper">
-                    <p class="hero-description">We craft bold identities that stand out. From strategy to visual DNA — we help brands redefine, not just refresh.</p>
+                    <p class="hero-description">Full-cycle web creation from concept to launch. Design, development, or pixel-perfect implementation — we turn visions into functional reality.</p>
                     <div class="hero-arrow-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
@@ -129,12 +131,12 @@ get_header();
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                         </svg>
-                        <span>BRANDING</span>
+                        <span>DESIGN</span>
                     </div>
                     <div class="hero-tags">
-                        <span class="hero-tag">DIGITAL CAMPAIGNS</span>
-                        <span class="hero-tag">CONTENT</span>
-                        <span class="hero-tag">CREATIVE STRATEGY</span>
+                        <span class="hero-tag">DESIGN + CODE</span>
+                        <span class="hero-tag">MARKUP</span>
+                        <span class="hero-tag">RESPONSIVE</span>
                     </div>
                 </div>
             </div>

@@ -48,20 +48,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Header scroll behavior
+    // Header scroll behavior - fix sticky positioning
     if (header) {
-        let lastScroll = 0;
-        window.addEventListener('scroll', function() {
+        let ticking = false;
+        
+        function updateHeader() {
             const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
             
             if (currentScroll > 50) {
-                header.classList.add('scrolled');
+                if (!header.classList.contains('scrolled')) {
+                    header.classList.add('scrolled');
+                }
             } else {
-                header.classList.remove('scrolled');
+                if (header.classList.contains('scrolled')) {
+                    header.classList.remove('scrolled');
+                }
             }
             
-            lastScroll = currentScroll;
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
         });
+        
+        // Initial check
+        updateHeader();
     }
 });
 </script>
