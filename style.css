@@ -1086,18 +1086,17 @@ body.home .wide-container {
     transform: none;
 }
 
-/* Line 3: Right vertical line (from top, stops before bottom) - uses vertical position */
+/* Line 3: Bottom horizontal line (from left to middle-right, stops before right) */
 .header-side .hamburger-menu:hover div:nth-child(3) {
-    width: 0px;
-    height: 30px; /* Height from top, not full - stops before bottom */
-    border-right: 1px solid #1D1D1D;
-    border-top: none;
+    width: 36px; /* Same width as top line */
+    height: 0px;
+    border-bottom: 1px solid #1D1D1D;
     border-left: none;
-    border-bottom: none;
-    right: 6px; /* Offset from right edge */
-    top: 3px;
-    bottom: auto;
-    left: auto;
+    border-right: none;
+    border-top: none;
+    left: 6px;
+    bottom: 3px; /* At bottom */
+    top: auto;
     transform: none;
 }
 
