@@ -1415,13 +1415,22 @@ body.home .top-nav.scrolled {
 /* Header content wrapper - everything except hamburger, fixed height */
 .header-content-wrapper {
     flex: 1;
-    margin-left: 54px; /* Space for hamburger */
+    margin-left: 0; /* No left margin - hamburger is inside header */
     padding: 0;
     height: 54px; /* Fixed height to match hamburger */
     display: flex;
     align-items: center;
     box-sizing: border-box;
     position: relative;
+}
+
+/* Wide container in header - no left padding to avoid white gap */
+body.home .top-nav .header-content-wrapper .wide-container {
+    padding-left: clamp(40px, 5vw, 120px); /* Only horizontal padding, no left margin */
+    padding-right: clamp(40px, 5vw, 120px);
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 54px; /* Space for hamburger */
 }
 
 /* No changes on scroll - wrapper stays same size */
@@ -1839,13 +1848,14 @@ body.home .hero-section .wide-container {
     z-index: 1;
 }
 
-/* Hamburger Menu Button - Part of Header, Left Edge, 54x54px */
+/* Hamburger Menu Button - Part of Header, Left Edge, 54x54px with Right Border */
 .hamburger-menu {
     width: 54px;
     height: 54px;
     position: relative;
     background: transparent;
     border: none;
+    border-right: 1px solid #1D1D1D; /* Right border to form square */
     cursor: pointer;
     padding: 0;
     display: flex;
@@ -1854,6 +1864,7 @@ body.home .hero-section .wide-container {
     gap: 0;
     flex-shrink: 0;
     z-index: 2;
+    box-sizing: border-box;
 }
 
 /* Hamburger icon - 3 lines, centered */
