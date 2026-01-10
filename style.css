@@ -1893,12 +1893,7 @@ body.home .hero-section .wide-container {
     margin-left: 54px;
 }
 
-/* Update header to work with sidebar */
-body.home .top-nav {
-    position: relative;
-    background: transparent;
-    padding: 24px 0;
-}
+/* Header styles moved to Konpo section above */
 
 body.home .top-nav .wide-container {
     padding-left: clamp(40px, 5vw, 120px);
