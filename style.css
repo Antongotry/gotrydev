@@ -1450,13 +1450,6 @@ body.home .top-nav.scrolled .header-divider {
     width: 100vw; /* Same width */
 }
 
-/* Divider stays in same position on scroll - no changes */
-body.home .top-nav.scrolled .header-divider {
-    bottom: 0; /* Same position */
-    margin: 0;
-    margin-left: -54px;
-}
-
 /* Hide right nav elements on scroll - only logo remains */
 body.home .top-nav.scrolled .nav-right {
     opacity: 0;
