@@ -11,11 +11,10 @@ get_header();
 <div class="main-grid" id="main-grid">
     <!-- Left Sidebar with Scroll Indicator -->
     <div class="header-side" id="header-side">
-        <!-- Scroll Indicator -->
+        <!-- Scroll Indicator - vertical line with dot at top -->
         <div class="scroll-indicator">
-            <div class="scroll-line"></div>
             <div class="scroll-dot scroll-dot-top"></div>
-            <div class="scroll-dot scroll-dot-bottom"></div>
+            <div class="scroll-line"></div>
         </div>
     </div>
     
