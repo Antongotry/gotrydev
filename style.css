@@ -1878,16 +1878,17 @@ body.home .hero-section .wide-container {
     z-index: 1;
 }
 
-/* Scroll Indicator - vertical line with dot at top */
+/* Scroll Indicator - vertical line with dot at top, positioned below hamburger */
 .scroll-indicator {
     position: relative;
     width: 1px;
-    height: 100vh;
+    height: calc(100vh - 54px); /* Full height minus hamburger block */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding-top: 24px;
+    margin-top: 54px; /* Space for hamburger menu */
 }
 
 .scroll-line {
