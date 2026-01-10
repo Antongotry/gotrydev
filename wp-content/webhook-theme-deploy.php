@@ -22,9 +22,10 @@ define('WP_ROOT', dirname(dirname(__FILE__))); // public_html
 // Путь к папке темы
 define('THEME_PATH', WP_ROOT . '/wp-content/themes/gotry');
 
-// Путь к git репозиторию (если используется git на сервере)
-// Если нет git на сервере, оставьте null и будет использован метод загрузки через GitHub API
-define('GIT_PATH', WP_ROOT);
+// Путь к git репозиторию - ОТКЛЮЧЕНО для безопасности
+// Git pull копирует весь репозиторий, что не нужно для обновления только темы
+// Если нужен git pull, используйте sparse checkout, но лучше использовать GitHub API метод ниже
+define('GIT_PATH', null); // Отключено
 
 // GitHub репозиторий (owner/repo)
 define('GITHUB_REPO', 'Antongotry/gotrydev');
@@ -140,30 +141,11 @@ log_message('Theme files changed: ' . implode(', ', array_unique($changed_files)
 
 $result = ['status' => 'success', 'method' => '', 'output' => []];
 
-// Метод 1: Используем git (если доступен на сервере)
-if (GIT_PATH && is_dir(GIT_PATH . '/.git')) {
-    log_message('Attempting to update via git pull');
-    $result['method'] = 'git';
-    
-    // Переходим в корень репозитория
-    chdir(GIT_PATH);
-    
-    // Выполняем git pull только для папки темы (если поддерживается sparse checkout)
-    // Или просто git pull, если вся папка является репозиторием
-    exec('git pull origin main 2>&1', $output, $return_code);
-    $result['output'] = $output;
-    $result['return_code'] = $return_code;
-    
-    if ($return_code === 0) {
-        log_message('Success: Theme updated via git pull');
-        echo json_encode($result);
-        exit;
-    } else {
-        log_message('Warning: Git pull failed, trying alternative method');
-    }
-}
+// ОТКЛЮЧЕН: Git pull копирует весь репозиторий, что не нужно
+// Метод 1: Git pull - ОТКЛЮЧЕН для безопасности (не копировать весь репозиторий)
+// Используем только GitHub API для загрузки только темы
 
-// Метод 2: Загрузка через GitHub API (fallback)
+// Метод 1: Загрузка через GitHub API (единственный безопасный метод)
 log_message('Attempting to update via GitHub API');
 $result['method'] = 'github_api';
 
@@ -201,24 +183,88 @@ if ($zip->open($zip_file) === TRUE) {
     $extracted_path = $temp_dir . '/gotrydev-main/wp-content/themes/gotry';
     
     if (is_dir($extracted_path)) {
-        // Удаляем старую папку темы (кроме uploads, если есть)
-        if (is_dir(THEME_PATH)) {
-            // Копируем только файлы темы
-            exec('cp -r ' . escapeshellarg($extracted_path) . '/* ' . escapeshellarg(THEME_PATH) . '/ 2>&1', $output, $return_code);
-            $result['output'] = $output;
-            $result['return_code'] = $return_code;
+        // Убедимся, что папка темы существует
+        if (!is_dir(THEME_PATH)) {
+            log_message('Creating theme directory: ' . THEME_PATH);
+            mkdir(THEME_PATH, 0755, true);
+        }
+        
+        // Создаем список файлов темы для копирования (исключаем ненужные)
+        $exclude_files = ['.DS_Store', '.git', '.gitignore'];
+        
+        // Копируем файлы и папки темы по одному (более безопасно)
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($extracted_path, RecursiveDirectoryIterator::SKIP_DOTS),
+            RecursiveIteratorIterator::SELF_FIRST
+        );
+        
+        $copied_files = [];
+        $errors = [];
+        
+        foreach ($iterator as $item) {
+            $source_path = $item->getPathname();
+            $relative_path = str_replace($extracted_path . DIRECTORY_SEPARATOR, '', $source_path);
             
-            if ($return_code === 0) {
-                log_message('Success: Theme updated via GitHub API');
-            } else {
-                log_message('Error: Failed to copy theme files');
+            // Пропускаем исключенные файлы
+            if (in_array(basename($relative_path), $exclude_files)) {
+                continue;
             }
+            
+            // Пропускаем файлы из корня WordPress, которые не должны быть в теме
+            // Проверяем содержимое index.php - если там WP_USE_THEMES, значит это корневой файл
+            if (basename($relative_path) === 'index.php') {
+                $file_content = file_get_contents($source_path);
+                if (strpos($file_content, "define( 'WP_USE_THEMES', true )") !== false || 
+                    strpos($file_content, 'define("WP_USE_THEMES", true)') !== false) {
+                    log_message('Skipping root WordPress index.php (contains WP_USE_THEMES)');
+                    continue;
+                }
+            }
+            
+            // Пропускаем другие файлы из корня WordPress
+            $root_wp_files = ['wp-load.php', 'wp-blog-header.php', 'wp-config-sample.php', 
+                             'wp-activate.php', 'wp-cron.php', 'wp-login.php', 'wp-signup.php'];
+            if (in_array(basename($relative_path), $root_wp_files) && 
+                strpos($relative_path, '/') === false) {
+                log_message('Skipping root WordPress file: ' . $relative_path);
+                continue;
+            }
+            
+            $dest_path = THEME_PATH . DIRECTORY_SEPARATOR . $relative_path;
+            
+            if ($item->isDir()) {
+                // Создаем директорию если не существует
+                if (!is_dir($dest_path)) {
+                    mkdir($dest_path, 0755, true);
+                }
+            } else {
+                // Копируем файл
+                if (copy($source_path, $dest_path)) {
+                    $copied_files[] = $relative_path;
+                    // Устанавливаем права на файл
+                    chmod($dest_path, 0644);
+                } else {
+                    $errors[] = 'Failed to copy: ' . $relative_path;
+                }
+            }
+        }
+        
+        $result['copied_files'] = count($copied_files);
+        $result['files'] = $copied_files;
+        
+        if (!empty($errors)) {
+            $result['errors'] = $errors;
+            log_message('Errors during copy: ' . implode(', ', $errors));
+        }
+        
+        if (count($copied_files) > 0) {
+            log_message('Success: Theme updated via GitHub API. Copied ' . count($copied_files) . ' files');
         } else {
-            log_message('Error: Theme directory does not exist: ' . THEME_PATH);
-            $result['error'] = 'Theme directory does not exist';
+            log_message('Warning: No files were copied');
+            $result['error'] = 'No files were copied';
         }
     } else {
-        log_message('Error: Extracted theme directory not found');
+        log_message('Error: Extracted theme directory not found: ' . $extracted_path);
         $result['error'] = 'Extracted theme directory not found';
     }
     
