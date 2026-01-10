@@ -37,8 +37,8 @@ Tags: landing, web-development, glassmorphism, modern
     --gradient-primary: radial-gradient(ellipse at right center, rgba(255, 107, 61, 0.4) 0%, rgba(255, 69, 0, 0.2) 30%, rgba(74, 20, 20, 0.6) 60%, rgba(26, 5, 5, 1) 100%);
     --gradient-red: linear-gradient(135deg, #4a1414 0%, #3a0f0f 50%, #2d0a0a 100%);
     
-    /* Typography - Inter font */
-    --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    /* Typography - Manrope font (отличная кириллица для креативной студии) */
+    --font-family-base: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
     
     --font-size-base: 16px;
@@ -279,23 +279,20 @@ body.home .video-background {
     position: relative;
     box-sizing: border-box;
     height: 100%;
-    display: flex;
-    align-items: center;
 }
 
-.top-nav .grid-12 {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.nav-wrapper {
+    display: flex;
     align-items: center;
-    box-sizing: border-box;
-    min-height: 24px;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
 }
 
 .nav-left {
     display: flex;
     align-items: center;
-    justify-self: start;
+    flex-shrink: 0;
 }
 
 .nav-logo {
@@ -375,7 +372,7 @@ body.home .video-background {
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-self: center;
+    flex: 1;
 }
 
 .nav-links {
@@ -406,7 +403,7 @@ body.home .video-background {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    justify-self: end;
+    flex-shrink: 0;
 }
 
 .nav-social {
@@ -480,14 +477,12 @@ body.home .video-background {
 }
 
 .hero-grid {
+    display: flex;
     width: 100%;
     height: 100%;
     align-items: center;
-    justify-items: start;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    gap: clamp(20px, 2.5vw, 40px);
+    justify-content: space-between;
+    gap: clamp(40px, 5vw, 80px);
     box-sizing: border-box;
 }
 
@@ -496,10 +491,8 @@ body.home .video-background {
     flex-direction: column;
     justify-content: center;
     gap: 50px;
-    height: 100%;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 100%;
+    flex: 0 0 calc(41.666% - clamp(20px, 2.5vw, 40px));
+    max-width: calc(41.666% - clamp(20px, 2.5vw, 40px));
     box-sizing: border-box;
     position: relative;
 }
@@ -509,11 +502,8 @@ body.home .video-background {
     flex-direction: column;
     justify-content: center;
     gap: 32px;
-    height: 100%;
-    align-items: flex-start;
-    padding-left: 0;
-    width: 100%;
-    max-width: 100%;
+    flex: 0 0 calc(50% - clamp(20px, 2.5vw, 40px));
+    max-width: calc(50% - clamp(20px, 2.5vw, 40px));
     box-sizing: border-box;
     position: relative;
 }
@@ -858,6 +848,10 @@ body.home .video-background {
         padding: 24px 0;
     }
     
+    .nav-wrapper {
+        gap: 32px;
+    }
+    
     .nav-links {
         gap: 32px;
     }
@@ -877,8 +871,21 @@ body.home .video-background {
         padding-bottom: 40px;
     }
     
+    .hero-grid {
+        flex-direction: row;
+        gap: clamp(20px, 3vw, 40px);
+    }
+    
     .hero-left {
+        flex: 0 0 calc(45% - clamp(10px, 1.5vw, 20px));
+        max-width: calc(45% - clamp(10px, 1.5vw, 20px));
         gap: 36px;
+    }
+    
+    .hero-right {
+        flex: 0 0 calc(50% - clamp(10px, 1.5vw, 20px));
+        max-width: calc(50% - clamp(10px, 1.5vw, 20px));
+        gap: 24px;
     }
     
     .hero-main-title {
@@ -902,10 +909,6 @@ body.home .video-background {
     
     .card-stat {
         font-size: 48px;
-    }
-    
-    .hero-right {
-        gap: 24px;
     }
     
     .hero-title-large {
@@ -1037,22 +1040,21 @@ body.home .video-background {
     }
     
     .hero-grid {
+        flex-direction: row;
         align-items: start;
         gap: clamp(20px, 3vw, 40px);
     }
     
     .hero-left {
-        gap: 40px;
-        padding-top: 0;
-        width: 100%;
-        max-width: 100%;
+        flex: 0 0 calc(45% - clamp(10px, 1.5vw, 20px));
+        max-width: calc(45% - clamp(10px, 1.5vw, 20px));
+        gap: 36px;
     }
     
     .hero-right {
-        gap: 28px;
-        padding-left: 0;
-        width: 100%;
-        max-width: 100%;
+        flex: 0 0 calc(50% - clamp(10px, 1.5vw, 20px));
+        max-width: calc(50% - clamp(10px, 1.5vw, 20px));
+        gap: 24px;
     }
     
     .hero-main-title {
@@ -1150,19 +1152,24 @@ body.home .video-background {
         padding-right: 20px;
     }
     
-    .nav-left, .nav-center, .nav-right {
-        grid-column: span 12;
-        grid-column-start: 1;
-        margin-top: 0;
+    .nav-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .nav-left {
+        width: 100%;
     }
     
     .nav-center {
-        margin-top: 12px;
+        width: 100%;
         order: 2;
     }
     
     .nav-right {
-        margin-top: 12px;
+        width: 100%;
+        justify-content: flex-start;
         order: 3;
     }
     
@@ -1224,9 +1231,22 @@ body.home .video-background {
     }
     
     .hero-grid {
-        align-items: start;
+        flex-direction: column;
+        align-items: stretch;
         gap: 32px;
         width: 100%;
+    }
+    
+    .hero-left {
+        flex: 1 1 auto;
+        max-width: 100%;
+        gap: 28px;
+    }
+    
+    .hero-right {
+        flex: 1 1 auto;
+        max-width: 100%;
+        gap: 20px;
     }
     
     .col-5, .col-6 {

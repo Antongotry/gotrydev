@@ -10,12 +10,9 @@ get_header();
 <!-- Header Navigation -->
 <header class="top-nav" id="top-nav">
     <div class="wide-container">
-        <div class="grid-12">
-            <!-- Empty column for left centering -->
-            <div class="col-1"></div>
-            
+        <div class="nav-wrapper">
             <!-- Left: Logo + Hamburger -->
-            <div class="col-2 nav-left">
+            <div class="nav-left">
                 <div class="nav-logo">
                     <a href="/" class="logo-link">
                         <img src="https://antongotry.dev/wp-content/uploads/2026/01/logo-white.svg" alt="Logo" class="logo-img logo-white">
@@ -30,7 +27,7 @@ get_header();
             </div>
             
             <!-- Center: Navigation Menu -->
-            <div class="col-6 nav-center">
+            <div class="nav-center">
                 <nav class="nav-links">
                     <a href="#home" class="nav-link">HOME</a>
                     <a href="#services" class="nav-link">SERVICES</a>
@@ -39,7 +36,7 @@ get_header();
             </div>
             
             <!-- Right: Social Icons -->
-            <div class="col-2 nav-right">
+            <div class="nav-right">
                 <div class="nav-social">
                     <a href="https://www.instagram.com/antongotry?igsh=bmFzdHpqb2RnM2Zj" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -50,14 +47,11 @@ get_header();
                     </a>
                     <a href="https://t.me/notarikon" class="social-icon" aria-label="Telegram" target="_blank" rel="noopener">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
                     </a>
                 </div>
             </div>
-            
-            <!-- Empty column for right centering -->
-            <div class="col-1"></div>
         </div>
     </div>
 </header>
@@ -73,12 +67,9 @@ get_header();
 <!-- Hero Section -->
 <section class="hero-section" id="hero">
     <div class="wide-container">
-        <div class="grid-12 hero-grid">
-            <!-- Empty column for left centering -->
-            <div class="col-1"></div>
-            
+        <div class="hero-grid">
             <!-- Left Side: Slogan + Cards -->
-            <div class="col-5 hero-left">
+            <div class="hero-left">
                 <div class="hero-slogan">
                     <h1 class="hero-main-title">КОД<br>ЗУСТРІЧАЄ<br>ДИЗАЙН/</h1>
                     <p class="hero-subtitle">Де ідеї стають пікселями, а пікселі стають досвідом.</p>
@@ -116,7 +107,7 @@ get_header();
             </div>
             
             <!-- Right Side: Main Title + Description + Tags -->
-            <div class="col-6 hero-right">
+            <div class="hero-right">
                 <!-- Main Title - Right Center/Above Center -->
                 <h2 class="hero-title-large">ВЕБ-СТУДІЯ<br>РОЗРОБКИ.</h2>
                 
