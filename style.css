@@ -402,13 +402,12 @@ body.home .top-nav .header-content-wrapper .wide-container {
 }
 
 /* ============================================
-   HERO SECTION (12-col grid, 100svh)
+   HERO SECTION (Base styles - overridden by body.home .hero-section)
    ============================================ */
 .hero-section {
     position: relative;
-    width: 100vw;
-    height: 100svh;
-    min-height: 100svh;
+    width: 100%; /* Use 100% instead of 100vw to prevent overflow */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -473,9 +472,9 @@ body.home .top-nav {
     position: fixed !important; /* Force fixed - NEVER changes */
     top: 0 !important;
     left: 54px !important; /* Start after sidebar (54px) */
-    right: 0 !important;
-    width: calc(100vw - 54px) !important; /* Full viewport width minus sidebar */
-    max-width: calc(100vw - 54px) !important; /* Prevent overflow */
+    right: 0 !important; /* Stretch to right edge - no need for calc(100vw - 54px) */
+    width: auto !important; /* Auto width - right: 0 handles it */
+    max-width: none !important; /* No max-width */
     background: transparent !important; /* Always transparent - NEVER changes */
     backdrop-filter: none !important;
     padding: 0 !important;
@@ -546,9 +545,9 @@ body.home .top-nav .header-right {
     display: flex; /* Always visible - static */
 }
 
-/* Header divider line - dark color, extends full width including hamburger area (full viewport width) */
+/* Header divider line - dark color, extends full width including hamburger area */
 .header-divider {
-    width: 100vw; /* Full viewport width - includes hamburger (54px) + header area */
+    width: calc(100% + 54px); /* Full width of header (100%) + sidebar width (54px) to include hamburger area */
     height: 1px;
     background: #1D1D1D; /* Dark color like reference */
     margin: 0;
@@ -615,23 +614,28 @@ body.home .logo-link .logo-img {
 /* Hero Section - Konpo Style */
 body.home .hero-section {
     background: #f5f3f7;
+    width: 100%; /* Full width of main-content, no overflow */
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 140px 0 80px;
     position: relative;
+    margin: 0; /* No margin */
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Wide container for home page - aligns with logo left edge and symmetric right padding */
+/* Note: main-content already has margin-left: 54px, so we only add logo padding here */
 body.home .hero-section .wide-container,
 body.home .wide-container {
     width: 100%;
     max-width: none; /* No max-width constraint */
     margin-left: 0;
     margin-right: 0;
-    /* Left padding matches: sidebar (54px) + logo padding (clamp(16px, 2vw, 24px)) = logo left edge */
-    padding-left: calc(54px + clamp(16px, 2vw, 24px)); /* Aligns with logo left edge */
+    /* Left padding: only logo padding (clamp(16px, 2vw, 24px)) - main-content margin-left handles sidebar offset */
+    padding-left: clamp(16px, 2vw, 24px); /* Aligns with logo left edge (54px sidebar + this padding) */
     /* Right padding symmetric to logo padding (clamp(16px, 2vw, 24px)) - creates logical symmetry */
     padding-right: clamp(16px, 2vw, 24px); /* Symmetric to logo padding */
     box-sizing: border-box;
@@ -1043,12 +1047,17 @@ body.home .wide-container {
 /* Main Content Area - Right Side (Working Area) - Starts after sidebar and header */
 .main-content {
     flex: 1;
-    width: calc(100vw - 54px); /* Full width minus sidebar */
+    width: auto; /* Auto width - margin-left and right edge handle it */
     min-height: 100vh;
     margin-left: 54px; /* Space for sidebar */
+    margin-right: 0; /* No right margin - stretch to edge */
     margin-top: 54px; /* Space for fixed header (54px height) */
     padding-top: 0; /* No padding - margin handles spacing */
+    padding-left: 0; /* No padding - wide-container handles it */
+    padding-right: 0; /* No padding - wide-container handles it */
     position: relative;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Header styles moved to Konpo section above - no wide-container in header anymore */
