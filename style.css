@@ -1629,6 +1629,14 @@ body.home .site-footer {
     .projects-divider {
         margin-bottom: 40px;
     }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .header-side {
+        display: none;
+    }
 }
 body.home .logo-img {
     height: 32px;
@@ -1640,10 +1648,9 @@ body.home .logo-img {
    KONPO SIDEBAR STRUCTURE
    ============================================ */
 
-/* Main Grid Layout */
+/* Main Flexbox Layout */
 .main-grid {
-    display: grid;
-    grid-template-columns: 54px 1fr;
+    display: flex;
     min-height: 100vh;
     width: 100%;
     position: relative;
@@ -1651,17 +1658,26 @@ body.home .logo-img {
 
 /* Left Sidebar - 54px width */
 .header-side {
+    flex: 0 0 54px;
+    width: 54px;
+    height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
-    width: 54px;
-    height: 100vh;
     z-index: 1001;
     background: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Sidebar appears first on load */
+.main-grid.loaded .header-side {
+    opacity: 1;
+    transition-delay: 0ms;
 }
 
 /* Menu Toggle Button - 54x54px at top */
@@ -1727,12 +1743,12 @@ body.home .logo-img {
     opacity: 0.7;
 }
 
-/* Main Content Area - offset by 54px */
+/* Main Content Area - flex: 1 to fill remaining space */
 .main-content {
-    grid-column: 2;
+    flex: 1;
     width: 100%;
     min-height: 100vh;
-    margin-left: 0;
+    margin-left: 54px;
 }
 
 /* Update header to work with sidebar */
@@ -1769,6 +1785,182 @@ body.home .hero-section .wide-container {
     
     .main-content {
         grid-column: 1;
+    }
+}
+
+
+/* ============================================
+   LOAD ANIMATION - Staggered Appearance
+   ============================================ */
+
+/* Initial state - all elements hidden */
+.main-grid:not(.loaded) .title-line-1,
+.main-grid:not(.loaded) .title-line-2,
+.main-grid:not(.loaded) .hero-description,
+.main-grid:not(.loaded) .projects-divider,
+.main-grid:not(.loaded) .project-card {
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+/* Hero Title Line 1 - appears first (0-100ms) */
+.main-grid:not(.loaded) .title-line-1 {
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.main-grid.loaded .title-line-1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: 100ms;
+}
+
+/* Hero Title Line 2 - appears second (150-200ms) */
+.main-grid:not(.loaded) .title-line-2 {
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.main-grid.loaded .title-line-2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: 200ms;
+}
+
+/* Hero Description - appears third (250-300ms) */
+.main-grid:not(.loaded) .hero-description {
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.main-grid.loaded .hero-description {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: 300ms;
+}
+
+/* Projects Divider - appears fourth (350ms) */
+.main-grid:not(.loaded) .projects-divider {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
+}
+
+.main-grid.loaded .projects-divider {
+    transform: scaleX(1);
+    transition: transform 0.6s ease;
+    transition-delay: 350ms;
+}
+
+/* Projects Grid - appears fifth (400ms) */
+.main-grid:not(.loaded) .projects-grid {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.main-grid.loaded .projects-grid {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition-delay: 400ms;
+}
+
+/* Project Cards - appear with stagger (400ms, 500ms, 600ms) */
+.main-grid:not(.loaded) .project-card {
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.main-grid.loaded .project-card:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: 400ms;
+}
+
+.main-grid.loaded .project-card:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: 500ms;
+}
+
+.main-grid.loaded .project-card:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: 600ms;
+}
+
+/* Header elements - appear with content */
+.main-grid:not(.loaded) .top-nav {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.main-grid.loaded .top-nav {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 50ms;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .main-grid:not(.loaded) *,
+    .main-grid.loaded * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        transition-delay: 0ms !important;
+    }
+}
+
+/* Responsive - adjust animation delays on mobile */
+@media (max-width: 768px) {
+    .main-grid.loaded .title-line-1 {
+        transition-delay: 50ms;
+    }
+    
+    .main-grid.loaded .title-line-2 {
+        transition-delay: 100ms;
+    }
+    
+    .main-grid.loaded .hero-description {
+        transition-delay: 150ms;
+    }
+    
+    .main-grid.loaded .projects-divider {
+        transition-delay: 200ms;
+    }
+    
+    .main-grid.loaded .projects-grid {
+        transition-delay: 250ms;
+    }
+    
+    .main-grid.loaded .project-card:nth-child(1) {
+        transition-delay: 300ms;
+    }
+    
+    .main-grid.loaded .project-card:nth-child(2) {
+        transition-delay: 350ms;
+    }
+    
+    .main-grid.loaded .project-card:nth-child(3) {
+        transition-delay: 400ms;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .header-side {
+        display: none;
     }
 }
 
