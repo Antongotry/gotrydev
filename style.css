@@ -1025,26 +1025,26 @@ body.home .wide-container {
     height: 9px;
     border-radius: 50%;
     margin-left: -11px;
-    margin-top: -4.5px; /* Center the circle vertically (9px / 2 = 4.5px) */
+    margin-top: -4.5px; /* Center the circle vertically (9px / 2 = 4.5px) to keep position */
     animation: atom 300ms linear 1;
     width: 25px;
     background: transparent;
-    /* Keep original top position, adjust with margin-top */
 }
 
+/* Preserve original top positions on hover */
 .header-side .hamburger-menu:hover div:nth-child(1) {
+    top: 20px; /* Keep original position */
     transform: rotate(-33deg);
-    /* Keep top: 20px, adjust with margin-top */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(2) {
+    top: 27px; /* Keep original position */
     transform: rotate(90deg);
-    /* Keep top: 27px, adjust with margin-top */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3) {
+    top: 34px; /* Keep original position */
     transform: rotate(33deg);
-    /* Keep top: 34px, adjust with margin-top */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3)::before {
