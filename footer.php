@@ -33,16 +33,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }, { once: true });
         });
         
-        // Событие когда видео загружено
+        // Уповільнюємо відео в 2 рази (playbackRate = 0.5)
         video.addEventListener('loadeddata', function() {
+            video.playbackRate = 0.5; // Уповільнюємо в 2 рази
             video.style.opacity = '1';
             videoContainer.style.background = 'transparent';
         });
         
         // Событие когда видео начинает играть
         video.addEventListener('playing', function() {
+            video.playbackRate = 0.5; // Переконаємося, що швидкість застосована
             video.style.opacity = '1';
         });
+        
+        // Якщо відео вже грає, застосуємо швидкість
+        if (video.readyState >= 2) {
+            video.playbackRate = 0.5;
+        }
     }
 });
 </script>

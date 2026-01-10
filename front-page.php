@@ -37,26 +37,50 @@ get_header();
     
     <!-- Hero Content -->
     <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="gradient-text">Перетворюю код</span><br>
-                у красивий дизайн
-            </h1>
-            <p class="hero-description">
-                Створюю сучасні веб-сайти: від ідеї до запуску.<br>
-                HTML/CSS/JS, адаптив, швидкість, SEO-база.<br>
-                Лендинги від <strong>500 $</strong>, термін від <strong>5 днів</strong>.
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary" data-analytics="cta-hero-primary">
-                    Отримати розрахунок
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <a href="https://t.me/notarikon" class="btn btn-secondary" target="_blank" rel="noopener" data-analytics="cta-hero-telegram">
-                    Написати в Telegram
-                </a>
+        <div class="hero-grid">
+            <!-- Ліва частина: Основний контент -->
+            <div class="hero-left">
+                <div class="hero-content-card">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Перетворюю код</span><br>
+                        у красивий дизайн
+                    </h1>
+                    <p class="hero-description">
+                        Створюю сучасні веб-сайти: від ідеї до запуску.<br>
+                        HTML/CSS/JS, адаптив, швидкість, SEO-база.<br>
+                        Лендинги від <strong>500 $</strong>, термін від <strong>5 днів</strong>.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary" data-analytics="cta-hero-primary">
+                            Отримати розрахунок
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="https://t.me/notarikon" class="btn btn-secondary" target="_blank" rel="noopener" data-analytics="cta-hero-telegram">
+                            Написати в Telegram
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Права частина: Статистика та додаткові елементи -->
+            <div class="hero-right">
+                <!-- Статистичні картки -->
+                <div class="hero-stats">
+                    <div class="hero-stat-card">
+                        <div class="stat-circle">
+                            <span class="stat-number">50+</span>
+                        </div>
+                        <p class="stat-text">реалізованих<br>проектів</p>
+                    </div>
+                    <div class="hero-stat-card">
+                        <div class="stat-circle">
+                            <span class="stat-number">100%</span>
+                        </div>
+                        <p class="stat-text">якість<br>коду</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
