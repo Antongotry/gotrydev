@@ -41,9 +41,9 @@ get_header();
                         </a>
                     </div>
                 </div>
-                <!-- Header divider line -->
-                <div class="header-divider"></div>
             </div>
+            <!-- Header divider line - positioned at bottom of header-content-wrapper -->
+            <div class="header-divider"></div>
         </div>
     </header>
     
