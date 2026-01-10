@@ -232,12 +232,12 @@ body.home .site-footer {
     width: 100%;
     z-index: 1000;
     background: transparent;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: none; /* No transitions - static */
     padding: 32px 0;
     box-sizing: border-box;
     margin: 0;
-    will-change: background-color, box-shadow;
-    transform: translateZ(0);
+    will-change: auto; /* No will-change */
+    transform: none; /* No transforms */
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
@@ -1409,15 +1409,7 @@ body.home .top-nav {
     overflow: visible; /* Allow content to extend */
 }
 
-/* No changes on scroll - header stays exactly same size */
-body.home .top-nav.scrolled {
-    background: transparent; /* Always transparent */
-    backdrop-filter: none;
-    height: 54px; /* Same height */
-    min-height: 54px;
-    max-height: 54px;
-    padding: 0; /* Same padding */
-}
+/* No scroll behavior - header is always static */
 
 /* Logo - right after hamburger, with right border line */
 .header-logo {
@@ -1463,13 +1455,9 @@ body.home .header-logo .logo-img {
     position: relative;
 }
 
-/* On scroll: hide header-right completely, keep only logo */
-body.home .top-nav.scrolled .header-right {
-    display: none !important; /* Completely hide on scroll */
-}
-
-body.home .top-nav:not(.scrolled) .header-right {
-    display: flex; /* Show on initial load */
+/* Header-right always visible - no scroll behavior */
+body.home .top-nav .header-right {
+    display: flex; /* Always visible - static */
 }
 
 /* Header divider line - dark color, extends full viewport width, positioned at exact bottom of 54px header */
@@ -1664,12 +1652,14 @@ body.home .hero-section .wide-container {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: none; /* No transitions - static */
+    will-change: auto; /* No will-change */
+    transform: none; /* No transforms */
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: none; /* No hover effects - static */
+    box-shadow: none; /* No hover effects */
 }
 
 .project-card-gradient {

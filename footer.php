@@ -31,36 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Animations removed - no loaded class needed
     
-    // Header scroll behavior
-    if (header) {
-        let ticking = false;
-        
-        function updateHeader() {
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (currentScroll > 50) {
-                if (!header.classList.contains('scrolled')) {
-                    header.classList.add('scrolled');
-                }
-            } else {
-                if (header.classList.contains('scrolled')) {
-                    header.classList.remove('scrolled');
-                }
-            }
-            
-            ticking = false;
-        }
-        
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                window.requestAnimationFrame(updateHeader);
-                ticking = true;
-            }
-        });
-        
-        // Initial check
-        updateHeader();
-    }
+    // Header scroll behavior - DISABLED - header is always static, no changes on scroll
 });
 </script>
 
