@@ -74,8 +74,7 @@ function initGlassDistortion() {
     u_vertFeatherPx: { value: 6.0 },
     u_flagAmpPx: { value: 10.0 },
     u_flagFreq: { value: 1.6 },
-    u_flagSpeed: { value: 0.65 },
-    u_heartbeat: { value: 0.0 } // Heartbeat intensity (0-1)
+    u_flagSpeed: { value: 0.65 }
   };
 
   const vertexShader = `
@@ -97,7 +96,6 @@ function initGlassDistortion() {
     uniform float u_imgBaseScale, u_imgHoverZoom, u_imgHoverTilt;
     uniform float u_vertFeatherPx;
     uniform float u_flagAmpPx, u_flagFreq, u_flagSpeed;
-    uniform float u_heartbeat;
 
     const float GAP_PX = 3.0;
     const vec2 LIGHT2D = vec2(0.55, 0.85);
@@ -129,9 +127,7 @@ function initGlassDistortion() {
       float d = distance(uv, u_mouse);
       float hover = exp(-6.0 * d*d);
       
-      // Heartbeat додає пульсацію до scale
-      float heartbeatScale = 1.0 + u_heartbeat * 0.05;
-      float scale = u_imgBaseScale * (1.0 + u_imgHoverZoom * hover) * heartbeatScale;
+      float scale = u_imgBaseScale * (1.0 + u_imgHoverZoom * hover);
       float rot   = u_imgHoverTilt * (hover * 2.0 - 1.0) * 0.5;
       float flagPhase = uv.y * u_flagFreq + t * u_flagSpeed;
       float flagDisp = (u_flagAmpPx / R.x) * (sin(6.28318*flagPhase) + 0.45*sin(6.28318*(flagPhase*1.73 + 1.2)));
@@ -164,9 +160,7 @@ function initGlassDistortion() {
       vec2 n2 = normalize(vec2(0.5 - u, 0.10));
 
       vec2 texel = 1.0 / R;
-      // Heartbeat збільшує distortion
-      float heartbeatDisp = u_glassDisp * (1.0 + u_heartbeat * 0.3);
-      float dispAmt = heartbeatDisp * (0.85*profile + 0.15) * 0.010;
+      float dispAmt = u_glassDisp * (0.85*profile + 0.15) * 0.010;
       vec2 o = n2 * dispAmt;
       float br = u_glassBlur;
       vec4 u0 = texture2D(u_tex, uv + o);
@@ -226,23 +220,17 @@ function initGlassDistortion() {
   container.addEventListener("pointerleave", onPointerLeave);
   window.addEventListener("resize", onResize);
 
-  // Animation loop з heartbeat синхронізацією
+  // Animation loop з плавними хвилями
   function animate(){
     uniforms.u_mouse.value.lerp(mouseTarget, 0.08);
-    uniforms.u_time.value += 0.028;
-    
-    // Оновлюємо heartbeat якщо є controller
-    if (window.heartbeatController) {
-      window.heartbeatController.update();
-      uniforms.u_heartbeat.value = window.heartbeatController.getIntensity();
-    }
+    uniforms.u_time.value += 0.016; // Плавна анимация (~60fps)
     
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   }
   animate();
   
-  console.log('✅ Glass Distortion initialized with phonegotry.webp');
+  console.log('✅ Glass Distortion initialized - волновой эффект без heartbeat');
 }
 
 // Запускаємо після завантаження DOM
