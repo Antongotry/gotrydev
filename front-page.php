@@ -49,12 +49,12 @@ get_header();
     <div class="header-side" id="header-side">
         <!-- Right vertical line that goes down from header -->
         <div class="sidebar-right-line"></div>
-        
-        <!-- Scroll Indicator - vertical line with dot at top -->
-        <div class="scroll-indicator">
-            <div class="scroll-dot scroll-dot-top"></div>
-            <div class="scroll-line"></div>
-        </div>
+    </div>
+    
+    <!-- Scroll Indicator - centered on screen, top at 50vh, line goes down 220px -->
+    <div class="scroll-indicator">
+        <div class="scroll-dot scroll-dot-top"></div>
+        <div class="scroll-line"></div>
     </div>
     
     <!-- Main Content Area -->
