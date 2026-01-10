@@ -325,13 +325,7 @@ body.home .top-nav .header-content-wrapper .wide-container {
     z-index: 1;
 }
 
-.top-nav.scrolled .logo-white {
-    opacity: 0;
-}
-
-.top-nav.scrolled .logo-dark {
-    opacity: 1;
-}
+/* Old scrolled logo styles removed - header is always static */
 
 /* Old hamburger-menu styles removed - using Konpo style below */
 
@@ -357,16 +351,14 @@ body.home .top-nav .header-content-wrapper .wide-container {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 4px;
-    transition: all var(--transition-fast);
+    transition: none !important; /* No transitions - static */
 }
 
 .nav-link:hover {
     opacity: 0.7;
 }
 
-.top-nav.scrolled .nav-link {
-    color: #210621;
-}
+/* Old scrolled nav-link styles removed - header is always static */
 
 .nav-right {
     display: flex;
@@ -402,15 +394,7 @@ body.home .top-nav .header-content-wrapper .wide-container {
     background: rgba(255, 255, 255, 0.05);
 }
 
-.top-nav.scrolled .social-icon {
-    border-color: rgba(33, 6, 33, 0.3);
-    color: #210621;
-}
-
-.top-nav.scrolled .social-icon:hover {
-    border-color: rgba(33, 6, 33, 0.6);
-    background: rgba(33, 6, 33, 0.05);
-}
+/* Old scrolled social-icon styles removed - header is always static */
 
 .social-icon svg {
     width: 14px;
@@ -702,7 +686,7 @@ body.home .top-nav .header-content-wrapper .wide-container {
     background: transparent;
     flex-shrink: 0;
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: none !important; /* No transitions - static */
 }
 
 .hero-arrow-icon:hover {
@@ -766,7 +750,7 @@ body.home .top-nav .header-content-wrapper .wide-container {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    transition: all var(--transition-fast);
+    transition: none !important; /* No transitions - static */
 }
 
 .hero-tag:hover {
