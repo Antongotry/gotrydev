@@ -16,7 +16,6 @@ get_header();
             <div></div>
             <div></div>
             <div></div>
-            <p class="hamburger-hint">hover & hold me down</p>
         </button>
         
         <!-- Right vertical line that goes down from hamburger -->
