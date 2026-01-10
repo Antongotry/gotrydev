@@ -29,29 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
         greetingText.textContent = greeting;
     }
     
-    // Preloader fallback - показываем контент через 3 секунды, если прелоадер не скрылся
-    setTimeout(function() {
-        const preloader = document.getElementById('preloader');
-        const mainGrid = document.getElementById('main-grid');
-        const body = document.body;
-        
-        if (preloader && !body.classList.contains('preloader-complete')) {
-            console.log('Preloader fallback: Force showing content');
-            if (mainGrid) {
-                mainGrid.style.opacity = '1';
-                mainGrid.style.pointerEvents = 'auto';
-                mainGrid.style.visibility = 'visible';
-            }
-            body.classList.add('preloader-complete');
-            preloader.classList.add('fade-out');
-            setTimeout(function() {
-                if (preloader.parentNode) {
-                    preloader.remove();
-                }
-            }, 600);
-        }
-    }, 3000);
-    
     // Header scroll behavior - DISABLED - header is always static, no changes on scroll
     
     // Scroll Indicator - Dynamic dot movement based on scroll position

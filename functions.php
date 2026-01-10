@@ -56,20 +56,6 @@ function gotry_enqueue_styles() {
         true
     );
     
-    // Page Loader JS - только для главной страницы
-    if (is_front_page()) {
-        $loader_js_version = file_exists(get_stylesheet_directory() . '/assets/js/page-loader.js')
-            ? filemtime(get_stylesheet_directory() . '/assets/js/page-loader.js')
-            : '1.0.0';
-        
-        wp_enqueue_script(
-            'gotry-page-loader',
-            get_template_directory_uri() . '/assets/js/page-loader.js',
-            array(),
-            $loader_js_version,
-            false // Загружаем в header для раннего запуска
-        );
-    }
     
     // Lens-effect прибрано для оптимізації
 }
