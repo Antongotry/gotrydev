@@ -5,19 +5,60 @@
 
 // Підключення стилів та скриптів
 function gotry_enqueue_styles() {
-    // Версія теми для cache busting (змінюємо при оновленнях)
-    $theme_version = '3.0.1';
+    // Автоматичне версіонування через filemtime для cache busting
+    $style_version = file_exists(get_stylesheet_directory() . '/style.css') 
+        ? filemtime(get_stylesheet_directory() . '/style.css') 
+        : '3.1.0';
+    
+    // Lenis CSS для smooth scroll
+    wp_enqueue_style(
+        'lenis-css',
+        'https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.css',
+        array(),
+        '1.2.3'
+    );
     
     // Основні стилі теми
-    wp_enqueue_style('gotry-style', get_stylesheet_uri(), array(), $theme_version);
+    wp_enqueue_style(
+        'gotry-style',
+        get_stylesheet_uri(),
+        array('lenis-css'),
+        $style_version
+    );
+    
+    // Lenis smooth scroll library (потрібен для всіх сторінок)
+    wp_enqueue_script(
+        'lenis',
+        'https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js',
+        array(),
+        '1.2.3',
+        true
+    );
+    
+    // Main JS для Lenis ініціалізації (для всіх сторінок)
+    $main_js_version = file_exists(get_stylesheet_directory() . '/assets/js/main.js')
+        ? filemtime(get_stylesheet_directory() . '/assets/js/main.js')
+        : '3.1.0';
+    
+    wp_enqueue_script(
+        'gotry-main',
+        get_template_directory_uri() . '/assets/js/main.js',
+        array('lenis'),
+        $main_js_version,
+        true
+    );
     
     // JavaScript для lens-effect (тільки на головній сторінці)
     if (is_front_page()) {
+        $lens_version = file_exists(get_stylesheet_directory() . '/assets/js/lens-effect.js')
+            ? filemtime(get_stylesheet_directory() . '/assets/js/lens-effect.js')
+            : '3.1.0';
+        
         wp_enqueue_script(
             'gotry-lens-effect',
             get_template_directory_uri() . '/assets/js/lens-effect.js',
-            array(), // Залежності
-            $theme_version,
+            array('lenis'), // Залежність від Lenis
+            $lens_version,
             true // В footer
         );
     }
