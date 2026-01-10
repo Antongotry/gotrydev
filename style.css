@@ -976,7 +976,7 @@ body.home .wide-container {
 /* Hamburger menu lines - 3 horizontal lines that transform on hover */
 .header-side .hamburger-menu div {
     height: 0px;
-    border: 1.5px solid #1D1D1D;
+    border: 1px solid #1D1D1D; /* Thinner border - was 1.5px */
     width: 22px;
     display: block;
     position: absolute;
