@@ -1433,14 +1433,15 @@ body.home .top-nav.scrolled {
     padding: 0; /* Same padding */
 }
 
-/* Logo - right after hamburger, before sidebar line */
+/* Logo - right after hamburger, with right border line */
 .header-logo {
     flex-shrink: 0;
     height: 54px;
     display: flex;
     align-items: center;
     padding: 0 clamp(16px, 2vw, 24px); /* Padding around logo */
-    border-right: 1px solid transparent; /* Space for sidebar line */
+    border-right: 1px solid #1D1D1D; /* Right border line like reference */
+    box-sizing: border-box;
 }
 
 body.home .header-logo .logo-link {
