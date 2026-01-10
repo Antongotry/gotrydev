@@ -1520,12 +1520,16 @@ body.home .top-nav:not(.scrolled) .nav-right {
 
 /* Nav wrapper - always align to right (logo is now separate in header-logo) */
 body.home .top-nav .nav-wrapper {
-    justify-content: flex-end; /* Always align to right */
+    justify-content: flex-end !important; /* Always align to right */
     width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto; /* Push to right */
 }
 
 body.home .top-nav.scrolled .nav-wrapper {
-    justify-content: flex-end; /* Keep right alignment on scroll */
+    justify-content: flex-end !important; /* Keep right alignment on scroll */
 }
 
 /* Logo image - SVG from URL */
