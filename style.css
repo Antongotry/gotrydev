@@ -1017,7 +1017,7 @@ body.home .wide-container {
 /* Hover state: lines transform into circles */
 .header-side .hamburger-menu:hover {
     transition-delay: 100ms;
-    transform: scale(1.05); /* Slightly less scale for 54px button */
+    transform: none; /* Remove scale to prevent distortion */
 }
 
 .header-side .hamburger-menu:hover div {
@@ -1025,26 +1025,25 @@ body.home .wide-container {
     height: 9px;
     border-radius: 50%;
     margin-left: -11px;
-    margin-top: -4.5px; /* Center circle vertically: half of height (9px / 2 = 4.5px) */
+    margin-top: -4.5px; /* Center circle: half height to align center with original line center */
     animation: atom 300ms linear 1;
     width: 25px;
     background: transparent;
-    /* Keep original top values - don't override them */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(1) {
-    /* top: 20px stays from base styles */
-    transform: rotate(-33deg);
+    top: 20px; /* Keep original position */
+    transform: rotate(-33deg) translateY(0); /* Add translateY(0) to preserve position during rotation */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(2) {
-    /* top: 27px stays from base styles */
-    transform: rotate(90deg);
+    top: 27px; /* Keep original position */
+    transform: rotate(90deg) translateY(0);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3) {
-    /* top: 34px stays from base styles */
-    transform: rotate(33deg);
+    top: 34px; /* Keep original position */
+    transform: rotate(33deg) translateY(0);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3)::before {
