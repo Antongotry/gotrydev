@@ -9,7 +9,8 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<!-- Порожній header - без меню, логотипу, навігації -->
+<?php if (!is_front_page()): ?>
 <header class="site-header">
     <!-- Нічого тут немає -->
 </header>
+<?php endif; ?>

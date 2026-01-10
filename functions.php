@@ -6,7 +6,18 @@
 // Підключення стилів та скриптів
 function gotry_enqueue_styles() {
     // Основні стилі теми
-    wp_enqueue_style('gotry-style', get_stylesheet_uri(), array(), '2.1.0');
+    wp_enqueue_style('gotry-style', get_stylesheet_uri(), array(), '3.0.0');
+    
+    // JavaScript для lens-effect (тільки на головній сторінці)
+    if (is_front_page()) {
+        wp_enqueue_script(
+            'gotry-lens-effect',
+            get_template_directory_uri() . '/assets/js/lens-effect.js',
+            array(), // Залежності
+            '3.0.0',
+            true // В footer
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'gotry_enqueue_styles');
 
