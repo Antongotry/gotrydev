@@ -30,17 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         greetingText.textContent = greeting;
     }
     
-    // Menu toggle functionality
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.classList.toggle('active');
-            
-            // Here you can add menu panel opening/closing logic
-            // For now, just toggle the active state
-            console.log('Menu toggled');
-        });
-    }
+    // Menu toggle removed - using scroll indicator instead
     
     // Add loaded class to main-grid for animations (when ready to implement)
     if (mainGrid) {

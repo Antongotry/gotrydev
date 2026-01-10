@@ -9,17 +9,14 @@ get_header();
 
 <!-- Main Grid Container -->
 <div class="main-grid" id="main-grid">
-    <!-- Left Sidebar -->
+    <!-- Left Sidebar with Scroll Indicator -->
     <div class="header-side" id="header-side">
-        <!-- Menu Toggle Button -->
-        <a href="#" class="header-toggle" id="menu-toggle" aria-label="Toggle Menu">
-            <span class="menu-icon">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </span>
-            <span class="menu-text">menu</span>
-        </a>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <div class="scroll-dot scroll-dot-top"></div>
+            <div class="scroll-dot scroll-dot-bottom"></div>
+        </div>
     </div>
     
     <!-- Main Content Area -->
@@ -28,25 +25,36 @@ get_header();
         <header class="top-nav" id="top-nav">
             <div class="wide-container">
                 <div class="nav-wrapper">
-                    <!-- Left: Logo -->
+                    <!-- Left: Logo with dots -->
                     <div class="nav-left">
                         <a href="/" class="logo-link">
-                            <img src="https://antongotry.dev/wp-content/uploads/2026/01/dark-1d-logo.svg" alt="Gotry Logo" class="logo-img logo-img-full">
+                            <span class="logo-dots">
+                                <span class="dot-row">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                                <span class="dot-row">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                            </span>
                             <span class="logo-text">Gotry</span>
                         </a>
                     </div>
                     
                     <!-- Right: Greeting + Hire Button -->
                     <div class="nav-right">
-                        <span class="nav-greeting" id="greeting-text">Добрий день!</span>
+                        <span class="nav-greeting" id="greeting-text">Добрий вечір!</span>
                         <a href="#contact" class="nav-hire-btn">
-                            <span>Замовити</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M7 17L17 7M7 7h10v10"/>
                             </svg>
+                            <span>Замовити</span>
                         </a>
                     </div>
                 </div>
+                <!-- Header divider line -->
+                <div class="header-divider"></div>
             </div>
         </header>
 
@@ -57,7 +65,9 @@ get_header();
                     <!-- Main Title -->
                     <h1 class="hero-main-title">
                         <span class="title-line-1">Full-Stack Design</span>
-                        <span class="title-line-2">Agency Studio.</span>
+                        <span class="title-line-2">
+                            <span class="strikethrough-text">Agency</span> Studio.
+                        </span>
                     </h1>
                     
                     <!-- Description with Globe Icon -->
@@ -78,13 +88,18 @@ get_header();
                         <!-- Card 1: Surge (Gradient) -->
                         <div class="project-card project-card-gradient">
                             <div class="project-card-content">
-                                <span class="project-name">surge</span>
+                                <span class="project-name">surge<sup class="project-sup">AI</sup></span>
                             </div>
                         </div>
                         
                         <!-- Card 2: ComPsych (White) -->
                         <div class="project-card project-card-white">
                             <div class="project-card-content">
+                                <div class="project-logo">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#2563eb">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
                                 <span class="project-name project-name-dark">ComPsych</span>
                             </div>
                         </div>
@@ -92,6 +107,9 @@ get_header();
                         <!-- Card 3: amp (Dark) -->
                         <div class="project-card project-card-dark">
                             <div class="project-card-content">
+                                <svg class="project-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                </svg>
                                 <span class="project-name">amp</span>
                             </div>
                         </div>

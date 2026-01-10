@@ -1404,14 +1404,28 @@ body.home .site-footer {
 /* Header - Konpo Style */
 body.home .top-nav {
     background: transparent;
-    padding: 24px 0;
+    padding: 24px 0 0 0;
     transition: background 0.3s ease, padding 0.3s ease;
+    border-bottom: 1px solid transparent;
 }
 
 body.home .top-nav.scrolled {
     background: rgba(245, 243, 247, 0.95);
     backdrop-filter: blur(10px);
-    padding: 16px 0;
+    padding: 16px 0 0 0;
+}
+
+/* Header divider line */
+.header-divider {
+    width: 100%;
+    height: 1px;
+    background: #e5e7eb;
+    margin-top: 24px;
+    transition: opacity 0.3s ease;
+}
+
+body.home .top-nav.scrolled .header-divider {
+    margin-top: 16px;
 }
 
 /* Hide right nav elements on scroll - only logo remains */
@@ -1440,7 +1454,7 @@ body.home .top-nav:not(.scrolled) .nav-wrapper {
 body.home .logo-link {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     text-decoration: none;
     color: #1D1D1D;
     font-weight: 500;
@@ -1448,45 +1462,46 @@ body.home .logo-link {
     position: relative;
 }
 
-body.home .logo-img-full {
-    height: 32px;
-    width: auto;
+/* Logo dots - 2x2 grid like colon */
+.logo-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot-row {
+    display: flex;
+    gap: 4px;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    background: #1D1D1D;
+    border-radius: 50%;
     display: block;
-    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-body.home .logo-text {
-    display: none;
-    font-weight: 600;
+.logo-text {
+    font-weight: 500;
     font-size: 18px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
     color: #1D1D1D;
-    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* On scroll: hide logo image, show text */
-body.home .top-nav.scrolled .logo-img-full {
-    opacity: 0;
-    transform: translateX(-10px);
-    position: absolute;
-    pointer-events: none;
+/* On scroll: logo stays same, text stays */
+body.home .top-nav.scrolled .logo-link {
+    gap: 12px;
+}
+
+body.home .top-nav.scrolled .logo-dots {
+    opacity: 1;
 }
 
 body.home .top-nav.scrolled .logo-text {
-    display: block;
     opacity: 1;
-    transform: translateX(0);
-}
-
-body.home .top-nav:not(.scrolled) .logo-img-full {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-body.home .top-nav:not(.scrolled) .logo-text {
-    display: none;
-    opacity: 0;
-    transform: translateX(10px);
 }
 
 
@@ -1503,9 +1518,9 @@ body.home .top-nav:not(.scrolled) .logo-text {
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: #1D1D1D;
+    background: #6B46C1; /* Dark purple like Konpo */
     color: #fff;
-    border-radius: 20px;
+    border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -1515,13 +1530,14 @@ body.home .top-nav:not(.scrolled) .logo-text {
 }
 
 .nav-hire-btn:hover {
-    background: #2a2a2a;
+    background: #5B21B6;
     transform: translateY(-1px);
 }
 
 .nav-hire-btn svg {
     width: 14px;
     height: 14px;
+    order: -1; /* Arrow before text */
 }
 
 /* Hero Section - Konpo Style */
@@ -1561,6 +1577,13 @@ body.home .top-nav:not(.scrolled) .logo-text {
     font-weight: 300;
     color: #858488;
     letter-spacing: -1.5px;
+    position: relative;
+}
+
+.strikethrough-text {
+    text-decoration: line-through;
+    opacity: 0.4;
+    margin-right: 8px;
 }
 
 .hero-description {
@@ -1620,7 +1643,7 @@ body.home .top-nav:not(.scrolled) .logo-text {
 }
 
 .project-card-gradient {
-    background: linear-gradient(135deg, #8b5cf6 0%, #f97316 100%);
+    background: linear-gradient(180deg, #6B46C1 0%, #9333EA 50%, #EC4899 100%);
     position: relative;
 }
 
@@ -1652,8 +1675,22 @@ body.home .top-nav:not(.scrolled) .logo-text {
 .project-card-content {
     position: absolute;
     top: 24px;
+    left: 24px;
     right: 24px;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.project-card-gradient .project-card-content {
+    align-items: flex-start;
+}
+
+.project-card-white .project-card-content,
+.project-card-dark .project-card-content {
+    align-items: flex-end;
 }
 
 .project-name {
@@ -1662,10 +1699,33 @@ body.home .top-nav:not(.scrolled) .logo-text {
     color: #fff;
     letter-spacing: -0.5px;
     text-transform: lowercase;
+    line-height: 1;
+}
+
+.project-sup {
+    font-size: 10px;
+    font-weight: 500;
+    vertical-align: super;
+    margin-left: 2px;
 }
 
 .project-name-dark {
     color: #2563eb;
+}
+
+.project-logo {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-icon {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    margin-bottom: 4px;
 }
 
 /* Responsive - Konpo Style */
@@ -1723,7 +1783,7 @@ body.home .logo-img {
     position: relative;
 }
 
-/* Left Sidebar - 54px width */
+/* Left Sidebar - 54px width with Scroll Indicator */
 .header-side {
     flex: 0 0 54px;
     width: 54px;
@@ -1736,7 +1796,8 @@ body.home .logo-img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 0;
+    justify-content: flex-start;
+    padding-top: 40px;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -1747,67 +1808,42 @@ body.home .logo-img {
     transition-delay: 0ms;
 }
 
-/* Menu Toggle Button - 54x54px at top */
-.header-toggle {
-    width: 54px;
-    height: 54px;
+/* Scroll Indicator - vertical line with dots */
+.scroll-indicator {
+    position: relative;
+    width: 1px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #1D1D1D;
-    font-size: 10px;
-    font-weight: 400;
-    text-transform: lowercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    justify-content: space-between;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 100%;
+    background: #d1d5db;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.scroll-dot {
+    width: 4px;
+    height: 4px;
+    background: #858488;
+    border-radius: 50%;
     position: relative;
+    z-index: 1;
 }
 
-.header-toggle:hover {
-    background: rgba(29, 29, 29, 0.05);
+.scroll-dot-top {
+    margin-bottom: auto;
 }
 
-.menu-icon {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    width: 18px;
-    height: 14px;
-    justify-content: center;
-}
-
-.menu-line {
-    width: 100%;
-    height: 1px;
-    background: #1D1D1D;
-    transition: all 0.3s ease;
-}
-
-.header-toggle.active .menu-line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.header-toggle.active .menu-line:nth-child(2) {
-    opacity: 0;
-}
-
-.header-toggle.active .menu-line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-.menu-text {
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    text-transform: lowercase;
-}
-
-.header-toggle.active .menu-text {
-    opacity: 0.7;
+.scroll-dot-bottom {
+    margin-top: auto;
 }
 
 /* Main Content Area - flex: 1 to fill remaining space */
