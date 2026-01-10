@@ -1492,9 +1492,19 @@ body.home .header-logo .logo-img {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding-right: clamp(40px, 5vw, 120px); /* Right padding - matches reference edge */
+    padding-right: clamp(40px, 5vw, 120px); /* Right padding - button at edge */
     padding-left: 0; /* No left padding - spacer handles spacing */
     box-sizing: border-box;
+    position: relative; /* For proper positioning */
+}
+
+/* On scroll: hide header-right, keep only logo */
+body.home .top-nav.scrolled .header-right {
+    display: none; /* Completely hide on scroll */
+}
+
+body.home .top-nav:not(.scrolled) .header-right {
+    display: flex; /* Show on initial load */
 }
 
 /* Header divider line - dark color, extends full viewport width, positioned at exact bottom of 54px header */
@@ -1517,19 +1527,7 @@ body.home .top-nav.scrolled .header-divider {
     width: 100vw; /* Same width */
 }
 
-/* Hide right elements on scroll - only logo remains */
-body.home .top-nav.scrolled .header-right {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    pointer-events: none;
-}
-
-body.home .top-nav:not(.scrolled) .header-right {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
+/* Hide right elements on scroll handled above in .header-right definition */
 
 /* Old nav-wrapper styles removed - using simplified header-right instead */
 
