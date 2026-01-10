@@ -1,7 +1,7 @@
 <?php
 /**
  * Template for Front Page (Home)
- * Creative Branding Agency Layout
+ * Web Development Studio Layout
  */
 
 get_header(); 
@@ -71,8 +71,8 @@ get_header();
             <!-- Left Side: Slogan + Cards -->
             <div class="col-5 hero-left">
                 <div class="hero-slogan">
-                    <h1 class="hero-main-title">SOURCE<br>OF BOLD<br>IDEAS/</h1>
-                    <p class="hero-subtitle">Where brands are reborn and boundaries are erased.</p>
+                    <h1 class="hero-main-title">CODE<br>MEETS<br>DESIGN/</h1>
+                    <p class="hero-subtitle">Where ideas become pixels and pixels become experiences.</p>
                 </div>
                 
                 <!-- Cards positioned at bottom left -->
@@ -81,30 +81,27 @@ get_header();
                     <div class="hero-card hero-card-white">
                         <div class="card-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="2" x2="12" y2="22"/>
-                                <line x1="2" y1="12" x2="22" y2="12"/>
-                                <polyline points="8 4 4 8 8 12"/>
-                                <polyline points="16 4 20 8 16 12"/>
-                                <polyline points="8 20 4 16 8 12"/>
-                                <polyline points="16 20 20 16 16 12"/>
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
                             </svg>
                         </div>
                         <div class="card-content">
-                            <p class="card-text">Brands that lead forward.</p>
-                            <div class="card-stat">85%</div>
-                            <p class="card-subtext">Win beyond the market.</p>
+                            <p class="card-text">Sites that perform.</p>
+                            <div class="card-stat">100+</div>
+                            <p class="card-subtext">Projects delivered.</p>
                         </div>
                     </div>
                     
                     <!-- Dark Card - Closer to center-left -->
                     <div class="hero-card hero-card-dark">
                         <div class="card-icon card-icon-swirl">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                                <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.12 0 4.07.74 5.62 1.97L12 8" stroke-linejoin="round"/>
-                                <path d="M21 3v5h-5" stroke-linejoin="round"/>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
                             </svg>
                         </div>
-                        <p class="card-text">Reload your brand.</p>
+                        <p class="card-text">Design to code.</p>
                     </div>
                 </div>
             </div>
