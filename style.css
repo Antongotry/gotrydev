@@ -1766,11 +1766,7 @@ body.home .top-nav.scrolled .logo-text {
         display: none;
     }
 }
-body.home .logo-img {
-    height: 32px;
-    width: auto;
-    display: block;
-}
+/* Logo image style removed - using dots structure now */
 
 /* ============================================
    KONPO SIDEBAR STRUCTURE
