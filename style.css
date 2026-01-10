@@ -254,6 +254,13 @@ body.home .site-footer {
     height: 100%;
 }
 
+/* Override for home page header - padding handled by margin */
+body.home .top-nav .wide-container {
+    padding-left: 0; /* No padding - margin handled by header-content-wrapper */
+    padding-right: clamp(40px, 5vw, 120px);
+    margin-left: clamp(40px, 5vw, 120px); /* Margin instead of padding */
+}
+
 .nav-wrapper {
     display: flex;
     align-items: center;
@@ -1424,14 +1431,7 @@ body.home .top-nav.scrolled {
     position: relative;
 }
 
-/* Wide container in header - add left margin for spacing after hamburger */
-body.home .top-nav .header-content-wrapper .wide-container {
-    padding-left: 0; /* No left padding - handled by margin */
-    padding-right: clamp(40px, 5vw, 120px);
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-left: clamp(40px, 5vw, 120px); /* Left margin for spacing after hamburger */
-}
+/* Wide container in header - specific styles if needed (already handled by body.home .top-nav .wide-container) */
 
 /* No changes on scroll - wrapper stays same size */
 body.home .top-nav.scrolled .header-content-wrapper {
