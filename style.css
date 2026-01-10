@@ -680,17 +680,44 @@ body.home .video-background {
         padding-right: var(--container-padding-mobile);
     }
     
-    .hero-content {
-        max-width: 100%;
+    .hero-grid {
+        gap: 24px;
+        padding: var(--spacing-md) 0;
     }
     
-    .hero-title {
+    .hero-content-card {
+        padding: 30px 24px;
+    }
+    
+    .hero-content-card .hero-title {
         font-size: clamp(28px, 7vw, 42px);
     }
     
-    .hero-description {
+    .hero-content-card .hero-description {
         font-size: clamp(14px, 4vw, 16px);
         line-height: 1.5;
+    }
+    
+    .hero-stats {
+        gap: 16px;
+    }
+    
+    .hero-stat-card {
+        min-width: 140px;
+        padding: 18px 20px;
+    }
+    
+    .stat-circle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .stat-number {
+        font-size: 20px;
+    }
+    
+    .stat-text {
+        font-size: 11px;
     }
     
     .code-background {
