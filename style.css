@@ -1028,8 +1028,8 @@ body.home .wide-container {
 }
 
 .scroll-dot {
-    width: 16px; /* Inner circle - increased by 15% from 14px (14 * 1.15 = 16.1 ≈ 16px) */
-    height: 16px; /* Inner circle - increased by 15% from 14px (14 * 1.15 = 16.1 ≈ 16px) */
+    width: 19px; /* Inner circle - increased to compensate for visual decrease (16px * 1.1875 ≈ 19px for better visibility) */
+    height: 19px; /* Inner circle - increased to compensate for visual decrease (16px * 1.1875 ≈ 19px for better visibility) */
     border: 7.2px solid #f5f3f7; /* Outer circle border - increased by 30% from 5.5px (5.5 * 1.3 = 7.15 ≈ 7.2px) */
     background: #1D1D1D; /* Dark dot - inner circle */
     border-radius: 50%;
