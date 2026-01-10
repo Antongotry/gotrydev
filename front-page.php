@@ -24,14 +24,14 @@ get_header();
 
 <!-- Hero Section (як на референсі) -->
 <section class="hero-section" id="hero">
+    <!-- Scroll Indicator (тільки на першому блоці, внизу зліва як на референсі) -->
+    <div class="hero-left-indicator">
+        <p class="scroll-indicator-text">scroll</p>
+        <p class="scroll-indicator-text">to explore</p>
+    </div>
+    
     <div class="container">
         <div class="hero-main-wrapper">
-            <!-- Ліва частина: Split text indicator (як на Lenis) -->
-            <div class="hero-left-indicator">
-                <p class="scroll-indicator-text">scroll</p>
-                <p class="scroll-indicator-text">to explore</p>
-            </div>
-            
             <!-- Центральна частина: Великий заголовок з split text -->
             <div class="hero-center-section">
                 <h1 class="hero-title-split">

@@ -338,7 +338,7 @@ body.home .video-background {
 
 .hero-main-wrapper {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto; /* Видалено auto для left-indicator */
     gap: 40px;
     align-items: center;
     width: 100%;
@@ -376,27 +376,28 @@ body.home .video-background {
 /* Code Background та Lens-effect прибрано для оптимізації */
 
 /* ============================================
-   HERO LEFT INDICATOR (як на Lenis)
+   HERO LEFT INDICATOR (тільки на першому блоці, внизу зліва як на референсі)
    ============================================ */
 .hero-left-indicator {
+    position: absolute;
+    bottom: 40px; /* Внизу зліва */
+    left: var(--container-padding-desktop);
+    z-index: 15; /* Вище foreground layer */
     display: flex;
     flex-direction: column;
-    gap: 6px; /* Зменшено gap */
-    align-self: center;
-    position: relative;
-    z-index: 15; /* Вище foreground layer */
+    gap: 8px;
+    pointer-events: none; /* Щоб не перешкоджати інтерактивності */
 }
 
 .scroll-indicator-text {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: var(--font-weight-medium);
     color: var(--color-text-muted);
-    text-transform: lowercase;
+    text-transform: uppercase; /* Як на референсі - uppercase */
     letter-spacing: 2px;
     margin: 0;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transform: rotate(180deg);
+    line-height: 1.2;
+    opacity: 0.9;
 }
 
 /* ============================================
@@ -714,7 +715,13 @@ body.home .video-background {
     }
     
     .hero-left-indicator {
-        display: none; /* Ховаємо на планшетах */
+        left: var(--container-padding-mobile); /* Адаптивний відступ */
+        bottom: 24px; /* Зменшено відступ знизу */
+    }
+    
+    .scroll-indicator-text {
+        font-size: 10px; /* Зменшено розмір на мобільних */
+        letter-spacing: 1px;
     }
     
     .hero-center-section {
@@ -806,7 +813,13 @@ body.home .video-background {
     }
     
     .hero-left-indicator {
-        display: none; /* Ховаємо на планшетах */
+        left: var(--container-padding-tablet); /* Адаптивний відступ */
+        bottom: 30px; /* Зменшено відступ знизу */
+    }
+    
+    .scroll-indicator-text {
+        font-size: 11px; /* Зменшено розмір на планшетах */
+        letter-spacing: 1.5px;
     }
     
     .hero-center-section {
