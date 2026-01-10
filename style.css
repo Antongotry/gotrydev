@@ -332,29 +332,9 @@ body.home .top-nav .header-content-wrapper .wide-container {
     opacity: 1;
 }
 
-.hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    width: 20px;
-    height: 16px;
-    justify-content: space-between;
-}
+/* Old hamburger-menu styles removed - using Konpo style below */
 
-.hamburger-line {
-    width: 100%;
-    height: 1px;
-    background: var(--color-text);
-    transition: all var(--transition-fast);
-}
-
-.top-nav.scrolled .hamburger-line {
-    background: #210621;
-}
+/* Old hamburger-line styles removed - using Konpo style below for home page */
 
 .nav-center {
     display: flex;
@@ -1160,14 +1140,7 @@ body.home .top-nav .header-content-wrapper .wide-container {
         height: 20px;
     }
     
-    .hamburger-menu {
-        width: 18px;
-        height: 14px;
-    }
-    
-    .hamburger-line {
-        height: 1px;
-    }
+    /* Old hamburger responsive styles removed - using fixed 54px for home page */
     
     .nav-links {
         gap: 16px;
@@ -1465,12 +1438,6 @@ body.home .header-logo .logo-img {
     width: auto;
     display: block;
     object-fit: contain;
-}
-
-/* Spacer - fills space between logo and right content */
-.header-spacer {
-    flex: 1; /* Takes all remaining space */
-    min-width: 0;
 }
 
 /* Spacer - fills space between logo and right content */
@@ -1894,8 +1861,27 @@ body.home .hero-section .wide-container {
     box-sizing: border-box;
 }
 
+/* Hamburger Menu Button - Part of Header, Left Edge, 54x54px with Right Border */
+body.home .hamburger-menu {
+    width: 54px;
+    height: 54px;
+    position: relative;
+    background: transparent;
+    border: none;
+    border-right: 1px solid #1D1D1D; /* Right border to form square */
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-shrink: 0;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
 /* Hamburger icon - 3 lines, centered */
-.hamburger-icon {
+body.home .hamburger-icon {
     width: 18px;
     height: 12px;
     display: flex;
@@ -1905,7 +1891,7 @@ body.home .hero-section .wide-container {
     z-index: 2;
 }
 
-.hamburger-line {
+body.home .hamburger-line {
     width: 100%;
     height: 1px;
     background: #1D1D1D;
