@@ -13,15 +13,10 @@ get_header();
     <div class="header-side" id="header-side">
         <!-- Hamburger Menu Button - Top of Sidebar -->
         <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
-            <div class="menu-ic">
-                <div class="menu-circle"></div>
-                <div class="menu-circle"></div>
-                <div class="menu-circle menu-cir-ct"></div>
-                <div class="menu-circle"></div>
-                <div class="menu-circle"></div>
-                <div class="header-toggle-txt header-hover-txt">menu</div>
-                <div class="header-toggle-txt header-active-txt">close</div>
-            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <p class="hamburger-hint">hover & hold me down</p>
         </button>
         
         <!-- Right vertical line that goes down from hamburger -->

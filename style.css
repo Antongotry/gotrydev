@@ -972,111 +972,194 @@ body.home .wide-container {
     z-index: 2;
 }
 
-/* Menu icon container - like reference */
-.header-side .hamburger-menu .menu-ic {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible; /* Allow circles to be visible */
-}
-
-/* Menu circles - 5 circles arranged in 2x2 grid with one in center */
-.header-side .hamburger-menu .menu-circle {
-    width: 6px;
-    height: 6px;
+/* Hamburger menu lines - 3 horizontal lines that transform on hover */
+.header-side .hamburger-menu div {
+    height: 0px;
+    border: 1.5px solid #1D1D1D;
+    width: 22px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -11px; /* Center the line (22px / 2 = 11px) */
+    transition: all 300ms cubic-bezier(0.61, 0.01, 0.42, 1);
     background: #1D1D1D;
+    border-radius: 0;
+}
+
+.header-side .hamburger-menu div:nth-child(1) {
+    top: 18px;
+}
+
+.header-side .hamburger-menu div:nth-child(2) {
+    top: 26px;
+}
+
+.header-side .hamburger-menu div:nth-child(3) {
+    top: 34px;
+}
+
+/* Third line pseudo-element for animated dot on hover */
+.header-side .hamburger-menu div:nth-child(3)::before {
+    opacity: 0;
+    content: '';
+    width: 2px;
+    height: 2px;
     border-radius: 50%;
+    background: #f5f3f7; /* Light background color for dot */
+    border: 2px solid #1D1D1D;
+    display: block;
+    position: relative;
+    top: 0.25px;
+    transition: opacity 600ms cubic-bezier(0.61, 0.01, 0.42, 1);
+}
+
+/* Hamburger hint text */
+.header-side .hamburger-menu .hamburger-hint {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 2;
-}
-
-/* Initial positions for 5 circles (2x2 grid + center) */
-.header-side .hamburger-menu .menu-circle:nth-child(1) {
-    transform: translate(calc(-50% - 4px), calc(-50% - 4px)); /* Top-left */
-}
-
-.header-side .hamburger-menu .menu-circle:nth-child(2) {
-    transform: translate(calc(-50% + 4px), calc(-50% - 4px)); /* Top-right */
-}
-
-.header-side .hamburger-menu .menu-circle.menu-cir-ct {
-    transform: translate(-50%, -50%); /* Center - using class selector instead of nth-child */
-}
-
-.header-side .hamburger-menu .menu-circle:nth-child(4) {
-    transform: translate(calc(-50% - 4px), calc(-50% + 4px)); /* Bottom-left */
-}
-
-.header-side .hamburger-menu .menu-circle:nth-child(5) {
-    transform: translate(calc(-50% + 4px), calc(-50% + 4px)); /* Bottom-right */
-}
-
-/* Menu text - both hover and active states */
-.header-side .hamburger-menu .header-toggle-txt {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 10px;
-    font-weight: 300;
     color: #1D1D1D;
-    text-transform: lowercase;
-    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 10px;
+    font-family: var(--font-family-base);
+    text-align: center;
+    margin-top: 45px;
+    margin-left: -85px;
     opacity: 0;
     pointer-events: none;
-    z-index: 3;
     transition: opacity 0.3s ease;
 }
 
-.header-side .hamburger-menu .header-hover-txt {
-    opacity: 0;
+/* Hover state: lines transform into circles, show hint text */
+.header-side .hamburger-menu:hover {
+    transition-delay: 100ms;
+    transform: scale(1.1);
 }
 
-.header-side .hamburger-menu .header-active-txt {
-    opacity: 0;
+.header-side .hamburger-menu:hover div {
+    border: 2px solid #1D1D1D;
+    height: 9px;
+    border-radius: 50%;
+    margin-left: -11px;
+    margin-top: 2px;
+    animation: atom 300ms linear 1;
+    width: 25px;
+    top: 0px;
+    background: transparent;
 }
 
-/* Hover state: circles fade out, "menu" text appears */
-.header-side .hamburger-menu:hover .menu-circle {
-    opacity: 0;
+.header-side .hamburger-menu:hover div:nth-child(1) {
+    transform: rotate(-33deg);
 }
 
-.header-side .hamburger-menu:hover .header-hover-txt {
+.header-side .hamburger-menu:hover div:nth-child(2) {
+    transform: rotate(90deg);
+}
+
+.header-side .hamburger-menu:hover div:nth-child(3) {
+    transform: rotate(33deg);
+}
+
+.header-side .hamburger-menu:hover div:nth-child(3)::before {
+    opacity: 1;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #f5f3f7;
+    animation: ball 1.5s linear infinite;
+}
+
+.header-side .hamburger-menu:hover .hamburger-hint {
     opacity: 1;
 }
 
-.header-side .hamburger-menu:hover .header-active-txt {
+/* Active state (on click): lines separate, dot disappears */
+.header-side .hamburger-menu:active:hover div:nth-child(3)::before,
+.header-side .hamburger-menu:active div:nth-child(3)::before,
+.header-side .hamburger-menu:active div:nth-child(2) {
+    opacity: 0;
+    transition: all 200ms;
+}
+
+.header-side .hamburger-menu:active div {
+    border: 1.5px solid #1D1D1D;
+    height: 0px;
+    border-radius: 0%;
+    margin-left: -11px;
+    margin-top: 6px;
+    animation: division 300ms linear 1;
+    width: 25px;
+    top: 0px;
+    background: #1D1D1D;
+}
+
+.header-side .hamburger-menu:active div:nth-child(2) {
+    width: 0px;
+}
+
+.header-side .hamburger-menu:active div:nth-child(3) {
+    transform: rotate(45deg);
+}
+
+.header-side .hamburger-menu:active div:nth-child(1) {
+    transform: rotate(-45deg);
+}
+
+.header-side .hamburger-menu:active .hamburger-hint {
     opacity: 0;
 }
 
-/* Active state (on click): circles fade out, "close" text appears */
-.header-side .hamburger-menu.active .menu-circle {
-    opacity: 0;
+/* Animations */
+@keyframes atom {
+    0% {
+        transform: rotate(180deg);
+    }
 }
 
-.header-side .hamburger-menu.active .header-hover-txt {
-    opacity: 0;
+@keyframes division {
+    0% {
+        transform: rotate(180deg);
+    }
 }
 
-.header-side .hamburger-menu.active .header-active-txt {
-    opacity: 1;
-}
-
-/* If menu is active, hover should still show close */
-.header-side .hamburger-menu.active:hover .header-hover-txt {
-    opacity: 0;
-}
-
-.header-side .hamburger-menu.active:hover .header-active-txt {
-    opacity: 1;
+@keyframes ball {
+    0% {
+        left: -20%;
+        top: 10%;
+    }
+    10% {
+        left: 10%;
+        top: -35%;
+    }
+    25% {
+        left: 45%;
+        top: -50%;
+    }
+    40% {
+        left: 80%;
+        top: -20%;
+    }
+    50% {
+        left: 98%;
+        top: 18%;
+    }
+    60% {
+        left: 80%;
+        top: 50%;
+    }
+    75% {
+        left: 45%;
+        top: 80%;
+    }
+    90% {
+        left: 0%;
+        top: 60%;
+    }
+    100% {
+        left: -20%;
+        top: 10%;
+    }
 }
 
 /* Right vertical line on sidebar that goes down from hamburger (starts at 54px from top) */
