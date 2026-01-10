@@ -1026,22 +1026,30 @@ body.home .wide-container {
     height: 9px;
     border-radius: 50%;
     margin-left: -12.5px; /* Center: half width (25px / 2 = 12.5px) */
-    margin-top: 2px; /* Small offset from top like in original */
     animation: atom 300ms linear 1;
     width: 25px; /* Original size from example */
-    top: 0px; /* All circles start from top like in original */
     background: transparent;
+    box-sizing: border-box;
 }
 
+/* Center each circle where its line was - line center at top + border/2 = top + 0.75px */
+/* Circle center should be at top + height/2 = top + 4.5px */
+/* So adjust top: original_top + 0.75px - 4.5px = original_top - 3.75px */
 .header-side .hamburger-menu:hover div:nth-child(1) {
+    top: calc(20px - 3.75px); /* 16.25px - centers circle where line was */
+    margin-top: 0;
     transform: rotate(-33deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(2) {
+    top: calc(27px - 3.75px); /* 23.25px - centers circle where line was */
+    margin-top: 0;
     transform: rotate(90deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3) {
+    top: calc(34px - 3.75px); /* 30.25px - centers circle where line was */
+    margin-top: 0;
     transform: rotate(33deg);
 }
 
