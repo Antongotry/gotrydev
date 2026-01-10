@@ -1,6 +1,6 @@
 # WordPress
 wp-config.php
-wp-config-sample.php
+# wp-config-sample.php should be in repository (it's a template)
 
 # Server config (may contain sensitive data)
 .htaccess
