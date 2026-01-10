@@ -1,0 +1,710 @@
+/**
+ * COSMIC BACKUP STYLES
+ * 
+ * These styles are from the old cosmic backup design and are NOT used in the current Konpo design.
+ * This file is kept for reference only and is NOT loaded in the theme.
+ * 
+ * DO NOT INCLUDE THIS FILE IN functions.php - it's only for backup/reference purposes.
+ */
+
+/* ============================================
+   OLD COSMIC BACKUP HERO STYLES
+   ============================================ */
+
+/* Old hero-section .wide-container styles removed - using Konpo style (body.home .hero-section .wide-container) instead */
+
+.hero-grid {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(40px, 5vw, 80px);
+    box-sizing: border-box;
+}
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    flex: 0 0 calc(41.666% - clamp(20px, 2.5vw, 40px));
+    max-width: calc(41.666% - clamp(20px, 2.5vw, 40px));
+    box-sizing: border-box;
+    position: relative;
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    flex: 0 0 calc(50% - clamp(20px, 2.5vw, 40px));
+    max-width: calc(50% - clamp(20px, 2.5vw, 40px));
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Foreground layer removed - using gradient background instead */
+
+/* Hero left indicator removed - no longer needed */
+
+/* ============================================
+   HERO LEFT - SLOGAN
+   ============================================ */
+.hero-slogan {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* OLD .hero-main-title - REPLACED by Konpo style at line 1549 in style.css */
+.hero-main-title {
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+}
+
+.hero-main-title br {
+    display: block;
+    content: "";
+    margin: 0;
+    line-height: 0.95;
+}
+
+.hero-subtitle {
+    font-size: clamp(12px, 1.1vw, 14px);
+    font-weight: 300;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 450px;
+    opacity: 0.8;
+}
+
+/* ============================================
+   HERO CARDS (Positioned at bottom)
+   ============================================ */
+.hero-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    margin-top: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-card {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-card-white {
+    background: rgba(255, 255, 255, 0.95);
+    color: #210621;
+    padding: 24px 28px;
+    gap: 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: visible;
+}
+
+.hero-card-white .card-icon {
+    position: absolute;
+    top: 24px;
+    left: 28px;
+    z-index: 1;
+}
+
+.hero-card-white .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 0;
+    padding-top: 36px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-card-dark {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 20px 24px;
+    gap: 12px;
+    width: 280px;
+    max-width: 100%;
+    margin-left: 40px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: visible;
+}
+
+.hero-card-dark .card-icon {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    z-index: 1;
+}
+
+.card-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-card-white .card-icon {
+    color: #210621;
+    opacity: 0.7;
+}
+
+.hero-card-dark .card-icon {
+    color: var(--color-text);
+}
+
+.card-icon-swirl svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* OLD .card-content - NOTE: .project-card-content is used in new design, this is different */
+.card-content {
+    position: relative;
+    width: 100%;
+}
+
+.card-text {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.5;
+    display: block;
+}
+
+.hero-card-white .card-text {
+    color: #210621;
+    margin: 0;
+}
+
+.hero-card-dark .card-text {
+    color: var(--color-text);
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+
+.card-stat {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1;
+    color: #210621;
+    margin: 8px 0;
+    display: block;
+    width: 100%;
+}
+
+.card-subtext {
+    font-size: 11px;
+    font-weight: 500;
+    color: #210621;
+    opacity: 0.7;
+    margin: 0;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+/* ============================================
+   HERO RIGHT - MAIN TITLE + DESCRIPTION
+   ============================================ */
+.hero-title-large {
+    font-size: clamp(52px, 6.5vw, 88px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin: 0;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: -2.5px;
+}
+
+.hero-title-large br {
+    display: block;
+    content: "";
+    margin: 0;
+    line-height: 0.95;
+}
+
+.hero-description-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 4px;
+    max-width: 520px;
+}
+
+/* OLD .hero-description - REPLACED by Konpo style at line 1601 in style.css */
+.hero-description {
+    font-size: clamp(12px, 1.1vw, 14px);
+    font-weight: 300;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+    opacity: 0.85;
+}
+
+.hero-arrow-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: var(--color-text);
+    background: transparent;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: none !important; /* No transitions - static */
+}
+
+.hero-arrow-icon:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-arrow-icon svg {
+    width: 18px;
+    height: 18px;
+    transform: rotate(45deg);
+}
+
+/* ============================================
+   HERO TAGS SECTION (Bottom Right)
+   ============================================ */
+.hero-tags-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+    align-items: flex-start;
+}
+
+.hero-branding-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.hero-branding-badge svg {
+    width: 10px;
+    height: 10px;
+    fill: currentColor;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-tag {
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: none !important; /* No transitions - static */
+}
+
+.hero-tag:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================
+   OLD COSMIC BACKUP RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablet (768px - 1100px) */
+@media (max-width: 1100px) and (min-width: 769px) {
+    .hero-grid {
+        flex-direction: row;
+        gap: clamp(20px, 3vw, 40px);
+    }
+    
+    .hero-left {
+        flex: 0 0 calc(45% - clamp(10px, 1.5vw, 20px));
+        max-width: calc(45% - clamp(10px, 1.5vw, 20px));
+        gap: 36px;
+    }
+    
+    .hero-right {
+        flex: 0 0 calc(50% - clamp(10px, 1.5vw, 20px));
+        max-width: calc(50% - clamp(10px, 1.5vw, 20px));
+        gap: 24px;
+    }
+    
+    .hero-main-title {
+        font-size: clamp(32px, 4vw, 52px);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(11px, 1.2vw, 13px);
+    }
+    
+    .hero-card-white {
+        width: 280px;
+        padding: 20px 24px;
+    }
+    
+    .hero-card-dark {
+        width: 240px;
+        padding: 18px 22px;
+        margin-left: 32px;
+    }
+    
+    .card-stat {
+        font-size: 48px;
+    }
+    
+    .hero-title-large {
+        font-size: clamp(44px, 5.5vw, 72px);
+        letter-spacing: -2px;
+    }
+    
+    .hero-description {
+        font-size: clamp(11px, 1.2vw, 13px);
+    }
+    
+    .hero-arrow-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+    
+    .hero-arrow-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-left, .hero-right {
+        gap: 40px;
+        padding-top: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .hero-cards-container {
+        margin-top: 40px;
+        gap: 16px;
+    }
+    
+    .hero-card-white {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+    }
+    
+    .hero-card-dark {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+    }
+    
+    .hero-right {
+        padding-left: 0;
+    }
+}
+
+/* Mobile + Tablet (≤ 1100px) */
+@media (max-width: 1100px) {
+    .hero-grid {
+        flex-direction: row;
+        align-items: start;
+        gap: clamp(20px, 3vw, 40px);
+    }
+    
+    .hero-left {
+        flex: 0 0 calc(45% - clamp(10px, 1.5vw, 20px));
+        max-width: calc(45% - clamp(10px, 1.5vw, 20px));
+        gap: 36px;
+    }
+    
+    .hero-right {
+        flex: 0 0 calc(50% - clamp(10px, 1.5vw, 20px));
+        max-width: calc(50% - clamp(10px, 1.5vw, 20px));
+        gap: 24px;
+    }
+    
+    .hero-main-title {
+        font-size: clamp(28px, 5vw, 44px);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(10px, 1.8vw, 12px);
+    }
+    
+    .hero-cards-container {
+        margin-top: 32px;
+        gap: 12px;
+        width: 100%;
+    }
+    
+    .hero-card-white {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 22px;
+        box-sizing: border-box;
+    }
+    
+    .hero-card-dark {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px 20px;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+    
+    .card-stat {
+        font-size: 44px;
+    }
+    
+    .hero-title-large {
+        font-size: clamp(36px, 5.5vw, 56px);
+        letter-spacing: -1.5px;
+    }
+    
+    .hero-description-wrapper {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .hero-description {
+        font-size: clamp(11px, 2vw, 13px);
+        max-width: 100%;
+    }
+    
+    .hero-arrow-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        align-self: flex-end;
+    }
+    
+    .hero-arrow-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .hero-tags-section {
+        margin-top: 32px;
+        gap: 12px;
+        width: 100%;
+    }
+    
+    .hero-tag {
+        font-size: 9px;
+        padding: 6px 12px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+    .hero-grid {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+        width: 100%;
+    }
+    
+    .hero-left {
+        flex: 1 1 auto;
+        max-width: 100%;
+        gap: 28px;
+    }
+    
+    .hero-right {
+        flex: 1 1 auto;
+        max-width: 100%;
+        gap: 20px;
+    }
+    
+    .hero-left {
+        gap: 28px;
+        width: 100%;
+        max-width: 100%;
+        padding-top: 0;
+    }
+    
+    .hero-right {
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        margin-top: 0;
+    }
+    
+    .hero-main-title {
+        font-size: clamp(24px, 6vw, 36px);
+        letter-spacing: -1px;
+        line-height: 1.15;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(9px, 2vw, 11px);
+        line-height: 1.4;
+    }
+    
+    .hero-cards-container {
+        margin-top: 24px;
+        gap: 12px;
+        width: 100%;
+    }
+    
+    .hero-card-white {
+        width: 100%;
+        max-width: 100%;
+        padding: 18px 20px;
+        box-sizing: border-box;
+    }
+    
+    .hero-card-white .card-icon {
+        top: 18px;
+        left: 20px;
+    }
+    
+    .hero-card-white .card-content {
+        padding-top: 32px;
+    }
+    
+    .hero-card-dark {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px 18px;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+    
+    .hero-card-dark .card-icon {
+        top: 16px;
+        right: 18px;
+    }
+    
+    .card-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .card-text {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    
+    .card-stat {
+        font-size: 40px;
+        line-height: 1;
+        margin: 8px 0;
+    }
+    
+    .card-subtext {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+    
+    .hero-title-large {
+        font-size: clamp(28px, 7vw, 48px);
+        letter-spacing: -1px;
+        line-height: 1.1;
+    }
+    
+    .hero-description-wrapper {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .hero-description {
+        font-size: clamp(10px, 2.5vw, 12px);
+        line-height: 1.6;
+        max-width: 100%;
+    }
+    
+    .hero-arrow-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        align-self: flex-end;
+    }
+    
+    .hero-arrow-icon svg {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .hero-tags-section {
+        margin-top: 24px;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .hero-branding-badge {
+        padding: 5px 10px;
+        font-size: 9px;
+    }
+    
+    .hero-branding-badge svg {
+        width: 9px;
+        height: 9px;
+    }
+    
+    .hero-tags {
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .hero-tag {
+        font-size: 8px;
+        padding: 6px 10px;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+}
