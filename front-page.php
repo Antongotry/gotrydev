@@ -20,64 +20,58 @@ get_header();
 <section class="hero-section" id="hero">
     <div class="container">
         <div class="hero-main-wrapper">
-            <!-- Ліва частина: Основний контент -->
-            <div class="hero-left-section">
-                <p class="hero-subtitle">Від ідеї до запуску</p>
-                <h1 class="hero-title">
-                    <span class="gradient-text">Перетворюю код</span><br>
-                    у красивий дизайн
+            <!-- Ліва частина: Split text indicator (як на Lenis) -->
+            <div class="hero-left-indicator">
+                <p class="scroll-indicator-text">scroll</p>
+                <p class="scroll-indicator-text">to explore</p>
+            </div>
+            
+            <!-- Центральна частина: Великий заголовок з split text -->
+            <div class="hero-center-section">
+                <h1 class="hero-title-split">
+                    <span class="title-word">Перетворюю</span>
+                    <span class="title-word highlight">код</span>
+                    <span class="title-word">у</span>
+                    <span class="title-word highlight">красивий</span>
+                    <span class="title-word">дизайн</span>
                 </h1>
                 
-                <div class="hero-cta-wrapper">
-                    <a href="#contact" class="btn btn-primary" data-analytics="cta-hero-primary">
-                        Отримати безкоштовну консультацію
-                    </a>
-                    <div class="cta-arrow">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </div>
-                    <p class="cta-description">
-                        Залиште заявку зараз і отримайте безкоштовну 30-хвилинну консультацію.
-                    </p>
+                <div class="hero-meta">
+                    <p class="hero-tagline">Створюю сучасні веб-сайти від ідеї до запуску</p>
+                    <p class="hero-copyright">© 2026 Gotry</p>
                 </div>
                 
-                <!-- Статистичні картки зліва внизу (як на референсі) -->
-                <div class="hero-stats-bottom">
-                    <div class="hero-stat-card-bottom">
-                        <span class="stat-number-large gradient-text">50+</span>
-                        <span class="stat-label">проектів</span>
-                        <p class="stat-description">Реалізовано для клієнтів у 15+ країнах</p>
-                    </div>
-                    <div class="hero-stat-card-bottom">
-                        <span class="stat-number-large gradient-text">30+</span>
-                        <span class="stat-label">послуг</span>
-                        <p class="stat-description">Від дизайну до розробки та SEO</p>
-                    </div>
+                <!-- CTA Links (як на Lenis) -->
+                <div class="hero-cta-links">
+                    <a href="#contact" class="cta-link" data-analytics="cta-hero-contact">
+                        <span class="cta-link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h8v8H3zM13 13h8v8h-8zM3 13h8v8H3zM13 3h8v8h-8z"/>
+                            </svg>
+                        </span>
+                        <span class="cta-link-text">Отримати консультацію</span>
+                    </a>
+                    <a href="https://t.me/notarikon" class="cta-link" target="_blank" rel="noopener" data-analytics="cta-hero-telegram">
+                        <span class="cta-link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </span>
+                        <span class="cta-link-text">Telegram</span>
+                    </a>
                 </div>
             </div>
             
-            <!-- Права частина: Біла картка з інформацією (як на референсі) -->
-            <div class="hero-right-section">
-                <div class="hero-info-card">
-                    <div class="info-card-image">
-                        <!-- Тут буде відео або зображення -->
-                        <video class="info-video" autoplay muted loop playsinline>
-                            <source src="#" type="video/mp4">
-                        </video>
+            <!-- Права частина: Статистика (як на Lenis - мінімалістична) -->
+            <div class="hero-right-meta">
+                <div class="hero-stats-minimal">
+                    <div class="stat-minimal">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label-small">проектів</span>
                     </div>
-                    <div class="info-card-content">
-                        <span class="info-budget gradient-text">$500+</span>
-                        <span class="info-label">бюджет проекту</span>
-                        <div class="info-divider">+</div>
-                        <p class="info-text">
-                            Як створити сайт без перевитрат та отримати результат за мінімальний термін.
-                        </p>
-                        <div class="info-avatars">
-                            <span class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=1');"></span>
-                            <span class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=3');"></span>
-                            <span class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=8');"></span>
-                        </div>
+                    <div class="stat-minimal">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label-small">якість</span>
                     </div>
                 </div>
             </div>
