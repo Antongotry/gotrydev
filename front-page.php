@@ -9,52 +9,64 @@ get_header();
 
 <!-- Header Navigation -->
 <header class="top-nav">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <span class="logo-text">R=</span>
-        </div>
-        <nav class="nav-links">
-            <a href="#home" class="nav-link">HOME</a>
-            <a href="#services" class="nav-link">SERVICES</a>
-            <a href="#cases" class="nav-link">CASES</a>
-        </nav>
-        <div class="nav-social">
-            <a href="#" class="social-icon" aria-label="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="Facebook">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                </svg>
-            </a>
+    <div class="wide-container">
+        <div class="grid-12">
+            <!-- Left: Logo + Hamburger -->
+            <div class="col-1 nav-left">
+                <div class="nav-logo">
+                    <span class="logo-icon">R</span>
+                    <button class="hamburger-menu" aria-label="Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Center: Navigation Menu -->
+            <div class="col-6 nav-center">
+                <nav class="nav-links">
+                    <a href="#home" class="nav-link">HOME</a>
+                    <a href="#services" class="nav-link">SERVICES</a>
+                    <a href="#cases" class="nav-link">CASES</a>
+                </nav>
+            </div>
+            
+            <!-- Right: Social Icons -->
+            <div class="col-2 nav-right">
+                <div class="nav-social">
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </header>
 
-<!-- Video Background -->
-<div class="video-background" id="video-background">
-    <video id="bg-video" autoplay muted loop playsinline webkit-playsinline>
-        <source src="https://antongotry.dev/wp-content/uploads/2026/01/0_Blackhole_Astrophysics_1920x1080.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="video-overlay"></div>
-</div>
-
 <!-- Hero Section -->
 <section class="hero-section" id="hero">
-    <div class="container">
-        <div class="hero-main-wrapper">
-            <!-- Left Content Block -->
-            <div class="hero-left-content">
-                <h1 class="hero-main-title">SOURCE<br>OF BOLD<br>IDEAS/</h1>
-                <p class="hero-subtitle">Where brands are reborn and boundaries are erased.</p>
+    <div class="wide-container">
+        <div class="grid-12">
+            <!-- Left Side: Slogan + Cards -->
+            <div class="col-5 hero-left">
+                <div class="hero-slogan">
+                    <h1 class="hero-main-title">SOURCE<br>OF BOLD<br>IDEAS/</h1>
+                    <p class="hero-subtitle">Where brands are reborn and boundaries are erased.</p>
+                </div>
                 
-                <div class="hero-cards">
-                    <!-- White Card -->
+                <!-- Cards positioned at bottom left -->
+                <div class="hero-cards-container">
+                    <!-- White Card - Bottom Left -->
                     <div class="hero-card hero-card-white">
                         <div class="card-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -71,43 +83,48 @@ get_header();
                         <p class="card-subtext">Win beyond the market.</p>
                     </div>
                     
-                    <!-- Dark Red Card -->
-                    <div class="hero-card hero-card-red">
-                        <div class="card-icon abstract-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.5">
-                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke-linejoin="round"/>
+                    <!-- Dark Card - Closer to center-left -->
+                    <div class="hero-card hero-card-dark">
+                        <div class="card-icon card-icon-swirl">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                                <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.12 0 4.07.74 5.62 1.97L12 8" stroke-linejoin="round"/>
+                                <path d="M21 3v5h-5" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <p class="card-text">Reload your brand.</p>
-                        <p class="card-description">We craft bold brands with strategies built to grow and lead globally.</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Right Content Block -->
-            <div class="hero-right-content">
+            <!-- Right Side: Main Title + Description + Tags -->
+            <div class="col-7 hero-right">
+                <!-- Main Title - Right Center/Above Center -->
                 <h2 class="hero-title-large">CREATIVE<br>BRANDING<br>AGENCY.</h2>
+                
+                <!-- Description with Arrow Icon -->
                 <div class="hero-description-wrapper">
                     <p class="hero-description">We craft bold identities that stand out. From strategy to visual DNA — we help brands redefine, not just refresh.</p>
                     <div class="hero-arrow-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
-                            <path d="M8 12h8M12 8l4 4-4 4"/>
+                            <path d="M12 16l4-4-4-4M8 12h8"/>
                         </svg>
                     </div>
                 </div>
                 
-                <!-- Tags at bottom right -->
-                <div class="hero-tags">
-                    <span class="hero-tag">DIGITAL CAMPAIGNS</span>
-                    <span class="hero-tag">CONTENT</span>
-                    <span class="hero-tag hero-tag-branding">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <!-- Tags at Bottom Right -->
+                <div class="hero-tags-section">
+                    <div class="hero-branding-badge">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                         </svg>
-                        BRANDING
-                    </span>
-                    <span class="hero-tag">CREATIVE STRATEGY</span>
+                        <span>BRANDING</span>
+                    </div>
+                    <div class="hero-tags">
+                        <span class="hero-tag">DIGITAL CAMPAIGNS</span>
+                        <span class="hero-tag">CONTENT</span>
+                        <span class="hero-tag">CREATIVE STRATEGY</span>
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,57 +5,9 @@
 <?php endif; ?>
 
 <script>
-// Принудительно запускаем видео и убираем черный фон
+// Set transparent background
 document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('bg-video');
-    const videoContainer = document.getElementById('video-background');
-    
-    if (video && videoContainer) {
-        // Убедимся что контейнер видим
-        videoContainer.style.display = 'block';
-        videoContainer.style.background = 'transparent';
-        
-        // Показываем видео сразу
-        video.style.opacity = '1';
-        video.style.display = 'block';
-        
-        // Убираем черный фон с body
-        document.body.style.background = 'transparent';
-        
-        // Оптимізація відео для плавності
-        video.preload = 'auto';
-        video.playsInline = true;
-        video.muted = true;
-        video.playbackRate = 1.0;
-        
-        // Принудительно запускаем видео
-        video.play().catch(function(error) {
-            console.log('Video autoplay failed:', error);
-            video.style.opacity = '1';
-            // Повторная попытка после взаимодействия пользователя
-            document.addEventListener('click', function() {
-                video.play();
-            }, { once: true });
-        });
-        
-        // Событие когда видео загружено
-        video.addEventListener('loadeddata', function() {
-            video.playbackRate = 1.0;
-            video.style.opacity = '1';
-            videoContainer.style.background = 'transparent';
-        });
-        
-        // Событие когда видео начинает играть
-        video.addEventListener('playing', function() {
-            video.playbackRate = 1.0;
-            video.style.opacity = '1';
-        });
-        
-        // Якщо відео вже завантажене
-        if (video.readyState >= 2) {
-            video.playbackRate = 1.0;
-        }
-    }
+    document.body.style.background = '#1a0505';
 });
 </script>
 
