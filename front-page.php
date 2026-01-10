@@ -9,7 +9,7 @@ get_header();
 
 <!-- Video Background -->
 <div class="video-background" id="video-background">
-    <video autoplay muted loop playsinline>
+    <video id="bg-video" autoplay muted loop playsinline webkit-playsinline>
         <source src="https://antongotry.dev/wp-content/uploads/2026/01/12.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
