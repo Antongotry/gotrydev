@@ -1,72 +1,59 @@
-# Gotry WordPress Project
+# Gotry Theme
 
-Репозиторий для темы Gotry и плагина Universal License Manager.
+**Coming Soon сторінка з Heartbeat ефектом 💗**
 
-## Структура репозитория
+## Опис
+
+Кастомна WordPress тема для antongotry.dev з унікальним heartbeat ефектом на головній сторінці:
+- 💓 Пульсація в ритмі серця (72 BPM)
+- 📈 Біла ECG кардіограма по центру
+- 🖼️ THREE.js glass distortion з вашим зображенням
+- 🖱️ Інтерактивність - все реагує на мишу
+- ⚡ Smooth 60fps анімації
+
+## Структура
 
 ```
-gotrydev/
-├── README.md
-├── .gitignore
-├── HOW-TO-COMMIT.md
-├── themes/
-│   └── gotry/              # Тема Gotry
-│       ├── style.css
-│       ├── functions.php
-│       ├── header.php
-│       ├── footer.php
-│       ├── index.php
-│       ├── front-page.php
-│       ├── screenshot.png
-│       ├── assets/
-│       └── README.md
-└── plugins/
-    └── universal-license-manager/  # Плагин Universal License Manager
-        ├── universal-license-manager.php
-        ├── includes/
-        ├── assets/
-        └── README.md
+gotry/
+├── style.css                          # Мета-інформація + базові стилі
+├── functions.php                      # Підключення assets
+├── header.php                         # Порожній header
+├── footer.php                         # Порожній footer
+├── front-page.php                     # Головна з canvas
+├── index.php                          # Для інших сторінок
+├── screenshot.png                     # Превью теми
+├── assets/
+│   ├── css/
+│   │   ├── glass-distortion.css      # Canvas стилі
+│   │   └── heartbeat.css             # Heartbeat стилі
+│   └── js/
+│       ├── glass-distortion.js       # THREE.js ефект
+│       ├── heartbeat-controller.js   # Контролер heartbeat
+│       └── ...
+└── README.md                          # Документація
 ```
-
-**Важно:** В репозитории НЕТ папки `wp-content/`. Файлы темы и плагина находятся напрямую в `themes/` и `plugins/` в корне репозитория.
 
 ## Настройка развертывания на Hostinger
 
-**Репозиторий:** `https://github.com/Antongotry/gotrydev`  
+**Репозиторій:** `https://github.com/Antongotry/gotrydev`  
 **Гілка:** `main`  
-**Шлях встановлення:** `wp-content`
+**Шлях встановлення:** `wp-content/themes/gotry`
 
-При развертывании на Hostinger в `wp-content`, файлы из репозитория попадут правильно:
-- `themes/gotry/` → `wp-content/themes/gotry/` ✅
-- `plugins/universal-license-manager/` → `wp-content/plugins/universal-license-manager/` ✅
+При развертывании Hostinger скопирует файлы из корня репозитория в `wp-content/themes/gotry/`:
+- `style.css` → `wp-content/themes/gotry/style.css` ✅
+- `functions.php` → `wp-content/themes/gotry/functions.php` ✅
+- `assets/` → `wp-content/themes/gotry/assets/` ✅
 
-## Обновление кода
+## Обновление темы
 
-### Обновление темы:
 ```bash
-git add themes/gotry/
+git add .
 git commit -m "Update theme: описание изменений"
 git push origin main
 ```
 
-### Обновление плагина:
-```bash
-git add plugins/universal-license-manager/
-git commit -m "Update plugin: описание изменений"
-git push origin main
-```
+## Автор
 
-### Обновление обоих:
-```bash
-git add themes/ plugins/
-git commit -m "Update theme and plugin: описание изменений"
-git push origin main
-```
-
-## Webhook
-
-Webhook настроен для автоматического обновления при push в GitHub:
-- Проверяет какие папки изменились (тема или плагин)
-- Обновляет только измененные папки на хостинге
-
-Подробная инструкция: `HOW-TO-COMMIT.md`
+**Anton Gotry**  
+📧 Telegram: [@notarikon](https://t.me/notarikon)  
+🌐 Website: [antongotry.dev](https://antongotry.dev)

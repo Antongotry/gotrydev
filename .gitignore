@@ -1,19 +1,16 @@
-# Игнорировать всё кроме тем, плагинов и webhook
+# Игнорировать всё кроме файлов темы
 *
 !.gitignore
 !README.md
-!HOW-TO-COMMIT.md
-!themes/
-!themes/gotry/
-!themes/gotry/**
-!plugins/
-!plugins/universal-license-manager/
-!plugins/universal-license-manager/**
-!webhook-deploy.php
-
-# Исключаем index.php файлы (стандартные WordPress файлы)
-themes/index.php
-plugins/index.php
+!style.css
+!functions.php
+!header.php
+!footer.php
+!index.php
+!front-page.php
+!screenshot.png
+!assets/
+!assets/**
 
 # Системные файлы
 .DS_Store
