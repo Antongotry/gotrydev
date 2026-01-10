@@ -68,8 +68,11 @@ get_header();
 <section class="hero-section" id="hero">
     <div class="wide-container">
         <div class="grid-12 hero-grid">
+            <!-- Empty column for centering -->
+            <div class="col-1"></div>
+            
             <!-- Left Side: Slogan + Cards -->
-            <div class="col-5 col-start-1 hero-left">
+            <div class="col-5 hero-left">
                 <div class="hero-slogan">
                     <h1 class="hero-main-title">SOURCE<br>OF BOLD<br>IDEAS/</h1>
                     <p class="hero-subtitle">Where brands are reborn and boundaries are erased.</p>
@@ -108,7 +111,7 @@ get_header();
             </div>
             
             <!-- Right Side: Main Title + Description + Tags -->
-            <div class="col-7 col-start-6 hero-right">
+            <div class="col-5 hero-right">
                 <!-- Main Title - Right Center/Above Center -->
                 <h2 class="hero-title-large">CREATIVE<br>BRANDING<br>AGENCY.</h2>
                 
