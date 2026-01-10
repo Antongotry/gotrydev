@@ -981,7 +981,7 @@ body.home .wide-container {
     display: block;
     position: absolute;
     left: 50%;
-    margin-left: -11px; /* Center the line (22px / 2 = 11px) */
+    margin-left: -11px; /* Center the line horizontally (22px / 2 = 11px) */
     transition: all 300ms cubic-bezier(0.61, 0.01, 0.42, 1);
     background: #1D1D1D;
     border-radius: 0;
@@ -1025,27 +1025,27 @@ body.home .wide-container {
     border: 2px solid #1D1D1D;
     height: 9px;
     border-radius: 50%;
-    margin-left: -12.5px; /* Center horizontally: half width (25px / 2 = 12.5px) */
-    margin-top: -4.5px; /* Center vertically: half height (9px / 2 = 4.5px) */
+    margin-left: 0; /* Reset margin - using transform for centering */
+    margin-top: 0; /* Reset margin - using transform for centering */
     animation: atom 300ms linear 1;
     width: 25px; /* Original size from example */
     background: transparent;
     box-sizing: border-box;
-    top: 50%; /* Center vertically in 54px button (27px from top) */
-    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically: 50% of button height (54px) = 27px */
+    left: 50%; /* Center horizontally: 50% of button width (54px) = 27px */
 }
 
-/* All circles start from center, then rotate */
+/* All circles start from center, then rotate - combine translate with rotate */
 .header-side .hamburger-menu:hover div:nth-child(1) {
-    transform: rotate(-33deg);
+    transform: translate(-50%, -50%) rotate(-33deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(2) {
-    transform: rotate(90deg);
+    transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3) {
-    transform: rotate(33deg);
+    transform: translate(-50%, -50%) rotate(33deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3)::before {
