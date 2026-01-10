@@ -46,12 +46,6 @@ get_header();
 
 <!-- Hero Section -->
 <section class="hero-section" id="hero">
-    <!-- Scroll Indicator (bottom left) -->
-    <div class="hero-left-indicator">
-        <p class="scroll-indicator-text">scroll</p>
-        <p class="scroll-indicator-text">to explore</p>
-    </div>
-    
     <div class="container">
         <div class="hero-main-wrapper">
             <!-- Left Content Block -->
