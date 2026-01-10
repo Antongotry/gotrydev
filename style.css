@@ -260,11 +260,10 @@ body.home .top-nav .header-content-wrapper .wide-container {
     width: 100%;
 }
 
-/* Override for home page header - use padding instead of margin to avoid double spacing */
 /* Override for home page header - full width, no max-width, proper padding */
 body.home .top-nav .header-content-wrapper .wide-container {
-    width: 100%;
-    max-width: none; /* No max-width to prevent white gap on right */
+    width: 100% !important;
+    max-width: none !important; /* No max-width to prevent white gap on right */
     padding-left: clamp(40px, 5vw, 120px);
     padding-right: clamp(40px, 5vw, 120px);
     padding-top: 0;
@@ -272,6 +271,7 @@ body.home .top-nav .header-content-wrapper .wide-container {
     margin-left: 0; /* No margin */
     margin-right: 0;
     box-sizing: border-box;
+    overflow: visible; /* Allow content to extend */
 }
 
 .nav-wrapper {
