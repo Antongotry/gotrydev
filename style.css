@@ -1066,40 +1066,43 @@ body.home .wide-container {
     border-top: none;
     border-right: none;
     border-bottom: none;
-    left: 3px; /* Small offset from left edge */
+    left: 6px; /* Offset from left edge */
     top: 3px;
+    bottom: auto;
     transform: none;
 }
 
-/* Line 2: Top horizontal line (from left to middle-right, stops before "U") */
+/* Line 2: Top horizontal line (from left to middle-right, stops before right) */
 .header-side .hamburger-menu:hover div:nth-child(2) {
-    width: 38px; /* Width to stop before "U" in "МЕНЮ" */
+    width: 36px; /* Width to stop before right edge, before "U" in "МЕНЮ" */
     height: 0px;
     border-top: 1px solid #1D1D1D;
     border-left: none;
     border-right: none;
     border-bottom: none;
-    left: 3px;
+    left: 6px;
     top: 3px;
+    bottom: auto;
     transform: none;
 }
 
-/* Line 3: Bottom horizontal line (from left to middle-right, stops before "U") */
+/* Line 3: Bottom horizontal line (from left to middle-right, stops before right) */
+/* Also creates right vertical line via ::after pseudo-element */
 .header-side .hamburger-menu:hover div:nth-child(3) {
-    width: 38px; /* Same width as top line */
+    width: 36px; /* Same width as top line */
     height: 0px;
     border-bottom: 1px solid #1D1D1D;
     border-left: none;
     border-right: none;
     border-top: none;
-    left: 3px;
-    bottom: 3px; /* At bottom instead of top */
+    left: 6px;
+    bottom: 3px; /* At bottom */
     top: auto;
     transform: none;
 }
 
-/* Right vertical line - created via pseudo-element on button */
-.header-side .hamburger-menu:hover::after {
+/* Right vertical line - created via pseudo-element on 3rd div */
+.header-side .hamburger-menu:hover div:nth-child(3)::after {
     content: '';
     position: absolute;
     width: 0px;
@@ -1108,8 +1111,9 @@ body.home .wide-container {
     border-top: none;
     border-left: none;
     border-bottom: none;
-    right: 3px; /* Small offset from right edge */
+    right: 6px; /* Offset from right edge */
     top: 3px;
+    bottom: auto;
 }
 
 /* Menu text - appears inside the frame */
