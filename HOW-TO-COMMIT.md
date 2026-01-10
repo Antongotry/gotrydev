@@ -4,12 +4,16 @@
 
 ```
 gotrydev/
-└── wp-content/
-    ├── themes/
-    │   └── gotry/              # Тема
-    └── plugins/
-        └── universal-license-manager/  # Плагин
+├── README.md
+├── .gitignore
+├── HOW-TO-COMMIT.md
+├── themes/
+│   └── gotry/              # Тема (без wp-content/)
+└── plugins/
+    └── universal-license-manager/  # Плагин (без wp-content/)
 ```
+
+**Важно:** В репозитории **НЕТ** папки `wp-content/`. Файлы напрямую в `themes/` и `plugins/` в корне.
 
 ## 🔄 Обновление темы
 
@@ -22,11 +26,11 @@ git status
 ### Шаг 2: Добавьте файлы темы
 ```bash
 # Всё папку темы целиком
-git add wp-content/themes/gotry/
+git add themes/gotry/
 
 # Или конкретный файл
-git add wp-content/themes/gotry/style.css
-git add wp-content/themes/gotry/functions.php
+git add themes/gotry/style.css
+git add themes/gotry/functions.php
 ```
 
 ### Шаг 3: Закоммитьте
@@ -54,10 +58,10 @@ git status
 ### Шаг 2: Добавьте файлы плагина
 ```bash
 # Всё плагин целиком
-git add wp-content/plugins/universal-license-manager/
+git add plugins/universal-license-manager/
 
 # Или конкретный файл
-git add wp-content/plugins/universal-license-manager/universal-license-manager.php
+git add plugins/universal-license-manager/universal-license-manager.php
 ```
 
 ### Шаг 3: Закоммитьте
@@ -78,7 +82,7 @@ git push origin main
 ## 🎯 Обновление обоих (темы и плагина)
 
 ```bash
-git add wp-content/
+git add themes/ plugins/
 git commit -m "Update theme and plugin: описание изменений"
 git push origin main
 ```
@@ -87,12 +91,12 @@ git push origin main
 
 ### Обновление темы:
 ```bash
-git add wp-content/themes/gotry/ && git commit -m "Update theme: описание" && git push origin main
+git add themes/gotry/ && git commit -m "Update theme: описание" && git push origin main
 ```
 
 ### Обновление плагина:
 ```bash
-git add wp-content/plugins/universal-license-manager/ && git commit -m "Update plugin: описание" && git push origin main
+git add plugins/universal-license-manager/ && git commit -m "Update plugin: описание" && git push origin main
 ```
 
 ## 📋 Что будет обновляться на Hostinger
@@ -100,9 +104,13 @@ git add wp-content/plugins/universal-license-manager/ && git commit -m "Update p
 При настройке на Hostinger:
 - **Шлях встановлення:** `wp-content`
 
+Hostinger развернет файлы из корня репозитория в `wp-content/`:
+- `themes/gotry/` → `wp-content/themes/gotry/` ✅
+- `plugins/universal-license-manager/` → `wp-content/plugins/universal-license-manager/` ✅
+
 Webhook автоматически определит что изменилось:
-- Если изменились файлы в `wp-content/themes/gotry/` → обновит только тему
-- Если изменились файлы в `wp-content/plugins/universal-license-manager/` → обновит только плагин
+- Если изменились файлы в `themes/gotry/` → обновит только тему
+- Если изменились файлы в `plugins/universal-license-manager/` → обновит только плагин
 - Если изменились оба → обновит оба
 
 ## ⚠️ Важно
@@ -111,7 +119,7 @@ Webhook автоматически определит что изменилос�
 - Пишите понятные сообщения коммитов
 - Коммитьте только измененные файлы
 - Не коммитьте чувствительные данные (пароли, ключи API)
-- Не коммитьте файлы из `wp-content/uploads/`, `wp-content/cache/` и т.д.
+- **НЕ коммитьте папку `wp-content/`** - её нет в репозитории!
 
 ## 🐛 Если случайно добавили лишнее
 
@@ -134,7 +142,7 @@ git status
 git status
 
 # 2. Добавление измененных файлов
-git add wp-content/themes/gotry/style.css wp-content/themes/gotry/functions.php
+git add themes/gotry/style.css themes/gotry/functions.php
 
 # 3. Коммит
 git commit -m "Update theme: обновил стили и функции heartbeat"

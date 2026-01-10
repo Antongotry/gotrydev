@@ -19,7 +19,7 @@ define('WEBHOOK_SECRET', 'your-secret-key-here-change-me');
 // Путь к корню WordPress на сервере
 define('WP_ROOT', dirname(dirname(__FILE__))); // public_html
 
-// Путь к папке темы
+// Путь к папке темы (WP_ROOT = public_html, так что это правильно)
 define('THEME_PATH', WP_ROOT . '/wp-content/themes/gotry');
 
 // Путь к папке плагина
@@ -102,15 +102,15 @@ if (isset($data['commits']) && is_array($data['commits'])) {
             $commit['removed'] ?? []
         );
         
-        foreach ($all_changes as $file) {
-            // Проверяем изменения в теме
-            if (strpos($file, 'wp-content/themes/gotry/') === 0) {
+            foreach ($all_changes as $file) {
+            // Проверяем изменения в теме (в репозитории это themes/gotry/, без wp-content/)
+            if (strpos($file, 'themes/gotry/') === 0 || strpos($file, 'wp-content/themes/gotry/') === 0) {
                 $theme_files_changed = true;
                 $theme_changed_files[] = $file;
             }
             
-            // Проверяем изменения в плагине
-            if (strpos($file, 'wp-content/plugins/universal-license-manager/') === 0) {
+            // Проверяем изменения в плагине (в репозитории это plugins/universal-license-manager/, без wp-content/)
+            if (strpos($file, 'plugins/universal-license-manager/') === 0 || strpos($file, 'wp-content/plugins/universal-license-manager/') === 0) {
                 $plugin_files_changed = true;
                 $plugin_changed_files[] = $file;
             }
@@ -237,8 +237,13 @@ if ($zip->open($zip_file) === TRUE) {
     }
     
     // Обновляем тему, если есть изменения
+    // В архиве путь: gotrydev-main/themes/gotry (без wp-content/)
     if ($theme_files_changed) {
-        $theme_source = $extracted_root . '/wp-content/themes/gotry';
+        $theme_source = $extracted_root . '/themes/gotry';
+        if (!is_dir($theme_source)) {
+            // Попробуем старый путь для совместимости
+            $theme_source = $extracted_root . '/wp-content/themes/gotry';
+        }
         if (is_dir($theme_source)) {
             $theme_result = copyDirectory($theme_source, THEME_PATH, $exclude_files, 'Theme');
             $result['theme']['updated'] = true;
@@ -249,14 +254,19 @@ if ($zip->open($zip_file) === TRUE) {
             }
             log_message("Theme updated: {$result['theme']['files']} files copied");
         } else {
-            log_message('Warning: Theme directory not found in archive');
+            log_message('Warning: Theme directory not found in archive (tried: ' . $extracted_root . '/themes/gotry and ' . $extracted_root . '/wp-content/themes/gotry)');
             $result['errors'][] = 'Theme directory not found in archive';
         }
     }
     
     // Обновляем плагин, если есть изменения
+    // В архиве путь: gotrydev-main/plugins/universal-license-manager (без wp-content/)
     if ($plugin_files_changed) {
-        $plugin_source = $extracted_root . '/wp-content/plugins/universal-license-manager';
+        $plugin_source = $extracted_root . '/plugins/universal-license-manager';
+        if (!is_dir($plugin_source)) {
+            // Попробуем старый путь для совместимости
+            $plugin_source = $extracted_root . '/wp-content/plugins/universal-license-manager';
+        }
         if (is_dir($plugin_source)) {
             $plugin_result = copyDirectory($plugin_source, PLUGIN_PATH, $exclude_files, 'Plugin');
             $result['plugin']['updated'] = true;
@@ -267,7 +277,7 @@ if ($zip->open($zip_file) === TRUE) {
             }
             log_message("Plugin updated: {$result['plugin']['files']} files copied");
         } else {
-            log_message('Warning: Plugin directory not found in archive');
+            log_message('Warning: Plugin directory not found in archive (tried: ' . $extracted_root . '/plugins/universal-license-manager and ' . $extracted_root . '/wp-content/plugins/universal-license-manager)');
             $result['errors'][] = 'Plugin directory not found in archive';
         }
     }

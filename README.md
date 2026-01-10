@@ -9,25 +9,26 @@ gotrydev/
 ├── README.md
 ├── .gitignore
 ├── HOW-TO-COMMIT.md
-└── wp-content/
-    ├── themes/
-    │   └── gotry/              # Тема Gotry
-    │       ├── style.css
-    │       ├── functions.php
-    │       ├── header.php
-    │       ├── footer.php
-    │       ├── index.php
-    │       ├── front-page.php
-    │       ├── screenshot.png
-    │       ├── assets/
-    │       └── README.md
-    └── plugins/
-        └── universal-license-manager/  # Плагин Universal License Manager
-            ├── universal-license-manager.php
-            ├── includes/
-            ├── assets/
-            └── README.md
+├── themes/
+│   └── gotry/              # Тема Gotry
+│       ├── style.css
+│       ├── functions.php
+│       ├── header.php
+│       ├── footer.php
+│       ├── index.php
+│       ├── front-page.php
+│       ├── screenshot.png
+│       ├── assets/
+│       └── README.md
+└── plugins/
+    └── universal-license-manager/  # Плагин Universal License Manager
+        ├── universal-license-manager.php
+        ├── includes/
+        ├── assets/
+        └── README.md
 ```
+
+**Важно:** В репозитории НЕТ папки `wp-content/`. Файлы темы и плагина находятся напрямую в `themes/` и `plugins/` в корне репозитория.
 
 ## Настройка развертывания на Hostinger
 
@@ -35,29 +36,29 @@ gotrydev/
 **Гілка:** `main`  
 **Шлях встановлення:** `wp-content`
 
-При развертывании:
-- Тема обновится в: `wp-content/themes/gotry/`
-- Плагин обновится в: `wp-content/plugins/universal-license-manager/`
+При развертывании на Hostinger в `wp-content`, файлы из репозитория попадут правильно:
+- `themes/gotry/` → `wp-content/themes/gotry/` ✅
+- `plugins/universal-license-manager/` → `wp-content/plugins/universal-license-manager/` ✅
 
 ## Обновление кода
 
 ### Обновление темы:
 ```bash
-git add wp-content/themes/gotry/
+git add themes/gotry/
 git commit -m "Update theme: описание изменений"
 git push origin main
 ```
 
 ### Обновление плагина:
 ```bash
-git add wp-content/plugins/universal-license-manager/
+git add plugins/universal-license-manager/
 git commit -m "Update plugin: описание изменений"
 git push origin main
 ```
 
 ### Обновление обоих:
 ```bash
-git add wp-content/
+git add themes/ plugins/
 git commit -m "Update theme and plugin: описание изменений"
 git push origin main
 ```
