@@ -3,11 +3,11 @@ Theme Name: Gotry
 Theme URI: https://antongotry.dev
 Author: Anton Gotry
 Author URI: https://t.me/notarikon
-Description: AI Landing Page з glass distortion ефектом
-Version: 1.0.0
+Description: AI Landing Page з video background
+Version: 2.0.0
 License: GNU General Public License v2 or later
 Text Domain: gotry
-Tags: ai, glass-effect, modern
+Tags: ai, video-background, modern
 */
 
 /* Базовий reset */
@@ -30,10 +30,10 @@ body {
     overflow-x: hidden;
 }
 
-/* Порожні header і footer на головній */
+/* Скрываем стандартные header и footer */
 body.home .site-header,
 body.home .site-footer {
-    display: none;
+    display: none !important;
 }
 
 /* Video Background */
@@ -66,103 +66,27 @@ body.home .site-footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(10, 10, 15, 0.7) 0%, rgba(26, 10, 46, 0.6) 50%, rgba(22, 33, 62, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(10, 10, 15, 0.6) 0%, rgba(26, 10, 46, 0.5) 50%, rgba(22, 33, 62, 0.6) 100%);
     z-index: 2;
     pointer-events: none;
 }
 
-/* Main Page */
-.hero-page {
+/* Hero Section */
+.hero-section {
     position: relative;
+    width: 100%;
+    height: 100svh;
     min-height: 100vh;
-    width: 100%;
-    padding: 0;
-}
-
-/* Header Navigation */
-.main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 40px;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    background: rgba(10, 10, 15, 0.3);
-    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-}
-
-.header-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.main-nav {
-    display: flex;
-    gap: 32px;
-}
-
-.main-nav a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.main-nav a:hover {
-    color: #8b5cf6;
-}
-
-.header-actions {
-    display: flex;
-    gap: 12px;
-}
-
-.icon-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    width: 40px;
-    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.icon-btn:hover {
-    background: rgba(139, 92, 246, 0.2);
-    border-color: rgba(139, 92, 246, 0.5);
-}
-
-/* Hero Section */
-.hero-section {
-    padding: 140px 40px 80px;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    min-height: 100vh;
+    padding: 0 40px;
+    z-index: 10;
 }
 
 .hero-content {
+    max-width: 800px;
+    text-align: center;
     z-index: 10;
 }
 
@@ -184,14 +108,17 @@ body.home .site-footer {
 .hero-description {
     font-size: 18px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 40px;
-    max-width: 500px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-buttons {
     display: flex;
     gap: 16px;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -230,233 +157,28 @@ body.home .site-footer {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Glass Cards */
-.hero-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    position: relative;
-}
-
-.glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 24px;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-.glass-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.glass-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(139, 92, 246, 0.3);
-    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
-}
-
-.glass-card:hover::before {
-    opacity: 1;
-}
-
-.card-1 {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.card-2 {
-    grid-column: 2;
-    grid-row: 1 / 3;
-}
-
-.card-3 {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-.card-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 16px;
-    color: #8b5cf6;
-}
-
-.card-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #ffffff;
-    position: relative;
-    z-index: 1;
-}
-
-.card-text {
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.6);
-    position: relative;
-    z-index: 1;
-}
-
-.card-dots {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    font-size: 24px;
-    color: rgba(255, 255, 255, 0.3);
-}
-
-.card-icons {
-    display: flex;
-    gap: 12px;
-    margin-top: 16px;
-    position: relative;
-    z-index: 1;
-}
-
-.card-icons svg {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.card-image {
-    width: 100%;
-    height: 200px;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 16px;
-    position: relative;
-}
-
-.spiral-pattern {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.spiral-pattern::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: repeating-conic-gradient(
-        from 0deg at 50% 50%,
-        transparent 0deg,
-        rgba(255, 255, 255, 0.1) 10deg,
-        transparent 20deg
-    );
-    animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Stats Section */
-.stats-section {
-    position: fixed;
-    bottom: 40px;
-    left: 40px;
-    z-index: 100;
-}
-
-.stats-container {
-    display: flex;
-    gap: 60px;
-    align-items: flex-end;
-}
-
-.stat-item {
-    position: relative;
-}
-
-.stat-label {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.stat-value {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1;
-    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 8px;
-}
-
-.stat-text {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-}
-
 /* Responsive */
-@media (max-width: 1200px) {
-    .hero-section {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-    
-    .hero-title {
-        font-size: 48px;
-    }
-    
-    .hero-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .card-2 {
-        grid-column: 1;
-        grid-row: 2;
-    }
-    
-    .card-3 {
-        grid-row: 3;
-    }
-}
-
 @media (max-width: 768px) {
-    .main-header {
-        padding: 16px 20px;
-    }
-    
-    .main-nav {
-        display: none;
-    }
-    
     .hero-section {
-        padding: 120px 20px 60px;
+        padding: 0 20px;
     }
     
     .hero-title {
         font-size: 36px;
     }
     
-    .stats-section {
-        bottom: 20px;
-        left: 20px;
+    .hero-description {
+        font-size: 16px;
     }
     
-    .stats-container {
+    .hero-buttons {
         flex-direction: column;
-        gap: 20px;
+        align-items: stretch;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
