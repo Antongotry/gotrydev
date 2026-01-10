@@ -282,6 +282,9 @@ body.home .top-nav .header-content-wrapper .wide-container {
     gap: 16px;
     min-width: 0; /* Allow flex shrinking */
     box-sizing: border-box;
+    flex-shrink: 1; /* Allow shrinking if needed */
+    max-width: 100%; /* Don't exceed parent width */
+    overflow: visible; /* Allow content to extend */
 }
 
 .nav-left {
@@ -390,6 +393,8 @@ body.home .top-nav .header-content-wrapper .wide-container {
     justify-content: flex-end;
     align-items: center;
     flex-shrink: 0;
+    gap: 16px; /* Gap between greeting and button */
+    max-width: 100%; /* Don't exceed parent width */
 }
 
 .nav-social {
