@@ -238,14 +238,11 @@ body.home .site-footer {
     margin: 0;
     will-change: auto; /* No will-change */
     transform: none; /* No transforms */
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    backface-visibility: visible !important; /* No backface-visibility */
+    -webkit-backface-visibility: visible !important;
 }
 
-.top-nav.scrolled {
-    background: #ffffff;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-}
+/* Remove old scrolled styles - header is always static */
 
 .top-nav .wide-container {
     padding-top: 0;
@@ -1386,27 +1383,29 @@ body.home .top-nav .header-content-wrapper .wide-container {
 
 /* Header - Konpo Style - Simplified: Hamburger (left) | Logo | Spacer | Greeting + Button (right) */
 body.home .top-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100vw; /* Full viewport width */
-    max-width: 100vw; /* Prevent overflow */
-    background: transparent; /* Always transparent */
-    backdrop-filter: none;
-    padding: 0;
-    margin: 0;
-    height: 54px; /* Fixed height - never changes */
-    min-height: 54px;
-    max-height: 54px;
-    transition: none;
-    border-bottom: 1px solid transparent;
-    z-index: 1000;
-    display: flex;
-    align-items: center; /* Center vertically */
-    box-sizing: border-box;
-    position: relative; /* For divider positioning */
-    overflow: visible; /* Allow content to extend */
+    position: fixed !important; /* Force fixed - NEVER changes */
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important; /* Full viewport width */
+    max-width: 100vw !important; /* Prevent overflow */
+    background: transparent !important; /* Always transparent - NEVER changes */
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 54px !important; /* Fixed height - NEVER changes */
+    min-height: 54px !important;
+    max-height: 54px !important;
+    transition: none !important; /* No transitions */
+    border-bottom: 1px solid transparent !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important; /* Center vertically */
+    box-sizing: border-box !important;
+    overflow: visible !important; /* Allow content to extend */
+    will-change: auto !important; /* No will-change */
+    transform: none !important; /* No transforms */
+    backface-visibility: visible !important; /* No backface-visibility */
 }
 
 /* No scroll behavior - header is always static */
@@ -1509,13 +1508,16 @@ body.home .logo-link .logo-img {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    transition: background 0.2s ease;
+    transition: none !important; /* No transitions - static */
     border: none;
     cursor: pointer;
+    will-change: auto !important; /* No will-change */
+    transform: none !important; /* No transforms */
 }
 
 .nav-hire-btn:hover {
-    background: #1D1D1D; /* No hover effect - static */
+    background: #1D1D1D !important; /* No hover effect - static */
+    transform: none !important; /* No hover transform */
 }
 
 .nav-hire-btn svg {
