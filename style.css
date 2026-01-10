@@ -259,13 +259,15 @@ body.home .top-nav .header-content-wrapper .wide-container {
     width: 100% !important;
     max-width: none !important; /* No max-width to prevent white gap on right */
     padding-left: clamp(40px, 5vw, 120px);
-    padding-right: clamp(40px, 5vw, 120px);
+    padding-right: clamp(40px, 5vw, 120px); /* Right padding should match visible edge */
     padding-top: 0;
     padding-bottom: 0;
     margin-left: 0; /* No margin */
     margin-right: 0;
     box-sizing: border-box;
     overflow: visible; /* Allow content to extend */
+    display: flex; /* Flex container */
+    justify-content: flex-end; /* Align content to right */
 }
 
 .nav-wrapper {
