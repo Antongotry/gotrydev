@@ -1057,40 +1057,26 @@ body.home .wide-container {
     animation: ball 1.5s linear infinite;
 }
 
-/* Active state (on click): lines separate, dot disappears */
-.header-side .hamburger-menu:active:hover div:nth-child(3)::before,
-.header-side .hamburger-menu:active div:nth-child(3)::before,
-.header-side .hamburger-menu:active div:nth-child(2) {
-    opacity: 0;
-    transition: all 200ms;
-}
-
+/* Active state (on click): disabled for now - menu will open later */
+/* For now, clicking does nothing - icon stays in hover state */
+.header-side .hamburger-menu:active:hover div,
 .header-side .hamburger-menu:active div {
-    border: 1px solid #1D1D1D; /* Thinner border - was 1.5px, matches lines */
-    height: 0px;
-    border-radius: 0%;
-    margin-left: -11px;
-    margin-top: 6px;
-    animation: division 300ms linear 1;
-    width: 25px;
-    top: 0px;
-    background: #1D1D1D;
+    /* Keep hover state when clicked - no changes */
 }
 
-.header-side .hamburger-menu:active div:nth-child(2) {
-    width: 0px;
-}
-
-.header-side .hamburger-menu:active div:nth-child(3) {
-    transform: rotate(45deg);
-}
-
+.header-side .hamburger-menu:active:hover div:nth-child(1),
 .header-side .hamburger-menu:active div:nth-child(1) {
-    transform: rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-33deg); /* Keep hover transform */
 }
 
-.header-side .hamburger-menu:active .hamburger-hint {
-    opacity: 0;
+.header-side .hamburger-menu:active:hover div:nth-child(2),
+.header-side .hamburger-menu:active div:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(90deg); /* Keep hover transform */
+}
+
+.header-side .hamburger-menu:active:hover div:nth-child(3),
+.header-side .hamburger-menu:active div:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(33deg); /* Keep hover transform */
 }
 
 /* Animations */
