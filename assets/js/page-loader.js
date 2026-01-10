@@ -1,78 +1,70 @@
 /**
- * Preloader - Карточки как колода с объёмным эффектом
- * Карточки складываются в колоду, затем красиво разлетаются на свои места
+ * Preloader - Простой и надежный
  */
 
 (function() {
     'use strict';
     
     const preloader = document.getElementById('preloader');
-    const cardsStack = document.getElementById('preloader-cards-stack');
-    const preloaderCards = document.querySelectorAll('.preloader-card');
     const mainGrid = document.getElementById('main-grid');
     const projectCards = document.querySelectorAll('.projects-grid .project-card');
     
-    if (!preloader || !cardsStack || preloaderCards.length === 0) {
+    if (!preloader) {
         // Если прелоадера нет, сразу показываем контент
         if (mainGrid) {
             mainGrid.style.opacity = '1';
+            mainGrid.style.pointerEvents = 'auto';
+            mainGrid.style.visibility = 'visible';
         }
-        if (projectCards.length > 0) {
-            projectCards.forEach(card => {
-                card.style.opacity = '1';
-                card.style.visibility = 'visible';
-            });
-        }
+        document.body.classList.add('preloader-complete');
         return;
     }
     
-    // Функция для расчета позиций карточек
-    function calculateCardPositions() {
-        if (projectCards.length === 0) {
-            // Fallback позиции, если основные карточки еще не загружены
-            setFallbackPositions();
-            return;
+    // Функция для скрытия прелоадера и показа контента
+    function hidePreloader() {
+        // Показываем основные карточки проектов
+        projectCards.forEach((card) => {
+            card.style.opacity = '1';
+            card.style.visibility = 'visible';
+        });
+        
+        // Показываем основной контент
+        if (mainGrid) {
+            mainGrid.style.opacity = '1';
+            mainGrid.style.pointerEvents = 'auto';
+            mainGrid.style.visibility = 'visible';
         }
         
-        // Ждем, пока layout будет готов
+        // Скрываем прелоадер
+        preloader.classList.add('fade-out');
+        document.body.classList.add('preloader-complete');
+        
+        // Удаляем прелоадер из DOM
         setTimeout(() => {
-            const stackRect = cardsStack.getBoundingClientRect();
-            const stackCenterX = stackRect.left + stackRect.width / 2;
-            const stackCenterY = stackRect.top + stackRect.height / 2;
-            
-            preloaderCards.forEach((preloaderCard, index) => {
-                if (projectCards[index]) {
-                    const cardRect = projectCards[index].getBoundingClientRect();
-                    const cardCenterX = cardRect.left + cardRect.width / 2;
-                    const cardCenterY = cardRect.top + cardRect.height / 2;
-                    
-                    // Вычисляем смещение от центра стека к центру карточки
-                    const offsetX = cardCenterX - stackCenterX;
-                    const offsetY = cardCenterY - stackCenterY;
-                    
-                    // Обновляем CSS переменные для позиционирования
-                    preloaderCard.style.setProperty('--final-x', offsetX + 'px');
-                    preloaderCard.style.setProperty('--final-y', offsetY + 'px');
-                }
-            });
-        }, 100);
+            if (preloader && preloader.parentNode) {
+                preloader.remove();
+            }
+        }, 600);
     }
     
-    // Fallback позиции
-    function setFallbackPositions() {
+    // Анимация карточек
+    const preloaderCards = document.querySelectorAll('.preloader-card');
+    const cardsStack = document.getElementById('preloader-cards-stack');
+    
+    if (cardsStack && preloaderCards.length > 0) {
+        // Рассчитываем позиции
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
         const stackRect = cardsStack.getBoundingClientRect();
         const stackCenterX = stackRect.left + stackRect.width / 2;
         const stackCenterY = stackRect.top + stackRect.height / 2;
         
-        // Примерные позиции для 3 карточек в grid
         const cardWidth = 339;
         const cardHeight = 530;
         const gap = 24;
         const totalWidth = (cardWidth * 3) + (gap * 2);
         const startX = viewportWidth / 2 - totalWidth / 2;
-        const startY = viewportHeight * 0.6; // Примерная позиция проектов
+        const startY = viewportHeight * 0.6;
         
         preloaderCards.forEach((preloaderCard, index) => {
             const cardCenterX = startX + (cardWidth / 2) + (index * (cardWidth + gap));
@@ -84,85 +76,41 @@
             preloaderCard.style.setProperty('--final-x', offsetX + 'px');
             preloaderCard.style.setProperty('--final-y', offsetY + 'px');
         });
+        
+        // Запускаем анимацию разлета через 0.8 секунды
+        setTimeout(() => {
+            preloaderCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('spreading');
+                }, index * 100);
+            });
+        }, 800);
     }
     
-    // Функция для раскладывания карточек
-    function spreadCards() {
-        console.log('Preloader: Spreading cards...');
-        
-        // Добавляем класс spreading для анимации
-        preloaderCards.forEach((card, index) => {
-            setTimeout(() => {
-                card.classList.add('spreading');
-            }, index * 50); // Небольшая задержка для каскадного эффекта
-        });
-        
-        // После завершения анимации, скрываем прелоадер и показываем основной контент
+    // Гарантированно скрываем прелоадер максимум через 2 секунды
+    const hideTimeout = setTimeout(() => {
+        hidePreloader();
+    }, 2000);
+    
+    // Также скрываем после завершения анимации
+    setTimeout(() => {
+        clearTimeout(hideTimeout);
+        hidePreloader();
+    }, 2500);
+    
+    // Если страница уже загружена, скрываем быстрее
+    if (document.readyState === 'complete') {
         setTimeout(() => {
+            clearTimeout(hideTimeout);
             hidePreloader();
-        }, 1200);
-    }
-    
-    // Функция для скрытия прелоадера
-    function hidePreloader() {
-        // Показываем основные карточки проектов
-        projectCards.forEach((card, index) => {
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.visibility = 'visible';
-            }, index * 100);
-        });
-        
-        // Показываем основной контент
-        if (mainGrid) {
-            mainGrid.style.opacity = '1';
-            mainGrid.style.pointerEvents = 'auto';
-        }
-        
-        // Скрываем прелоадер
-        preloader.classList.add('fade-out');
-        
-        // Добавляем класс на body
-        document.body.classList.add('preloader-complete');
-        
-        // Удаляем прелоадер из DOM после анимации
-        setTimeout(() => {
-            if (preloader.parentNode) {
-                preloader.remove();
-            }
-        }, 600);
-    }
-    
-    // Функция инициализации
-    function initPreloader() {
-        // Рассчитываем позиции карточек
-        calculateCardPositions();
-        
-        // Небольшая задержка, чтобы карточки были видны как колода
-        setTimeout(() => {
-            spreadCards();
-        }, 500);
-    }
-    
-    // Запускаем прелоадер при загрузке
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(initPreloader, 200);
-        });
+        }, 1500);
     } else {
-        // DOM уже готов
-        setTimeout(initPreloader, 200);
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                clearTimeout(hideTimeout);
+                hidePreloader();
+            }, 1500);
+        });
     }
-    
-    // Обновляем позиции при изменении размера окна
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            if (!preloader.classList.contains('fade-out')) {
-                calculateCardPositions();
-            }
-        }, 250);
-    });
     
 })();

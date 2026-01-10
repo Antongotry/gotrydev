@@ -1213,12 +1213,14 @@ body.home .wide-container {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+    pointer-events: auto;
 }
 
 .preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    display: none !important;
 }
 
 /* Cards Stack - Карточки как колода по центру (объёмный эффект) */
@@ -1239,8 +1241,7 @@ body.home .wide-container {
     left: 0;
     transform-origin: center center;
     will-change: transform, opacity;
-    transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                opacity 1s ease-out;
+    transition: none; /* Без transition по умолчанию - только при spreading */
 }
 
 /* Initial state - карточки сложены в колоду с объёмным эффектом */
@@ -1298,9 +1299,9 @@ body.home .wide-container {
 
 /* Анимация раскладывания - карточки разлетаются на свои места */
 .preloader-card.spreading {
-    transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                opacity 1s ease-out,
-                box-shadow 1s ease-out;
+    transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important, 
+                opacity 1.2s ease-out !important,
+                box-shadow 1.2s ease-out !important;
 }
 
 /* Final positions - рассчитываются динамически через CSS переменные */
@@ -1324,26 +1325,90 @@ body.home .wide-container {
 
 /* Скрываем основные карточки проектов во время прелоадера */
 body:not(.preloader-complete) .projects-grid .project-card {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0 !important;
+    visibility: hidden !important;
 }
 
 body.preloader-complete .projects-grid .project-card {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
     transition: opacity 0.4s ease-out 0.3s, visibility 0.4s ease-out 0.3s;
+}
+
+/* Убеждаемся что основной контент показывается */
+body.preloader-complete .projects-grid {
+    display: grid !important;
 }
 
 /* Скрываем основной контент до загрузки */
 body:not(.preloader-complete) #main-grid {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
+}
+
+/* Принудительно показываем контент через 3 секунды, даже если прелоадер не скрылся */
+@keyframes showMainGrid {
+    to {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        visibility: visible !important;
+    }
+}
+
+#main-grid {
+    animation: showMainGrid 0.1s ease-out 3s forwards;
 }
 
 body.preloader-complete #main-grid {
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.6s ease-out;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+    transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+}
+
+/* Убеждаемся, что прелоадер скрывается */
+body.preloader-complete .preloader {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Аварийное скрытие прелоадера через 3 секунды */
+.preloader {
+    animation: forceHide 1s ease-out 3s forwards;
+}
+
+@keyframes forceHide {
+    to {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+        pointer-events: none;
+    }
+}
+
+/* Гарантируем показ контента через 3 секунды */
+body {
+    animation: forceShowContent 0.1s ease-out 3s forwards;
+}
+
+@keyframes forceShowContent {
+    to {
+        /* Принудительно показываем контент */
+    }
+}
+
+body::after {
+    content: '';
+    animation: forceShowMainGrid 0.1s ease-out 3s forwards;
+}
+
+@keyframes forceShowMainGrid {
+    to {
+        content: '';
+    }
 }
 
 /* Responsive для мобильных */
