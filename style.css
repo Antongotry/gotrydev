@@ -1424,9 +1424,9 @@ body.home .top-nav.scrolled {
     position: relative;
 }
 
-/* Wide container in header - adjust padding to avoid white gap */
+/* Wide container in header - adjust padding to avoid white gap after hamburger */
 body.home .top-nav .header-content-wrapper .wide-container {
-    padding-left: clamp(40px, 5vw, 120px);
+    padding-left: clamp(0px, calc(5vw - 14px), calc(120px - 54px)); /* Reduced padding to account for 54px margin */
     padding-right: clamp(40px, 5vw, 120px);
     padding-top: 0;
     padding-bottom: 0;
