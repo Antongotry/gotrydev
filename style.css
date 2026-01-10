@@ -1569,11 +1569,18 @@ body.home .hero-section {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-main-title {
-    margin: 0 0 40px 0;
+    margin: 0 0 32px 0;
     line-height: 1.1;
+    text-align: center;
+    width: 100%;
 }
 
 .title-line-1 {
@@ -1583,6 +1590,8 @@ body.home .hero-section {
     color: #1D1D1D;
     letter-spacing: -2px;
     margin-bottom: 8px;
+    text-align: center;
+    width: 100%;
 }
 
 .title-line-2 {
@@ -1592,6 +1601,8 @@ body.home .hero-section {
     color: #858488;
     letter-spacing: -1.5px;
     position: relative;
+    text-align: center;
+    width: 100%;
 }
 
 .strikethrough-text {
@@ -1600,21 +1611,32 @@ body.home .hero-section {
     margin-right: 8px;
 }
 
-.hero-description {
+/* Globe Icon - centered separately */
+.hero-globe-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    margin: 0 0 16px 0;
+    width: 100%;
+}
+
+.globe-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+    color: #1D1D1D;
+}
+
+/* Description text - centered below globe */
+.hero-description {
     font-size: clamp(14px, 1.5vw, 18px);
     color: #1D1D1D;
     line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;
-}
-
-.globe-icon {
-    flex-shrink: 0;
-    opacity: 0.6;
+    text-align: center;
+    width: 100%;
+    display: block;
 }
 
 /* Projects Section */
@@ -1908,6 +1930,7 @@ body.home .hero-section .wide-container {
 /* Initial state - all elements hidden */
 .main-grid:not(.loaded) .title-line-1,
 .main-grid:not(.loaded) .title-line-2,
+.main-grid:not(.loaded) .hero-globe-wrapper,
 .main-grid:not(.loaded) .hero-description,
 .main-grid:not(.loaded) .projects-divider,
 .main-grid:not(.loaded) .project-card {
@@ -1941,7 +1964,21 @@ body.home .hero-section .wide-container {
     transition-delay: 200ms;
 }
 
-/* Hero Description - appears third (250-300ms) */
+/* Globe Icon - appears third (250ms) */
+.main-grid:not(.loaded) .hero-globe-wrapper {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.main-grid.loaded .hero-globe-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 250ms;
+}
+
+/* Hero Description - appears fourth (300ms) */
 .main-grid:not(.loaded) .hero-description {
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;

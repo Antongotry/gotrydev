@@ -69,15 +69,17 @@ get_header();
                         </span>
                     </h1>
                     
-                    <!-- Description with Globe Icon -->
-                    <div class="hero-description">
+                    <!-- Globe Icon - centered -->
+                    <div class="hero-globe-wrapper">
                         <svg class="globe-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
                             <line x1="2" y1="12" x2="22" y2="12"/>
                             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                         </svg>
-                        <p>Gotry — це plug-and-play команда досвідчених дизайнерів для тих, хто розуміє, що дизайн — це несправедлива перевага.</p>
                     </div>
+                    
+                    <!-- Description - centered below globe -->
+                    <p class="hero-description">Gotry — це plug-and-play команда досвідчених дизайнерів для тих, хто розуміє, що дизайн — це несправедлива перевага.</p>
                 </div>
                 
                 <!-- Project Cards -->
