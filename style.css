@@ -1054,32 +1054,32 @@ body.home .wide-container {
     transition: opacity 0.3s ease 0.2s; /* Fade in after dots start spreading */
 }
 
-/* Active state (on click): dots spread to corners, text appears */
-.header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-1 {
+/* Hover state: dots spread to corners, text appears */
+.header-side .hamburger-menu:hover .hamburger-logo-dots .logo-dot-1 {
     top: 12px;
     left: 12px;
     transform: translate(0, 0); /* Top-left corner */
 }
 
-.header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-2 {
+.header-side .hamburger-menu:hover .hamburger-logo-dots .logo-dot-2 {
     top: 12px;
     right: 12px;
     transform: translate(0, 0); /* Top-right corner */
 }
 
-.header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-3 {
+.header-side .hamburger-menu:hover .hamburger-logo-dots .logo-dot-3 {
     bottom: 12px;
     left: 12px;
     transform: translate(0, 0); /* Bottom-left corner */
 }
 
-.header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-4 {
+.header-side .hamburger-menu:hover .hamburger-logo-dots .logo-dot-4 {
     bottom: 12px;
     right: 12px;
     transform: translate(0, 0); /* Bottom-right corner */
 }
 
-.header-side .hamburger-menu.active .hamburger-menu-text {
+.header-side .hamburger-menu:hover .hamburger-menu-text {
     opacity: 1;
 }
 
