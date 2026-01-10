@@ -1381,51 +1381,71 @@ body.home .site-footer {
    KONPO-STYLE DESIGN OVERRIDES
    ============================================ */
 
-/* Header - Konpo Style - Full Width with Hamburger */
+/* Header - Konpo Style - Full Width with Hamburger, Fixed Height (never changes) */
 body.home .top-nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    background: transparent;
+    background: transparent; /* Always transparent, no sticky background */
+    backdrop-filter: none;
     padding: 0;
-    transition: background 0.3s ease, padding 0.3s ease;
+    height: 54px; /* Fixed height - never changes on scroll */
+    min-height: 54px;
+    max-height: 54px;
+    transition: none; /* No transitions to prevent shrinking */
     border-bottom: 1px solid transparent;
     z-index: 1000;
     display: flex;
     align-items: flex-start;
+    box-sizing: border-box;
 }
 
-/* Header content wrapper - everything except hamburger */
+/* No changes on scroll - header stays exactly same size */
+body.home .top-nav.scrolled {
+    background: transparent; /* Always transparent */
+    backdrop-filter: none;
+    height: 54px; /* Same height */
+    min-height: 54px;
+    max-height: 54px;
+    padding: 0; /* Same padding */
+}
+
+/* Header content wrapper - everything except hamburger, fixed height */
 .header-content-wrapper {
     flex: 1;
     margin-left: 54px; /* Space for hamburger */
-    padding: 24px 0 0 0;
+    padding: 0;
+    height: 54px; /* Fixed height to match hamburger */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
 }
 
+/* No changes on scroll - wrapper stays same size */
 body.home .top-nav.scrolled .header-content-wrapper {
-    padding: 16px 0 0 0;
+    padding: 0; /* Same padding */
+    height: 54px; /* Same height */
 }
 
-body.home .top-nav.scrolled {
-    background: transparent; /* Always transparent, no sticky background */
-    backdrop-filter: none;
-    padding: 16px 0 0 0;
-}
-
-/* Header divider line - dark color, extends full width including hamburger area */
+/* Header divider line - dark color, extends full width, fixed position */
 .header-divider {
     width: calc(100% + 54px); /* Extend to include hamburger area */
     height: 1px;
     background: #1D1D1D; /* Dark color like reference */
-    margin-top: 24px;
+    margin-top: 0; /* No top margin, positioned at bottom of header */
     margin-left: -54px; /* Back to start including hamburger */
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
+/* Divider stays in same position on scroll */
 body.home .top-nav.scrolled .header-divider {
-    margin-top: 16px;
+    margin-top: 0; /* Same position */
+    bottom: 0;
 }
 
 /* Hide right nav elements on scroll - only logo remains */
@@ -1787,14 +1807,14 @@ body.home .hero-section .wide-container {
     position: relative;
 }
 
-/* Left Sidebar - Below Header, 54px width with Right Line and Scroll Indicator */
+/* Left Sidebar - Below Header, 54px width, exactly touching header */
 .header-side {
     flex: 0 0 54px;
     width: 54px;
     min-height: calc(100vh - 54px); /* Full height minus header */
     position: fixed;
     left: 0;
-    top: 54px; /* Start below header */
+    top: 54px; /* Exactly at header bottom - no gap */
     z-index: 999;
     background: transparent;
     display: flex;
@@ -1802,6 +1822,7 @@ body.home .hero-section .wide-container {
     align-items: center;
     justify-content: flex-start;
     padding-top: 0;
+    margin-top: 0; /* No gap - exactly touching header */
     opacity: 1; /* Always visible - no animation */
 }
 
