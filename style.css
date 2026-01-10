@@ -1025,31 +1025,25 @@ body.home .wide-container {
     height: 9px;
     border-radius: 50%;
     margin-left: -11px;
+    margin-top: -4.5px; /* Center circle vertically: half of height (9px / 2 = 4.5px) */
     animation: atom 300ms linear 1;
     width: 25px;
     background: transparent;
-    /* Adjust top to center circle where line was */
-    /* Original line: top: 20px/27px/34px, border 1.5px = center at top + 0.75px */
-    /* Circle height 9px = center should be at top + 4.5px */
-    /* So new top = original top + 0.75px - 4.5px = original top - 3.75px */
+    /* Keep original top values - don't override them */
 }
 
-/* Adjust top positions to center circles where lines were */
 .header-side .hamburger-menu:hover div:nth-child(1) {
-    top: calc(20px - 3.75px); /* Center circle where line was */
-    margin-top: 0;
+    /* top: 20px stays from base styles */
     transform: rotate(-33deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(2) {
-    top: calc(27px - 3.75px); /* Center circle where line was */
-    margin-top: 0;
+    /* top: 27px stays from base styles */
     transform: rotate(90deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3) {
-    top: calc(34px - 3.75px); /* Center circle where line was */
-    margin-top: 0;
+    /* top: 34px stays from base styles */
     transform: rotate(33deg);
 }
 
