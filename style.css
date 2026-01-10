@@ -1024,23 +1024,29 @@ body.home .wide-container {
     border: 2px solid #1D1D1D;
     height: 9px;
     border-radius: 50%;
-    margin-left: -11px; /* Center: half width (22px / 2 = 11px), but adjust for 25px circle */
-    margin-top: 2px; /* Small offset from top */
+    margin-left: -12.5px; /* Center: half width of circle (25px / 2 = 12.5px) */
+    margin-top: 0; /* No margin-top - use top for positioning */
     animation: atom 300ms linear 1;
     width: 25px;
-    top: 0px; /* All circles start from top: 0px like in original */
     background: transparent;
 }
 
+/* Center each circle where its line was */
+/* Line center: top + border/2 (1.5px/2 = 0.75px) */
+/* Circle center: top + height/2 (9px/2 = 4.5px) */
+/* So: circle_top = line_top + 0.75px - 4.5px = line_top - 3.75px */
 .header-side .hamburger-menu:hover div:nth-child(1) {
+    top: calc(20px - 3.75px); /* 16.25px - centers circle where line was */
     transform: rotate(-33deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(2) {
+    top: calc(27px - 3.75px); /* 23.25px - centers circle where line was */
     transform: rotate(90deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3) {
+    top: calc(34px - 3.75px); /* 30.25px - centers circle where line was */
     transform: rotate(33deg);
 }
 
