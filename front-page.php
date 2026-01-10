@@ -11,6 +11,9 @@ get_header();
 <header class="top-nav" id="top-nav">
     <div class="wide-container">
         <div class="grid-12">
+            <!-- Empty column for left centering -->
+            <div class="col-1"></div>
+            
             <!-- Left: Logo + Hamburger -->
             <div class="col-2 nav-left">
                 <div class="nav-logo">
@@ -52,6 +55,9 @@ get_header();
                     </a>
                 </div>
             </div>
+            
+            <!-- Empty column for right centering -->
+            <div class="col-1"></div>
         </div>
     </div>
 </header>
@@ -68,6 +74,9 @@ get_header();
 <section class="hero-section" id="hero">
     <div class="wide-container">
         <div class="grid-12 hero-grid">
+            <!-- Empty column for left centering -->
+            <div class="col-1"></div>
+            
             <!-- Left Side: Slogan + Cards -->
             <div class="col-5 hero-left">
                 <div class="hero-slogan">
@@ -107,7 +116,7 @@ get_header();
             </div>
             
             <!-- Right Side: Main Title + Description + Tags -->
-            <div class="col-6 col-start-7 hero-right">
+            <div class="col-6 hero-right">
                 <!-- Main Title - Right Center/Above Center -->
                 <h2 class="hero-title-large">ВЕБ-СТУДІЯ<br>РОЗРОБКИ.</h2>
                 
