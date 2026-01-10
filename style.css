@@ -1562,7 +1562,7 @@ body.home .hero-section {
     justify-content: center;
     padding: 120px 0 80px;
     position: relative;
-    margin-top: 80px; /* Space for fixed header */
+    padding-top: 200px; /* Space for fixed header */
 }
 
 .hero-content {
