@@ -1025,28 +1025,25 @@ body.home .wide-container {
     height: 9px;
     border-radius: 50%;
     margin-left: -12.5px; /* Center: half width of circle (25px / 2 = 12.5px) */
-    margin-top: 0; /* No margin-top - use top for positioning */
+    margin-top: -3.75px; /* Adjust to center circle: line border (1.5px) center offset (0.75px) - circle half height (4.5px) = -3.75px */
     animation: atom 300ms linear 1;
     width: 25px;
     background: transparent;
+    /* Keep original top values - don't override them */
 }
 
-/* Center each circle where its line was */
-/* Line center: top + border/2 (1.5px/2 = 0.75px) */
-/* Circle center: top + height/2 (9px/2 = 4.5px) */
-/* So: circle_top = line_top + 0.75px - 4.5px = line_top - 3.75px */
 .header-side .hamburger-menu:hover div:nth-child(1) {
-    top: calc(20px - 3.75px); /* 16.25px - centers circle where line was */
+    /* top: 20px - keeps from base styles */
     transform: rotate(-33deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(2) {
-    top: calc(27px - 3.75px); /* 23.25px - centers circle where line was */
+    /* top: 27px - keeps from base styles */
     transform: rotate(90deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3) {
-    top: calc(34px - 3.75px); /* 30.25px - centers circle where line was */
+    /* top: 34px - keeps from base styles */
     transform: rotate(33deg);
 }
 
