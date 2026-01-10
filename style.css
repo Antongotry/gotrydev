@@ -980,6 +980,7 @@ body.home .wide-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible; /* Allow circles to be visible */
 }
 
 /* Menu circles - 5 circles arranged in 2x2 grid with one in center */
@@ -1006,8 +1007,8 @@ body.home .wide-container {
     transform: translate(calc(-50% + 4px), calc(-50% - 4px)); /* Top-right */
 }
 
-.header-side .hamburger-menu .menu-circle:nth-child(3).menu-cir-ct {
-    transform: translate(-50%, -50%); /* Center */
+.header-side .hamburger-menu .menu-circle.menu-cir-ct {
+    transform: translate(-50%, -50%); /* Center - using class selector instead of nth-child */
 }
 
 .header-side .hamburger-menu .menu-circle:nth-child(4) {
