@@ -71,8 +71,8 @@ get_header();
             <!-- Left Side: Slogan + Cards -->
             <div class="col-5 hero-left">
                 <div class="hero-slogan">
-                    <h1 class="hero-main-title">CODE<br>MEETS<br>DESIGN/</h1>
-                    <p class="hero-subtitle">Where ideas become pixels and pixels become experiences.</p>
+                    <h1 class="hero-main-title">КОД<br>ЗУСТРІЧАЄ<br>ДИЗАЙН/</h1>
+                    <p class="hero-subtitle">Де ідеї стають пікселями, а пікселі стають досвідом.</p>
                 </div>
                 
                 <!-- Cards positioned at bottom left -->
@@ -87,9 +87,9 @@ get_header();
                             </svg>
                         </div>
                         <div class="card-content">
-                            <p class="card-text">Sites that perform.</p>
+                            <p class="card-text">Сайти, які працюють.</p>
                             <div class="card-stat">100+</div>
-                            <p class="card-subtext">Projects delivered.</p>
+                            <p class="card-subtext">Проєктів реалізовано.</p>
                         </div>
                     </div>
                     
@@ -101,7 +101,7 @@ get_header();
                                 <polyline points="8 6 2 12 8 18"/>
                             </svg>
                         </div>
-                        <p class="card-text">Design to code.</p>
+                        <p class="card-text">Дизайн у код.</p>
                     </div>
                 </div>
             </div>
@@ -109,11 +109,11 @@ get_header();
             <!-- Right Side: Main Title + Description + Tags -->
             <div class="col-6 col-start-7 hero-right">
                 <!-- Main Title - Right Center/Above Center -->
-                <h2 class="hero-title-large">WEB<br>DEVELOPMENT<br>STUDIO.</h2>
+                <h2 class="hero-title-large">ВЕБ-СТУДІЯ<br>РОЗРОБКИ.</h2>
                 
                 <!-- Description with Arrow Icon -->
                 <div class="hero-description-wrapper">
-                    <p class="hero-description">Full-cycle web creation from concept to launch. Design, development, or pixel-perfect implementation — we turn visions into functional reality.</p>
+                    <p class="hero-description">Повний цикл створення веб-сайтів від концепції до запуску. Дизайн, розробка або ідеальна верстка — ми перетворюємо бачення на функціональну реальність.</p>
                     <div class="hero-arrow-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
@@ -128,12 +128,12 @@ get_header();
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                         </svg>
-                        <span>DESIGN</span>
+                        <span>ДИЗАЙН</span>
                     </div>
                     <div class="hero-tags">
-                        <span class="hero-tag">DESIGN + CODE</span>
-                        <span class="hero-tag">MARKUP</span>
-                        <span class="hero-tag">RESPONSIVE</span>
+                        <span class="hero-tag">ДИЗАЙН + КОД</span>
+                        <span class="hero-tag">ВЕРСТКА</span>
+                        <span class="hero-tag">АДАПТИВНІСТЬ</span>
                     </div>
                 </div>
             </div>
