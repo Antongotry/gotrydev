@@ -1940,15 +1940,7 @@ body.home .top-nav .wide-container {
     padding-right: clamp(40px, 5vw, 120px);
 }
 
-/* Hero section adjustments */
-body.home .hero-section {
-    padding-left: 0;
-}
-
-body.home .hero-section .wide-container {
-    padding-left: clamp(40px, 5vw, 120px);
-    padding-right: clamp(40px, 5vw, 120px);
-}
+/* Hero section - content boundaries handled by body.home .wide-container above */
 
 /* Responsive - Hide sidebar on mobile */
 @media (max-width: 768px) {
