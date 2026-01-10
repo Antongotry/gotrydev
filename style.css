@@ -1467,21 +1467,9 @@ body.home .header-logo .logo-img {
     min-width: 0;
 }
 
-/* Right Content - Greeting + Button at right edge */
-.header-right {
-    flex-shrink: 0;
-    height: 54px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding-right: clamp(40px, 5vw, 120px); /* Right padding - matches reference edge */
-    padding-left: clamp(40px, 5vw, 120px); /* Left padding for spacing from center */
-    box-sizing: border-box;
-}
-
 /* Spacer - fills space between logo and right content */
 .header-spacer {
-    flex: 1; /* Takes all remaining space */
+    flex: 1; /* Takes all remaining space between logo and button */
     min-width: 0;
 }
 
@@ -1492,15 +1480,15 @@ body.home .header-logo .logo-img {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding-right: clamp(40px, 5vw, 120px); /* Right padding - button at edge */
-    padding-left: 0; /* No left padding - spacer handles spacing */
+    padding-right: clamp(40px, 5vw, 120px); /* Right padding - button at right edge */
+    padding-left: 0; /* No left padding - spacer fills all space, button at edge */
     box-sizing: border-box;
-    position: relative; /* For proper positioning */
+    position: relative;
 }
 
-/* On scroll: hide header-right, keep only logo */
+/* On scroll: hide header-right completely, keep only logo */
 body.home .top-nav.scrolled .header-right {
-    display: none; /* Completely hide on scroll */
+    display: none !important; /* Completely hide on scroll */
 }
 
 body.home .top-nav:not(.scrolled) .header-right {
