@@ -1,122 +1,71 @@
-# Gotry Theme
+# Gotry WordPress Project
 
-**Coming Soon сторінка з Heartbeat ефектом 💗**
+Репозиторий для темы Gotry и плагина Universal License Manager.
 
-## Опис
-
-Кастомна WordPress тема для antongotry.dev з унікальним heartbeat ефектом на головній сторінці:
-- 💓 Пульсація в ритмі серця (72 BPM)
-- 📈 Біла ECG кардіограма по центру
-- 🖼️ THREE.js glass distortion з вашим зображенням
-- 🖱️ Інтерактивність - все реагує на мишу
-- ⚡ Smooth 60fps анімації
-
-## Особливості Coming Soon
-
-💗 **Heartbeat Синхронізація** - 72 BPM (833ms per beat)  
-📈 **ECG Кардіограма** - біла лінія з P-QRS-T комплексом  
-✨ **THREE.js Glass Distortion** - WebGL shader з heartbeat пульсацією  
-🖼️ **Ваше зображення** - `phonegotry.webp` пульсує в ритмі  
-🖱️ **Mouse Interaction** - ECG амплітуда змінюється від курсора  
-🎨 **Glow Effects** - білі лінії з тінями  
-📱 **Респонсивний дизайн** - працює на всіх екранах  
-🔇 **Mute Button** - готово для додавання звуку  
-
-## Технології
-
-- **THREE.js r160** - 3D графічна бібліотека
-- **GLSL Shaders** - vertex та fragment шейдери
-- **WebGL** - апаратне прискорення
-- **Canvas API** - рендеринг ефекту
-
-## Структура
+## Структура репозитория
 
 ```
-gotry/
-├── style.css                          # Мета-інформація + базові стилі
-├── functions.php                      # Підключення assets
-├── header.php                         # Порожній header
-├── footer.php                         # Порожній footer
-├── front-page.php                     # Головна з canvas
-├── index.php                          # Для інших сторінок
-├── screenshot.png                     # Превью теми
-├── assets/
-│   ├── css/
-│   │   └── glass-distortion.css      # Canvas стилі
-│   └── js/
-│       └── glass-distortion.js       # THREE.js ефект
-└── README.md                          # Ця документація
+gotrydev/
+├── README.md
+├── .gitignore
+├── HOW-TO-COMMIT.md
+└── wp-content/
+    ├── themes/
+    │   └── gotry/              # Тема Gotry
+    │       ├── style.css
+    │       ├── functions.php
+    │       ├── header.php
+    │       ├── footer.php
+    │       ├── index.php
+    │       ├── front-page.php
+    │       ├── screenshot.png
+    │       ├── assets/
+    │       └── README.md
+    └── plugins/
+        └── universal-license-manager/  # Плагин Universal License Manager
+            ├── universal-license-manager.php
+            ├── includes/
+            ├── assets/
+            └── README.md
 ```
 
-## Установка
+## Настройка развертывания на Hostinger
 
-1. Завантажте тему в `/wp-content/themes/gotry/`
-2. Перейдіть в **Appearance → Themes** в WordPress Admin
-3. Активуйте тему **"Gotry"**
-4. Відкрийте головну сторінку
+**Репозиторий:** `https://github.com/Antongotry/gotrydev`  
+**Гілка:** `main`  
+**Шлях встановлення:** `wp-content`
 
-## Налаштування
+При развертывании:
+- Тема обновится в: `wp-content/themes/gotry/`
+- Плагин обновится в: `wp-content/plugins/universal-license-manager/`
 
-### Параметри ефекту
+## Обновление кода
 
-В `assets/js/glass-distortion.js` можна змінити:
-
-```javascript
-const uniforms = {
-    u_waveAmp: { value: 0.38 },        // Амплітуда хвиль
-    u_glassDisp: { value: 0.9 },       // Сила distortion
-    u_glassBlur: { value: 1.5 },       // Blur інтенсивність
-    u_darkness: { value: 0.2 }         // Затемнення (0.0 - 1.0)
-};
+### Обновление темы:
+```bash
+git add wp-content/themes/gotry/
+git commit -m "Update theme: описание изменений"
+git push origin main
 ```
 
-### Зміна зображення
-
-Щоб використати інше зображення, змініть в `glass-distortion.js`:
-
-```javascript
-const IMAGE_URL = "/wp-content/uploads/2025/10/your-image.webp";
+### Обновление плагина:
+```bash
+git add wp-content/plugins/universal-license-manager/
+git commit -m "Update plugin: описание изменений"
+git push origin main
 ```
 
-## Ефект
+### Обновление обоих:
+```bash
+git add wp-content/
+git commit -m "Update theme and plugin: описание изменений"
+git push origin main
+```
 
-**Fractal Glass Distortion:**
-- 🌊 Вертикальні glass смуги з wave деформацією
-- ✨ Динамічне освітлення та тіні
-- 🎭 Blur та saturation ефекти
-- 🖱️ Hover інтеракція з мишею
-- 📐 Fractal noise для органічності
+## Webhook
 
-## Підтримка браузерів
+Webhook настроен для автоматического обновления при push в GitHub:
+- Проверяет какие папки изменились (тема или плагин)
+- Обновляет только измененные папки на хостинге
 
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
-- ⚠️ Потребує WebGL підтримки
-
-## Продуктивність
-
-- Оптимізовано для 60 FPS
-- Адаптивний pixelRatio
-- High-performance rendering mode
-- Responsive resize handling
-
-## Автор
-
-**Anton Gotry**  
-📧 Telegram: [@notarikon](https://t.me/notarikon)  
-🌐 Website: [antongotry.dev](https://antongotry.dev)
-
-## Ліцензія
-
-GNU General Public License v2 or later
-
-## Версія
-
-**1.0.0** - Початковий реліз з THREE.js glass distortion
-
----
-
-*Based on Fractal Glass Distortion effect from secure-file-access plugin*
-
+Подробная инструкция: `HOW-TO-COMMIT.md`

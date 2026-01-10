@@ -1,27 +1,30 @@
-# Игнорировать всё кроме темы
+# Игнорировать всё кроме wp-content/themes/gotry и wp-content/plugins/universal-license-manager
 *
 !.gitignore
 !README.md
-!style.css
-!functions.php
-!header.php
-!footer.php
-!index.php
-!front-page.php
-!screenshot.png
-!assets/
-!assets/**
-!USAGE.md
 !HOW-TO-COMMIT.md
+!wp-content/
+!wp-content/themes/
+!wp-content/themes/gotry/
+!wp-content/themes/gotry/**
+!wp-content/plugins/
+!wp-content/plugins/universal-license-manager/
+!wp-content/plugins/universal-license-manager/**
 
-# Исключаем всё остальное (WordPress файлы, плагины и т.д.)
-wp-*
-xmlrpc.php
-license.txt
-readme.html
-wp-content/
-wp-admin/
-wp-includes/
+# Исключаем index.php файлы (стандартные WordPress файлы)
+wp-content/index.php
+wp-content/plugins/index.php
+wp-content/themes/index.php
+
+# Исключаем другие папки в wp-content
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/upgrade-temp-backup/
+wp-content/litespeed/
+wp-content/mu-plugins/
+wp-content/cache/
+wp-content/check-site.php
+wp-content/webhook-theme-deploy.php
 
 # Системные файлы
 .DS_Store
