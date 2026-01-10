@@ -865,12 +865,12 @@ body.home .video-background {
     }
     
     .hero-section {
-        padding-top: 100px;
-        padding-bottom: 60px;
+        padding-top: 90px;
+        padding-bottom: 40px;
     }
     
     .hero-left {
-        gap: 60px;
+        gap: 36px;
     }
     
     .hero-main-title {
@@ -897,7 +897,7 @@ body.home .video-background {
     }
     
     .hero-right {
-        gap: 32px;
+        gap: 24px;
     }
     
     .hero-title-large {
@@ -1197,7 +1197,7 @@ body.home .video-background {
     
     .hero-section {
         padding-top: 80px;
-        padding-bottom: 40px;
+        padding-bottom: 30px;
         height: auto;
         min-height: 100svh;
     }
