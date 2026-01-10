@@ -5,8 +5,11 @@
 
 // Підключення стилів та скриптів
 function gotry_enqueue_styles() {
+    // Версія теми для cache busting (змінюємо при оновленнях)
+    $theme_version = '3.0.1';
+    
     // Основні стилі теми
-    wp_enqueue_style('gotry-style', get_stylesheet_uri(), array(), '3.0.0');
+    wp_enqueue_style('gotry-style', get_stylesheet_uri(), array(), $theme_version);
     
     // JavaScript для lens-effect (тільки на головній сторінці)
     if (is_front_page()) {
@@ -14,12 +17,27 @@ function gotry_enqueue_styles() {
             'gotry-lens-effect',
             get_template_directory_uri() . '/assets/js/lens-effect.js',
             array(), // Залежності
-            '3.0.0',
+            $theme_version,
             true // В footer
         );
     }
 }
 add_action('wp_enqueue_scripts', 'gotry_enqueue_styles');
+
+// Очищення кешу при збереженні теми
+function gotry_clear_cache() {
+    // Спроба очистити різні типи кешу
+    if (function_exists('wp_cache_flush')) {
+        wp_cache_flush();
+    }
+    if (function_exists('w3tc_flush_all')) {
+        w3tc_flush_all();
+    }
+    if (function_exists('wp_super_cache_flush')) {
+        wp_super_cache_flush();
+    }
+}
+add_action('after_switch_theme', 'gotry_clear_cache');
 
 // Підтримка основних WordPress функцій
 function gotry_setup() {
