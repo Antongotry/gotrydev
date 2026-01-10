@@ -1521,13 +1521,18 @@ body.home .hero-section {
     position: relative;
 }
 
-body.home .hero-section .wide-container {
+/* Wide container for home page - aligns with header boundaries */
+body.home .hero-section .wide-container,
+body.home .wide-container {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: clamp(40px, 5vw, 120px);
-    padding-right: clamp(40px, 5vw, 120px);
+    max-width: none; /* No max-width constraint */
+    margin-left: 0;
+    margin-right: 0;
+    /* Left padding matches: hamburger (54px) + logo padding (clamp(16px, 2vw, 24px)) */
+    padding-left: calc(54px + clamp(16px, 2vw, 24px)); /* Aligns with logo left edge */
+    /* Right padding matches: header-right padding (clamp(40px, 5vw, 120px)) */
+    padding-right: clamp(40px, 5vw, 120px); /* Aligns with button right edge */
+    box-sizing: border-box;
 }
 
 .hero-content {
