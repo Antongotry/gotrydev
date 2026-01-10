@@ -24,7 +24,8 @@ wp-content/litespeed/
 wp-content/mu-plugins/
 wp-content/cache/
 wp-content/check-site.php
-wp-content/webhook-theme-deploy.php
+# Разрешаем webhook для развертывания
+!wp-content/webhook-deploy.php
 
 # Системные файлы
 .DS_Store
