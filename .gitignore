@@ -1,21 +1,37 @@
-# Игнорировать всё кроме темы Gotry и README
+# Игнорировать всё кроме файлов темы
 *
 !.gitignore
 !README.md
-!wp-content/
-!wp-content/themes/
-!wp-content/themes/gotry/
-!wp-content/themes/gotry/**
+!style.css
+!functions.php
+!header.php
+!footer.php
+!index.php
+!front-page.php
+!screenshot.png
+!assets/
+!assets/**
+!USAGE.md
 
-# Системные файлы (даже в теме)
-**/.DS_Store
-**/.DS_Store?
-**/._*
-**/.Spotlight-V100
-**/.Trashes
+# Системные файлы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 
 # IDE
-**/.idea/
-**/.vscode/
-**/*.sublime-project
-**/*.sublime-workspace
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Временные файлы
+*.swp
+*.swo
+*~
