@@ -9,29 +9,18 @@ get_header();
 
 <!-- Main Grid Container -->
 <div class="main-grid" id="main-grid">
-    <!-- Left Sidebar with Hamburger Menu -->
-    <div class="header-side" id="header-side">
-        <!-- Hamburger Menu Button (left edge) -->
+    <!-- Header Navigation - Full Width with Hamburger -->
+    <header class="top-nav" id="top-nav">
+        <!-- Hamburger Menu Button (left edge, part of header) -->
         <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
             <span class="hamburger-icon">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </span>
-            <span class="hamburger-line-right"></span>
         </button>
         
-        <!-- Scroll Indicator - vertical line with dot at top -->
-        <div class="scroll-indicator">
-            <div class="scroll-dot scroll-dot-top"></div>
-            <div class="scroll-line"></div>
-        </div>
-    </div>
-    
-    <!-- Main Content Area -->
-    <div class="main-content">
-        <!-- Header Navigation -->
-        <header class="top-nav" id="top-nav">
+        <div class="header-content-wrapper">
             <div class="wide-container">
                 <div class="nav-wrapper">
                     <!-- Left: Logo with dots -->
@@ -65,7 +54,23 @@ get_header();
                 <!-- Header divider line -->
                 <div class="header-divider"></div>
             </div>
-        </header>
+        </div>
+    </header>
+    
+    <!-- Left Sidebar - Below Header with Right Line -->
+    <div class="header-side" id="header-side">
+        <!-- Right vertical line that goes down from header -->
+        <div class="sidebar-right-line"></div>
+        
+        <!-- Scroll Indicator - vertical line with dot at top -->
+        <div class="scroll-indicator">
+            <div class="scroll-dot scroll-dot-top"></div>
+            <div class="scroll-line"></div>
+        </div>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div class="main-content">
 
         <!-- Hero Section -->
         <section class="hero-section" id="hero">

@@ -1390,17 +1390,31 @@ body.home .site-footer {
    KONPO-STYLE DESIGN OVERRIDES
    ============================================ */
 
-/* Header - Konpo Style - Always visible, fixed position */
+/* Header - Konpo Style - Full Width with Hamburger */
 body.home .top-nav {
     position: fixed;
     top: 0;
-    left: 54px;
+    left: 0;
     right: 0;
+    width: 100%;
     background: transparent;
-    padding: 24px 0 0 0;
+    padding: 0;
     transition: background 0.3s ease, padding 0.3s ease;
     border-bottom: 1px solid transparent;
     z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Header content wrapper - everything except hamburger */
+.header-content-wrapper {
+    flex: 1;
+    margin-left: 54px; /* Space for hamburger */
+    padding: 24px 0 0 0;
+}
+
+body.home .top-nav.scrolled .header-content-wrapper {
+    padding: 16px 0 0 0;
 }
 
 body.home .top-nav.scrolled {
@@ -1811,15 +1825,15 @@ body.home .hero-section .wide-container {
     position: relative;
 }
 
-/* Left Sidebar - 54px width with Hamburger Menu and Scroll Indicator */
+/* Left Sidebar - Below Header, 54px width with Right Line and Scroll Indicator */
 .header-side {
     flex: 0 0 54px;
     width: 54px;
-    height: 100vh;
+    min-height: calc(100vh - 54px); /* Full height minus header */
     position: fixed;
     left: 0;
-    top: 0;
-    z-index: 1001;
+    top: 54px; /* Start below header */
+    z-index: 999;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -1829,7 +1843,18 @@ body.home .hero-section .wide-container {
     opacity: 1; /* Always visible - no animation */
 }
 
-/* Hamburger Menu Button - at the very left edge, 54x54px square */
+/* Right vertical line on sidebar that goes down from header divider */
+.sidebar-right-line {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: #1D1D1D;
+    z-index: 1;
+}
+
+/* Hamburger Menu Button - Part of Header, Left Edge, 54x54px */
 .hamburger-menu {
     width: 54px;
     height: 54px;
@@ -1840,23 +1865,20 @@ body.home .hero-section .wide-container {
     padding: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 0;
     flex-shrink: 0;
-    margin-bottom: 0;
+    z-index: 2;
 }
 
-/* Hamburger icon - 3 lines, positioned on the left */
+/* Hamburger icon - 3 lines, centered */
 .hamburger-icon {
     width: 18px;
     height: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
-    left: 18px; /* Center horizontally in 54px block */
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
     z-index: 2;
 }
 
@@ -1867,28 +1889,17 @@ body.home .hero-section .wide-container {
     display: block;
 }
 
-/* Right vertical line that forms square with hamburger block */
-.hamburger-line-right {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 1px;
-    height: 54px;
-    background: #1D1D1D;
-    z-index: 1;
-}
-
-/* Scroll Indicator - vertical line with dot at top, positioned below hamburger */
+/* Scroll Indicator - vertical line with dot at top, in sidebar */
 .scroll-indicator {
     position: relative;
     width: 1px;
-    height: calc(100vh - 54px); /* Full height minus hamburger block */
+    height: calc(100vh - 54px); /* Full height minus header */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding-top: 24px;
-    margin-top: 54px; /* Space for hamburger menu */
+    z-index: 2;
 }
 
 .scroll-line {
@@ -1916,11 +1927,14 @@ body.home .hero-section .wide-container {
 }
 
 /* Main Content Area - flex: 1 to fill remaining space */
+/* Main Content Area - Below Header */
 .main-content {
     flex: 1;
     width: 100%;
     min-height: 100vh;
-    margin-left: 54px;
+    margin-left: 54px; /* Space for sidebar */
+    margin-top: 54px; /* Space for header */
+    padding-top: 0;
 }
 
 /* Header styles moved to Konpo section above */
