@@ -528,15 +528,15 @@ body.home .header-logo .logo-img {
     min-width: 0;
 }
 
-/* Right Content - Greeting + Button at right edge (no left padding, only right) */
+/* Right Content - Greeting + Button with symmetric padding matching logo padding */
 .header-right {
     flex-shrink: 0;
     height: 54px;
     display: flex;
     align-items: center;
     gap: 16px;
-    padding-right: clamp(40px, 5vw, 120px); /* Right padding - button at right edge */
-    padding-left: 0; /* No left padding - spacer fills all space, button at edge */
+    padding-right: clamp(16px, 2vw, 24px); /* Symmetric to logo padding - creates logical symmetry */
+    padding-left: 0; /* No left padding - spacer fills all space */
     box-sizing: border-box;
     position: relative;
 }
@@ -623,17 +623,17 @@ body.home .hero-section {
     position: relative;
 }
 
-/* Wide container for home page - aligns with header boundaries */
+/* Wide container for home page - aligns with logo left edge and symmetric right padding */
 body.home .hero-section .wide-container,
 body.home .wide-container {
     width: 100%;
     max-width: none; /* No max-width constraint */
     margin-left: 0;
     margin-right: 0;
-    /* Left padding matches: hamburger (54px) + logo padding (clamp(16px, 2vw, 24px)) */
+    /* Left padding matches: sidebar (54px) + logo padding (clamp(16px, 2vw, 24px)) = logo left edge */
     padding-left: calc(54px + clamp(16px, 2vw, 24px)); /* Aligns with logo left edge */
-    /* Right padding matches: header-right padding (clamp(40px, 5vw, 120px)) */
-    padding-right: clamp(40px, 5vw, 120px); /* Aligns with button right edge */
+    /* Right padding symmetric to logo padding (clamp(16px, 2vw, 24px)) - creates logical symmetry */
+    padding-right: clamp(16px, 2vw, 24px); /* Symmetric to logo padding */
     box-sizing: border-box;
 }
 
@@ -1037,12 +1037,7 @@ body.home .wide-container {
     position: relative;
 }
 
-/* Header styles moved to Konpo section above */
-
-body.home .top-nav .wide-container {
-    padding-left: clamp(40px, 5vw, 120px);
-    padding-right: clamp(40px, 5vw, 120px);
-}
+/* Header styles moved to Konpo section above - no wide-container in header anymore */
 
 /* Hero section - content boundaries handled by body.home .wide-container above */
 
