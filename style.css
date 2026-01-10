@@ -465,6 +465,7 @@ body.home .video-background {
     margin: 0 auto;
     padding: 0;
     gap: clamp(20px, 2.5vw, 40px);
+    box-sizing: border-box;
 }
 
 .hero-left {
@@ -474,6 +475,10 @@ body.home .video-background {
     gap: 80px;
     height: 100%;
     align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .hero-right {
@@ -484,6 +489,10 @@ body.home .video-background {
     height: 100%;
     align-items: flex-start;
     padding-left: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
 }
 
 /* Foreground layer removed - using gradient background instead */
@@ -535,6 +544,9 @@ body.home .video-background {
     gap: 16px;
     align-items: flex-start;
     margin-top: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-card {
@@ -544,6 +556,8 @@ body.home .video-background {
     position: relative;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-card-white {
@@ -553,6 +567,10 @@ body.home .video-background {
     gap: 0;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     width: 320px;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: visible;
 }
 
 .hero-card-white .card-icon {
@@ -568,6 +586,8 @@ body.home .video-background {
     gap: 12px;
     margin-top: 0;
     padding-top: 36px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-card-dark {
@@ -576,13 +596,18 @@ body.home .video-background {
     padding: 20px 24px;
     gap: 12px;
     width: 280px;
+    max-width: 100%;
     margin-left: 40px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: visible;
 }
 
 .hero-card-dark .card-icon {
     position: absolute;
     top: 20px;
     right: 24px;
+    z-index: 1;
 }
 
 .card-icon {
@@ -877,156 +902,37 @@ body.home .video-background {
 }
 
 @media (max-width: 900px) {
-    .col-5, .col-7 {
-        grid-column: span 12;
+    .col-5, .col-6 {
+        grid-column: span 12 !important;
+        grid-column-start: 1 !important;
     }
     
     .hero-left, .hero-right {
         gap: 40px;
         padding-top: 0;
+        width: 100%;
+        max-width: 100%;
     }
     
     .hero-cards-container {
         margin-top: 40px;
+        gap: 16px;
     }
     
     .hero-card-white {
         width: 100%;
-        max-width: 320px;
+        max-width: 100%;
+        margin-left: 0;
     }
     
     .hero-card-dark {
         width: 100%;
-        max-width: 280px;
+        max-width: 100%;
         margin-left: 0;
     }
-    .container {
-        padding-left: var(--container-padding-tablet);
-        padding-right: var(--container-padding-tablet);
-    }
     
-    .nav-container {
-        padding: 20px var(--container-padding-tablet);
-        gap: 28px;
-    }
-    
-    .nav-links {
-        gap: 28px;
-    }
-    
-    .nav-link {
-        font-size: 12px;
-    }
-    
-    .social-icon {
-        width: 34px;
-        height: 34px;
-    }
-    
-    .hero-section {
-        height: 100svh;
-        padding-top: 90px;
-        overflow: auto;
-    }
-    
-    .hero-section .container {
-        padding: 40px var(--container-padding-tablet);
-        height: auto;
-        min-height: calc(100vh - 90px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .hero-main-wrapper {
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-        align-items: start;
-        width: 100%;
-        max-width: 1200px;
-        padding-top: 0;
-    }
-    
-    .hero-left-content {
-        gap: 20px;
-        max-width: 100%;
-    }
-    
-    .hero-main-title {
-        font-size: clamp(38px, 5vw, 58px);
-        line-height: 1.15;
-    }
-    
-    .hero-subtitle {
-        font-size: clamp(14px, 1.6vw, 16px);
-        line-height: 1.5;
-    }
-    
-    .hero-cards {
-        margin-top: 24px;
-        gap: 14px;
-    }
-    
-    .hero-card {
-        padding: 18px 22px;
-        gap: 12px;
-    }
-    
-    .card-stat {
-        font-size: 44px;
-    }
-    
-    .hero-right-content {
-        gap: 20px;
-        max-width: 100%;
-    }
-    
-    .hero-title-large {
-        font-size: clamp(50px, 6.5vw, 75px);
-        line-height: 1.1;
-        letter-spacing: -1.5px;
-    }
-    
-    .hero-description-wrapper {
-        gap: 14px;
-    }
-    
-    .hero-description {
-        font-size: clamp(14px, 1.6vw, 15px);
-        line-height: 1.6;
-        max-width: 100%;
-    }
-    
-    .hero-arrow-icon {
-        width: 44px;
-        height: 44px;
-        min-width: 44px;
-    }
-    
-    .hero-arrow-icon svg {
-        width: 18px;
-        height: 18px;
-    }
-    
-    .hero-tags {
-        margin-top: 24px;
-        gap: 10px;
-    }
-    
-    .hero-tag {
-        font-size: 10px;
-        padding: 7px 14px;
-    }
-    
-    @media (max-width: 900px) {
-        .hero-main-wrapper {
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-        
-        .hero-right-content {
-            margin-left: 0;
-        }
+    .hero-right {
+        padding-left: 0;
     }
 }
 
@@ -1038,16 +944,32 @@ body.home .video-background {
     }
     
     .grid-12 {
+        gap: clamp(16px, 2vw, 32px);
+    }
+    
+    .top-nav .grid-12 {
         gap: clamp(12px, 1.5vw, 24px);
     }
     
-    .col-1, .col-2, .col-6 {
+    .col-2, .col-5, .col-6 {
         grid-column: span 12;
+        grid-column-start: 1;
     }
     
-    .nav-center, .nav-right {
+    .nav-left, .nav-center, .nav-right {
+        grid-column: span 12;
+        grid-column-start: 1;
+        justify-self: start;
+    }
+    
+    .nav-center {
+        margin-top: 12px;
         justify-content: flex-start;
-        margin-top: 16px;
+    }
+    
+    .nav-right {
+        margin-top: 12px;
+        justify-content: flex-start;
     }
     
     .nav-links {
@@ -1073,12 +995,31 @@ body.home .video-background {
         padding-top: 90px;
         padding-bottom: 50px;
         height: auto;
-        min-height: 100vh;
+        min-height: 100svh;
+    }
+    
+    .hero-section .wide-container {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .hero-grid {
+        align-items: start;
+        gap: clamp(20px, 3vw, 40px);
     }
     
     .hero-left {
         gap: 40px;
         padding-top: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .hero-right {
+        gap: 28px;
+        padding-left: 0;
+        width: 100%;
+        max-width: 100%;
     }
     
     .hero-main-title {
@@ -1092,27 +1033,26 @@ body.home .video-background {
     .hero-cards-container {
         margin-top: 32px;
         gap: 12px;
+        width: 100%;
     }
     
     .hero-card-white {
         width: 100%;
-        max-width: 300px;
+        max-width: 100%;
         padding: 20px 22px;
+        box-sizing: border-box;
     }
     
     .hero-card-dark {
         width: 100%;
-        max-width: 260px;
+        max-width: 100%;
         padding: 16px 20px;
         margin-left: 0;
+        box-sizing: border-box;
     }
     
     .card-stat {
         font-size: 44px;
-    }
-    
-    .hero-right {
-        gap: 28px;
     }
     
     .hero-title-large {
@@ -1124,10 +1064,12 @@ body.home .video-background {
         flex-direction: column;
         gap: 16px;
         align-items: flex-start;
+        width: 100%;
     }
     
     .hero-description {
         font-size: clamp(11px, 2vw, 13px);
+        max-width: 100%;
     }
     
     .hero-arrow-icon {
@@ -1145,6 +1087,7 @@ body.home .video-background {
     .hero-tags-section {
         margin-top: 32px;
         gap: 12px;
+        width: 100%;
     }
     
     .hero-tag {
@@ -1169,8 +1112,33 @@ body.home .video-background {
         padding: 20px 0;
     }
     
-    .logo-icon {
-        font-size: 18px;
+    .top-nav .wide-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .nav-left, .nav-center, .nav-right {
+        grid-column: span 12;
+        grid-column-start: 1;
+        margin-top: 0;
+    }
+    
+    .nav-center {
+        margin-top: 12px;
+        order: 2;
+    }
+    
+    .nav-right {
+        margin-top: 12px;
+        order: 3;
+    }
+    
+    .logo-link {
+        height: 20px;
+    }
+    
+    .logo-img {
+        height: 20px;
     }
     
     .hamburger-menu {
@@ -1178,14 +1146,23 @@ body.home .video-background {
         height: 14px;
     }
     
+    .hamburger-line {
+        height: 1px;
+    }
+    
     .nav-links {
-        gap: 20px;
+        gap: 16px;
         flex-wrap: wrap;
+        width: 100%;
     }
     
     .nav-link {
         font-size: 9px;
         letter-spacing: 1.5px;
+    }
+    
+    .nav-social {
+        gap: 10px;
     }
     
     .social-icon {
@@ -1202,37 +1179,87 @@ body.home .video-background {
         padding-top: 80px;
         padding-bottom: 40px;
         height: auto;
-        min-height: 100vh;
+        min-height: 100svh;
+    }
+    
+    .hero-section .wide-container {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .hero-grid {
+        align-items: start;
+        gap: 32px;
+        width: 100%;
+    }
+    
+    .col-5, .col-6 {
+        grid-column: span 12 !important;
+        grid-column-start: 1 !important;
     }
     
     .hero-left {
         gap: 32px;
+        width: 100%;
+        max-width: 100%;
+        padding-top: 0;
+    }
+    
+    .hero-right {
+        gap: 24px;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        margin-top: 0;
     }
     
     .hero-main-title {
         font-size: clamp(32px, 8vw, 48px);
         letter-spacing: -1.5px;
+        line-height: 1.15;
     }
     
     .hero-subtitle {
         font-size: clamp(10px, 2.5vw, 12px);
+        line-height: 1.5;
     }
     
     .hero-cards-container {
         margin-top: 24px;
-        gap: 10px;
+        gap: 12px;
+        width: 100%;
     }
     
     .hero-card-white {
         width: 100%;
+        max-width: 100%;
         padding: 18px 20px;
-        gap: 12px;
+        box-sizing: border-box;
+    }
+    
+    .hero-card-white .card-icon {
+        top: 18px;
+        left: 20px;
+    }
+    
+    .hero-card-white .card-content {
+        padding-top: 32px;
     }
     
     .hero-card-dark {
         width: 100%;
+        max-width: 100%;
         padding: 16px 18px;
-        gap: 10px;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+    
+    .hero-card-dark .card-icon {
+        top: 16px;
+        right: 18px;
     }
     
     .card-icon {
@@ -1242,37 +1269,44 @@ body.home .video-background {
     
     .card-text {
         font-size: 12px;
+        line-height: 1.5;
     }
     
     .card-stat {
         font-size: 40px;
+        line-height: 1;
+        margin: 8px 0;
     }
     
     .card-subtext {
         font-size: 10px;
-    }
-    
-    .hero-right {
-        gap: 24px;
+        line-height: 1.4;
     }
     
     .hero-title-large {
         font-size: clamp(40px, 9vw, 64px);
         letter-spacing: -1.5px;
+        line-height: 1.1;
     }
     
     .hero-description-wrapper {
+        flex-direction: column;
         gap: 12px;
+        align-items: flex-start;
+        width: 100%;
     }
     
     .hero-description {
         font-size: clamp(10px, 2.5vw, 12px);
+        line-height: 1.6;
+        max-width: 100%;
     }
     
     .hero-arrow-icon {
         width: 32px;
         height: 32px;
         min-width: 32px;
+        align-self: flex-end;
     }
     
     .hero-arrow-icon svg {
@@ -1283,6 +1317,7 @@ body.home .video-background {
     .hero-tags-section {
         margin-top: 24px;
         gap: 10px;
+        width: 100%;
     }
     
     .hero-branding-badge {
@@ -1297,12 +1332,14 @@ body.home .video-background {
     
     .hero-tags {
         gap: 8px;
+        width: 100%;
     }
     
     .hero-tag {
         font-size: 8px;
         padding: 6px 10px;
         letter-spacing: 1px;
+        white-space: nowrap;
     }
 }
 
