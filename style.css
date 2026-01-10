@@ -915,7 +915,13 @@ body.home .video-background {
     }
     
     .hero-left-indicator {
-        display: none; /* Ховаємо на мобільних */
+        left: var(--container-padding-mobile); /* Адаптивний відступ */
+        bottom: 20px; /* Зменшено відступ знизу на мобільних */
+    }
+    
+    .scroll-indicator-text {
+        font-size: 9px; /* Мінімальний розмір на мобільних */
+        letter-spacing: 0.5px;
     }
     
     .hero-center-section {
