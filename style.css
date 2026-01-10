@@ -1415,7 +1415,7 @@ body.home .top-nav.scrolled {
 /* Header content wrapper - everything except hamburger, fixed height */
 .header-content-wrapper {
     flex: 1;
-    margin-left: 0; /* No left margin - hamburger is inside header */
+    margin-left: 54px; /* Space for hamburger */
     padding: 0;
     height: 54px; /* Fixed height to match hamburger */
     display: flex;
@@ -1424,13 +1424,13 @@ body.home .top-nav.scrolled {
     position: relative;
 }
 
-/* Wide container in header - no left padding to avoid white gap */
+/* Wide container in header - adjust padding to avoid white gap */
 body.home .top-nav .header-content-wrapper .wide-container {
-    padding-left: clamp(40px, 5vw, 120px); /* Only horizontal padding, no left margin */
+    padding-left: clamp(40px, 5vw, 120px);
     padding-right: clamp(40px, 5vw, 120px);
     padding-top: 0;
     padding-bottom: 0;
-    margin-left: 54px; /* Space for hamburger */
+    margin-left: 0; /* No additional left margin */
 }
 
 /* No changes on scroll - wrapper stays same size */
