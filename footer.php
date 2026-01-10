@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         video.preload = 'auto';
         video.playsInline = true;
         video.muted = true;
-        video.playbackRate = 1.0; // Нормальна швидкість (без уповільнення)
+        video.playbackRate = 1.0;
         
         // Принудительно запускаем видео
         video.play().catch(function(error) {
@@ -38,20 +38,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }, { once: true });
         });
         
-        // Событие когда видео загружено - переконаємося що швидкість нормальна
+        // Событие когда видео загружено
         video.addEventListener('loadeddata', function() {
-            video.playbackRate = 1.0; // Нормальна швидкість
+            video.playbackRate = 1.0;
             video.style.opacity = '1';
             videoContainer.style.background = 'transparent';
         });
         
-        // Событие когда видео начинает играть - переконаємося що швидкість нормальна
+        // Событие когда видео начинает играть
         video.addEventListener('playing', function() {
-            video.playbackRate = 1.0; // Нормальна швидкість
+            video.playbackRate = 1.0;
             video.style.opacity = '1';
         });
         
-        // Якщо відео вже завантажене, застосуємо нормальну швидкість
+        // Якщо відео вже завантажене
         if (video.readyState >= 2) {
             video.playbackRate = 1.0;
         }

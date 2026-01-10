@@ -1,11 +1,39 @@
 <?php
 /**
  * Template for Front Page (Home)
- * AI Landing Page з Video Background
+ * Creative Branding Agency Layout
  */
 
 get_header(); 
 ?>
+
+<!-- Header Navigation -->
+<header class="top-nav">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <span class="logo-text">R=</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#home" class="nav-link">HOME</a>
+            <a href="#services" class="nav-link">SERVICES</a>
+            <a href="#cases" class="nav-link">CASES</a>
+        </nav>
+        <div class="nav-social">
+            <a href="#" class="social-icon" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>
 
 <!-- Video Background -->
 <div class="video-background" id="video-background">
@@ -16,15 +44,9 @@ get_header();
     <div class="video-overlay"></div>
 </div>
 
-<!-- Foreground Object Layer (для об'єкта поверх відео, як щупальця восьминога) -->
-<div class="hero-foreground-layer" id="heroForegroundLayer">
-    <!-- Тут буде об'єкт (3D модель, зображення, SVG) який накладається поверх відео -->
-    <!-- z-index буде між відео (z-1) та контентом (z-10) -->
-</div>
-
-<!-- Hero Section (як на референсі) -->
+<!-- Hero Section -->
 <section class="hero-section" id="hero">
-    <!-- Scroll Indicator (тільки на першому блоці, внизу зліва як на референсі) -->
+    <!-- Scroll Indicator (bottom left) -->
     <div class="hero-left-indicator">
         <p class="scroll-indicator-text">scroll</p>
         <p class="scroll-indicator-text">to explore</p>
@@ -32,53 +54,54 @@ get_header();
     
     <div class="container">
         <div class="hero-main-wrapper">
-            <!-- Центральна частина: Великий заголовок з split text -->
-            <div class="hero-center-section">
-                <h1 class="hero-title-split">
-                    <span class="title-word">Перетворюю</span>
-                    <span class="title-word highlight">код</span>
-                    <span class="title-word">у</span>
-                    <span class="title-word highlight">красивий</span>
-                    <span class="title-word">дизайн</span>
-                </h1>
+            <!-- Left Content Block -->
+            <div class="hero-left-content">
+                <h1 class="hero-main-title">SOURCE OF BOLD IDEAS/</h1>
+                <p class="hero-subtitle">Where brands are reborn and boundaries are erased.</p>
                 
-                <div class="hero-meta">
-                    <p class="hero-tagline">Веб-сайти від ідеї до запуску</p>
-                    <p class="hero-copyright">© 2026 Gotry</p>
-                </div>
-                
-                <!-- CTA Links (як на Lenis - коротші) -->
-                <div class="hero-cta-links">
-                    <a href="#contact" class="cta-link" data-analytics="cta-hero-contact">
-                        <span class="cta-link-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 3h8v8H3zM13 13h8v8h-8zM3 13h8v8H3zM13 3h8v8h-8z"/>
+                <div class="hero-cards">
+                    <!-- White Card -->
+                    <div class="hero-card hero-card-white">
+                        <div class="card-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
                             </svg>
-                        </span>
-                        <span class="cta-link-text">Консультація</span>
-                    </a>
-                    <a href="https://t.me/notarikon" class="cta-link" target="_blank" rel="noopener" data-analytics="cta-hero-telegram">
-                        <span class="cta-link-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </div>
+                        <p class="card-text">Brands that lead forward.</p>
+                        <div class="card-stat">85%</div>
+                        <p class="card-subtext">Win beyond the market.</p>
+                    </div>
+                    
+                    <!-- Dark Red Card -->
+                    <div class="hero-card hero-card-red">
+                        <div class="card-icon star-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                             </svg>
-                        </span>
-                        <span class="cta-link-text">Telegram</span>
-                    </a>
+                        </div>
+                        <p class="card-text">Reload your brand.</p>
+                        <p class="card-description">We craft bold brands with strategies built to grow and lead globally.</p>
+                    </div>
                 </div>
             </div>
             
-            <!-- Права частина: Статистика (як на Lenis - мінімалістична) -->
-            <div class="hero-right-meta">
-                <div class="hero-stats-minimal">
-                    <div class="stat-minimal">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label-small">проектів</span>
-                    </div>
-                    <div class="stat-minimal">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label-small">якість</span>
-                    </div>
+            <!-- Right Content Block -->
+            <div class="hero-right-content">
+                <h2 class="hero-title-large">CREATIVE<br>BRANDING<br>AGENCY.</h2>
+                <p class="hero-description">We craft bold identities that stand out. From strategy to visual DNA — we help brands redefine, not just refresh.</p>
+                
+                <!-- Tags at bottom right -->
+                <div class="hero-tags">
+                    <span class="hero-tag">DIGITAL CAMPAIGNS</span>
+                    <span class="hero-tag">CONTENT</span>
+                    <span class="hero-tag">CREATIVE STRATEGY</span>
+                    <span class="hero-tag hero-tag-branding">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        BRANDING
+                    </span>
                 </div>
             </div>
         </div>

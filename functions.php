@@ -10,6 +10,14 @@ function gotry_enqueue_styles() {
         ? filemtime(get_stylesheet_directory() . '/style.css') 
         : '3.1.0';
     
+    // Google Fonts - Inter
+    wp_enqueue_style(
+        'google-fonts-inter',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap',
+        array(),
+        null
+    );
+    
     // Lenis CSS для smooth scroll
     wp_enqueue_style(
         'lenis-css',
@@ -22,7 +30,7 @@ function gotry_enqueue_styles() {
     wp_enqueue_style(
         'gotry-style',
         get_stylesheet_uri(),
-        array('lenis-css'),
+        array('google-fonts-inter', 'lenis-css'),
         $style_version
     );
     

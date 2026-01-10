@@ -14,17 +14,16 @@ Tags: landing, web-development, glassmorphism, modern
    CSS VARIABLES (Custom Properties)
    ============================================ */
 :root {
-    /* Colors - Спокійна палітра: білий + відтінки чорного */
-    --color-primary: #ffffff;        /* Білий */
-    --color-secondary: #1a1a1a;      /* Темно-сірий (майже чорний) */
-    --color-accent: #2a2a2a;         /* Середньо-сірий */
-    --color-highlight: #f5f5f5;      /* Світло-сірий */
+    /* Colors - Dark red/burgundy palette like reference */
+    --color-primary: #ffffff;        /* White */
+    --color-red-dark: #2d0a0a;       /* Dark red/burgundy */
+    --color-red-medium: #4a1414;     /* Medium red */
+    --color-orange-light: #ff6b3d;   /* Orange-red light source */
     --color-text: #ffffff;
-    --color-text-muted: rgba(255, 255, 255, 0.85);
-    --color-text-secondary: rgba(255, 255, 255, 0.65);
+    --color-text-muted: rgba(255, 255, 255, 0.9);
+    --color-text-secondary: rgba(255, 255, 255, 0.7);
     --color-text-dark: #1a1a1a;
-    --color-bg-dark: #0a0a0a;        /* Дуже темний чорний */
-    --color-bg-code: #18181b;
+    --color-bg-dark: #1a0505;        /* Very dark red background */
     
     /* Glassmorphism */
     --glass-bg: rgba(255, 255, 255, 0.1);
@@ -34,13 +33,12 @@ Tags: landing, web-development, glassmorphism, modern
     --glass-blur: 20px;
     --glass-blur-strong: 40px;
     
-    /* Gradients - Спокійні, м'які */
-    --gradient-primary: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
-    --gradient-subtle: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-    --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    /* Gradients - Red/orange lighting like reference */
+    --gradient-primary: radial-gradient(ellipse at right center, rgba(255, 107, 61, 0.4) 0%, rgba(255, 69, 0, 0.2) 30%, rgba(74, 20, 20, 0.6) 60%, rgba(26, 5, 5, 1) 100%);
+    --gradient-red: linear-gradient(135deg, #4a1414 0%, #3a0f0f 50%, #2d0a0a 100%);
     
-    /* Typography */
-    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    /* Typography - Inter font */
+    --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
     
     --font-size-base: 16px;
@@ -143,6 +141,7 @@ body {
     background: var(--color-bg-dark);
     color: var(--color-text);
     overflow-x: hidden;
+    font-weight: 400;
 }
 
 body.home {
@@ -163,7 +162,7 @@ body.home .site-footer {
     height: 100vh;
     z-index: 0;
     overflow: hidden;
-    background: #000;
+    background: #1a0505;
 }
 
 body.home .video-background {
@@ -182,8 +181,8 @@ body.home .video-background {
     display: block;
     opacity: 1;
     background: transparent;
-    will-change: transform; /* Оптимізація для плавності */
-    transform: translateZ(0); /* Hardware acceleration */
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .video-overlay {
@@ -192,8 +191,8 @@ body.home .video-background {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.3) 0%, rgba(15, 15, 15, 0.2) 50%, rgba(10, 10, 10, 0.3) 100%);
-    z-index: 2; /* Вище відео (z-1), нижче foreground layer (z-5) */
+    background: var(--gradient-primary);
+    z-index: 2;
     pointer-events: none;
     opacity: 1;
 }
@@ -217,7 +216,7 @@ body.home .video-background {
 }
 
 /* ============================================
-   TOP NAVIGATION (як на референсі)
+   TOP NAVIGATION (Reference Style)
    ============================================ */
 .top-nav {
     position: fixed;
@@ -225,22 +224,14 @@ body.home .video-background {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
     transition: all var(--transition-base);
 }
 
-.top-nav.scrolled {
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
 .nav-container {
-    max-width: var(--container-max-width);
+    max-width: 100%;
     margin: 0 auto;
-    padding: 20px var(--container-padding-desktop);
+    padding: 24px var(--container-padding-desktop);
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
@@ -248,81 +239,82 @@ body.home .video-background {
 }
 
 .nav-logo {
-    font-size: 24px;
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.nav-logo a {
-    color: inherit;
-    text-decoration: none;
+.logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: -0.5px;
 }
 
 .nav-links {
     display: flex;
-    gap: 32px;
+    gap: 40px;
     justify-content: center;
     align-items: center;
 }
 
 .nav-link {
-    color: var(--color-text-muted);
-    font-size: 14px;
-    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    font-size: 13px;
+    font-weight: 500;
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: all var(--transition-fast);
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--color-text);
-    background: rgba(255, 255, 255, 0.1);
+.nav-link:hover {
+    opacity: 0.7;
 }
 
-.nav-actions {
+.nav-social {
     display: flex;
     gap: 16px;
     align-items: center;
 }
 
-.nav-btn {
-    padding: 10px 24px;
-    border-radius: 20px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+.social-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
     color: var(--color-text);
-    border: 1px solid var(--glass-border);
-    font-size: 14px;
-    font-weight: var(--font-weight-semibold);
     text-decoration: none;
-    transition: all var(--transition-base);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-fast);
 }
 
-.nav-btn:hover {
-    transform: translateY(-2px);
-    background: var(--glass-bg-hover);
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+.social-icon:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon svg {
+    width: 16px;
+    height: 16px;
 }
 
 /* ============================================
-   HERO SECTION (як на doscinali)
+   HERO SECTION (Reference Style)
    ============================================ */
 .hero-section {
     position: relative;
     width: 100vw;
-    height: 100svh; /* Точна висота 100svh як на референсі */
+    height: 100svh;
     max-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10;
     overflow: hidden;
-    padding-top: 80px; /* Для навігації зверху */
+    padding-top: 100px;
     box-sizing: border-box;
 }
 
@@ -332,344 +324,242 @@ body.home .video-background {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding: 0 var(--container-padding-desktop);
     box-sizing: border-box;
 }
 
 .hero-main-wrapper {
     display: grid;
-    grid-template-columns: 1fr auto; /* Видалено auto для left-indicator */
-    gap: 40px;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
     width: 100%;
+    max-width: 1400px;
     height: 100%;
     position: relative;
-    z-index: 15; /* Вище foreground layer */
+    z-index: 15;
+    padding-top: 60px;
 }
+
+/* Foreground layer removed - using gradient background instead */
 
 /* ============================================
-   FOREGROUND OBJECT LAYER (для об'єкта поверх відео)
-   ============================================ */
-.hero-foreground-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5; /* Між відео (z-1) та контентом (z-15) */
-    pointer-events: none; /* Щоб не перешкоджати інтерактивності */
-    overflow: hidden;
-}
-
-/* Тут буде стиль для об'єкта (3D модель, зображення, SVG) */
-.hero-foreground-layer img,
-.hero-foreground-layer svg,
-.hero-foreground-layer canvas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center right; /* Як на референсі - об'єкт справа */
-    pointer-events: none;
-}
-
-/* Code Background та Lens-effect прибрано для оптимізації */
-
-/* ============================================
-   HERO LEFT INDICATOR (тільки на першому блоці, внизу зліва як на референсі)
+   HERO LEFT INDICATOR (bottom left)
    ============================================ */
 .hero-left-indicator {
     position: absolute;
-    bottom: 40px; /* Внизу зліва */
+    bottom: 40px;
     left: var(--container-padding-desktop);
-    z-index: 15; /* Вище foreground layer */
+    z-index: 15;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    pointer-events: none; /* Щоб не перешкоджати інтерактивності */
+    gap: 4px;
+    pointer-events: none;
 }
 
 .scroll-indicator-text {
-    font-size: 13px;
-    font-weight: var(--font-weight-medium);
-    color: var(--color-text-muted);
-    text-transform: uppercase; /* Як на референсі - uppercase */
-    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     margin: 0;
     line-height: 1.2;
-    opacity: 0.9;
 }
 
 /* ============================================
-   HERO CENTER SECTION (як на Lenis - split text)
+   HERO LEFT CONTENT (Reference Style)
    ============================================ */
-.hero-center-section {
+.hero-left-content {
     display: flex;
     flex-direction: column;
-    gap: 24px; /* Зменшено gap для компактності */
+    gap: 24px;
     position: relative;
     z-index: 15;
-    max-width: 900px;
-    justify-content: center;
+    max-width: 600px;
 }
 
-/* Split Text Title (як на Lenis - компактніше) */
-.hero-title-split {
-    font-size: clamp(48px, 7vw, 96px); /* Зменшено розмір */
-    font-weight: var(--font-weight-extrabold);
-    line-height: 0.9; /* Компактніше */
+.hero-main-title {
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 800;
+    line-height: 1.1;
     margin: 0;
     color: var(--color-text);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.03em; /* Зменшено gap */
-    letter-spacing: -0.03em; /* Компактніше */
     text-transform: uppercase;
+    letter-spacing: -1px;
 }
 
-.title-word {
-    display: inline-block;
-    color: var(--color-text);
-    transition: all var(--transition-base);
+.hero-subtitle {
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-weight: 400;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 500px;
 }
 
-.title-word.highlight {
-    color: var(--color-primary);
-    position: relative;
-}
-
-.hero-meta {
+/* Hero Cards */
+.hero-cards {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Зменшено gap */
+    gap: 16px;
+    margin-top: 32px;
 }
 
-.hero-tagline {
-    font-size: clamp(14px, 1.8vw, 18px); /* Зменшено розмір */
-    font-weight: var(--font-weight-normal);
-    color: var(--color-text-muted);
-    line-height: 1.5; /* Компактніше */
+.hero-card {
+    padding: 20px 24px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero-card-white {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-text-dark);
+}
+
+.hero-card-red {
+    background: var(--gradient-red);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(255, 107, 61, 0.1) 0%, transparent 70%),
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.02) 10px, rgba(255, 255, 255, 0.02) 20px);
+}
+
+.card-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-card-red .card-icon {
+    color: var(--color-text);
+}
+
+.card-icon.star-icon {
+    color: var(--color-text);
+}
+
+.card-text {
+    font-size: 14px;
+    font-weight: 500;
     margin: 0;
-    max-width: 550px;
+    line-height: 1.5;
 }
 
-.hero-copyright {
-    font-size: 12px; /* Зменшено розмір */
-    font-weight: var(--font-weight-medium);
+.hero-card-white .card-text {
+    color: var(--color-text-dark);
+}
+
+.hero-card-red .card-text {
+    color: var(--color-text);
+}
+
+.card-stat {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--color-text-dark);
+    margin: 4px 0;
+}
+
+.card-subtext {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.card-description {
+    font-size: 13px;
+    font-weight: 400;
     color: var(--color-text-secondary);
     margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* CTA Links (як на Lenis - компактніше) */
-.hero-cta-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Зменшено gap */
-    margin-top: 12px; /* Зменшено margin */
-}
-
-.cta-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px; /* Зменшено gap */
-    padding: 12px 20px; /* Компактніше */
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    color: var(--color-text);
-    text-decoration: none;
-    font-size: 14px; /* Зменшено розмір */
-    font-weight: var(--font-weight-medium);
-    transition: all var(--transition-base);
-    width: fit-content;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-.cta-link:hover {
-    background: var(--glass-bg-hover);
-    border-color: var(--glass-border-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
-}
-
-.cta-link-icon {
-    width: 18px; /* Зменшено розмір */
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    padding: 3px; /* Зменшено padding */
-}
-
-.cta-link-text {
-    font-weight: var(--font-weight-semibold);
+    line-height: 1.6;
 }
 
 /* ============================================
-   HERO RIGHT META (мінімалістична статистика як на Lenis)
+   HERO RIGHT CONTENT (Reference Style)
    ============================================ */
-.hero-right-meta {
+.hero-right-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 16px; /* Зменшено gap */
+    gap: 24px;
     position: relative;
-    z-index: 15; /* Вище foreground layer */
-    align-self: center;
+    z-index: 15;
+    align-items: flex-start;
+    max-width: 550px;
+    margin-left: auto;
 }
 
-.hero-stats-minimal {
+.hero-title-large {
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.hero-description {
+    font-size: clamp(14px, 1.5vw, 16px);
+    font-weight: 400;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 480px;
+}
+
+/* Hero Tags */
+.hero-tags {
     display: flex;
-    flex-direction: column;
-    gap: 16px; /* Зменшено gap */
-    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
 }
 
-.stat-minimal {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 3px; /* Зменшено gap */
-}
-
-.stat-number {
-    font-size: clamp(28px, 3.5vw, 42px); /* Зменшено розмір */
-    font-weight: var(--font-weight-extrabold);
-    line-height: 1;
-    color: var(--color-primary);
-}
-
-.stat-label-small {
-    font-size: 11px; /* Зменшено розмір */
-    font-weight: var(--font-weight-medium);
-    color: var(--color-text-secondary);
+.hero-tag {
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-tag-branding {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+}
+
+.hero-tag-branding svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
 }
 
 /* Старі стилі видалено - використовуємо мінімалістичну статистику як на Lenis */
 
 /* Старі стилі видалено - використовуємо мінімалістичну структуру як на Lenis */
 
-.gradient-text {
-    color: var(--color-primary); /* Білий текст */
-    display: inline-block;
-}
-
-/* Старі статистичні картки видалено - використовуємо мінімалістичну статистику як на Lenis */
-
-.hero-description {
-    font-size: var(--font-size-body);
-    line-height: var(--line-height-base);
-    color: var(--color-text-muted);
-    margin-bottom: var(--spacing-xl);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.hero-description strong {
-    color: var(--color-text);
-    font-weight: var(--font-weight-semibold);
-}
-
-.hero-buttons {
-    display: flex;
-    gap: var(--spacing-sm);
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-/* Scroll Indicator */
-.hero-scroll-indicator {
-    position: absolute;
-    bottom: var(--spacing-xl);
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-xs);
-    color: var(--color-text-muted);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    z-index: 10;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(10px);
-    }
-}
-
-.hero-scroll-indicator svg {
-    opacity: 0.6;
-}
+/* Old unused styles removed */
 
 /* ============================================
-   BUTTONS
+   BUTTONS - REMOVED (as per reference)
    ============================================ */
-.btn {
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-semibold);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
-    transition: all var(--transition-base);
-    border: none;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.btn-primary {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    color: var(--color-text);
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    transition: all var(--transition-base);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    background: var(--glass-bg-hover);
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
-}
-
-.btn-primary:active {
-    transform: translateY(0);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--color-text);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    transition: all var(--transition-base);
-}
-
-.btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
-}
 
 /* ============================================
    RESPONSIVE
@@ -683,196 +573,190 @@ body.home .video-background {
     }
     
     .nav-container {
-        padding: 16px var(--container-padding-tablet);
-        gap: 24px;
+        padding: 20px var(--container-padding-tablet);
+        gap: 32px;
     }
     
     .nav-links {
-        gap: 20px;
+        gap: 32px;
     }
     
     .nav-link {
-        font-size: 13px;
-        padding: 6px 12px;
+        font-size: 12px;
     }
     
     .hero-section {
-        height: 100svh; /* Точна висота 100svh */
-        padding-top: 60px;
+        height: 100svh;
+        padding-top: 90px;
         overflow: hidden;
     }
     
     .hero-section .container {
-        padding: 16px 0;
+        padding: 0 var(--container-padding-tablet);
         height: 100%;
     }
     
     .hero-main-wrapper {
-        grid-template-columns: 1fr;
-        gap: 20px; /* Зменшено gap */
-        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
         height: 100%;
     }
     
     .hero-left-indicator {
-        left: var(--container-padding-mobile); /* Адаптивний відступ */
-        bottom: 24px; /* Зменшено відступ знизу */
+        left: var(--container-padding-tablet);
+        bottom: 32px;
     }
     
     .scroll-indicator-text {
-        font-size: 10px; /* Зменшено розмір на мобільних */
+        font-size: 11px;
         letter-spacing: 1px;
     }
     
-    .hero-center-section {
-        gap: 16px; /* Зменшено gap */
+    .hero-left-content {
+        gap: 20px;
         max-width: 100%;
-        text-align: center;
     }
     
-    .hero-title-split {
-        font-size: clamp(40px, 7vw, 72px); /* Зменшено розмір */
-        justify-content: center;
+    .hero-main-title {
+        font-size: clamp(36px, 5vw, 56px);
     }
     
-    .hero-meta {
-        gap: 4px; /* Зменшено gap */
-        align-items: center;
-        text-align: center;
+    .hero-subtitle {
+        font-size: clamp(13px, 1.5vw, 16px);
     }
     
-    .hero-tagline {
-        font-size: clamp(13px, 1.6vw, 16px); /* Зменшено розмір */
+    .hero-cards {
+        margin-top: 24px;
+        gap: 12px;
     }
     
-    .hero-cta-links {
-        gap: 8px; /* Зменшено gap */
-        margin-top: 10px;
-        align-items: center;
+    .hero-card {
+        padding: 18px 20px;
     }
     
-    .cta-link {
-        width: fit-content;
-        max-width: 280px;
-        justify-content: center;
-        padding: 10px 18px; /* Компактніше */
-        font-size: 13px; /* Зменшено розмір */
+    .hero-right-content {
+        gap: 20px;
+        max-width: 100%;
     }
     
-    .hero-right-meta {
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        gap: 12px; /* Зменшено gap */
+    .hero-title-large {
+        font-size: clamp(48px, 6vw, 72px);
     }
     
-    .hero-stats-minimal {
-        flex-direction: row;
-        gap: 24px; /* Зменшено gap */
-        width: 100%;
-        justify-content: center;
+    .hero-description {
+        font-size: clamp(13px, 1.5vw, 15px);
     }
     
-    .stat-minimal {
-        align-items: center;
+    .hero-tags {
+        margin-top: 24px;
+        gap: 10px;
+    }
+    
+    .hero-tag {
+        font-size: 10px;
+        padding: 6px 14px;
     }
 }
 
 /* Mobile + Tablet (≤ 1100px) */
 @media (max-width: 1100px) {
     .nav-container {
-        grid-template-columns: auto 1fr;
-        gap: 16px;
-        padding: 16px var(--container-padding-mobile);
+        grid-template-columns: auto 1fr auto;
+        gap: 24px;
+        padding: 18px var(--container-padding-mobile);
     }
     
     .nav-links {
-        display: none; /* На мобільних ховаємо навігацію (можна додати burger menu) */
+        gap: 24px;
     }
     
-    .nav-actions {
-        justify-self: end;
+    .nav-link {
+        font-size: 11px;
+    }
+    
+    .social-icon {
+        width: 32px;
+        height: 32px;
     }
     
     .hero-section {
-        height: 100svh; /* Точна висота 100svh */
-        padding-top: 70px;
+        height: 100svh;
+        padding-top: 80px;
         overflow: hidden;
     }
     
     .hero-section .container {
-        padding: 20px 0;
+        padding: 0 var(--container-padding-mobile);
         height: 100%;
     }
     
     .hero-main-wrapper {
         grid-template-columns: 1fr;
-        gap: 24px; /* Зменшено gap */
-        align-items: center;
+        gap: 40px;
+        align-items: start;
         height: 100%;
+        padding-top: 40px;
     }
     
     .hero-left-indicator {
-        left: var(--container-padding-tablet); /* Адаптивний відступ */
-        bottom: 30px; /* Зменшено відступ знизу */
+        left: var(--container-padding-mobile);
+        bottom: 24px;
     }
     
     .scroll-indicator-text {
-        font-size: 11px; /* Зменшено розмір на планшетах */
-        letter-spacing: 1.5px;
+        font-size: 10px;
+        letter-spacing: 1px;
     }
     
-    .hero-center-section {
-        gap: 20px; /* Зменшено gap */
+    .hero-left-content {
+        gap: 18px;
         max-width: 100%;
-        text-align: center;
     }
     
-    .hero-title-split {
-        font-size: clamp(40px, 7vw, 72px); /* Зменшено розмір */
-        justify-content: center;
+    .hero-main-title {
+        font-size: clamp(32px, 6vw, 48px);
     }
     
-    .hero-meta {
-        gap: 6px; /* Зменшено gap */
-        align-items: center;
-        text-align: center;
+    .hero-subtitle {
+        font-size: clamp(12px, 2vw, 15px);
     }
     
-    .hero-tagline {
-        font-size: clamp(13px, 1.6vw, 16px); /* Зменшено розмір */
+    .hero-cards {
+        margin-top: 20px;
+        gap: 12px;
     }
     
-    .hero-cta-links {
-        gap: 8px; /* Зменшено gap */
-        margin-top: 10px;
-        align-items: center;
+    .hero-card {
+        padding: 16px 18px;
     }
     
-    .cta-link {
-        width: fit-content;
-        max-width: 280px;
-        justify-content: center;
-        padding: 10px 18px; /* Компактніше */
-        font-size: 13px; /* Зменшено розмір */
+    .card-stat {
+        font-size: 40px;
     }
     
-    .hero-right-meta {
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        gap: 12px; /* Зменшено gap */
+    .hero-right-content {
+        gap: 18px;
+        max-width: 100%;
+        margin-left: 0;
     }
     
-    .hero-stats-minimal {
-        flex-direction: row;
-        gap: 24px; /* Зменшено gap */
-        width: 100%;
-        justify-content: center;
+    .hero-title-large {
+        font-size: clamp(40px, 7vw, 64px);
     }
     
-    .stat-minimal {
-        align-items: center;
+    .hero-description {
+        font-size: clamp(12px, 2vw, 14px);
+    }
+    
+    .hero-tags {
+        margin-top: 20px;
+        gap: 8px;
+    }
+    
+    .hero-tag {
+        font-size: 9px;
+        padding: 6px 12px;
     }
 }
 
@@ -884,118 +768,138 @@ body.home .video-background {
     }
     
     .nav-container {
-        padding: 12px var(--container-padding-mobile);
+        padding: 16px var(--container-padding-mobile);
+        gap: 16px;
     }
     
-    .nav-logo {
-        font-size: 20px;
+    .logo-text {
+        font-size: 16px;
     }
     
-    .nav-btn {
-        padding: 8px 16px;
-        font-size: 13px;
+    .nav-links {
+        gap: 16px;
+    }
+    
+    .nav-link {
+        font-size: 10px;
+    }
+    
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .social-icon svg {
+        width: 14px;
+        height: 14px;
     }
     
     .hero-section {
-        height: 100svh; /* Точна висота 100svh */
-        padding-top: 60px;
+        height: 100svh;
+        padding-top: 70px;
         overflow: hidden;
     }
     
     .hero-section .container {
-        padding: 12px 0;
+        padding: 0 var(--container-padding-mobile);
         height: 100%;
     }
     
     .hero-main-wrapper {
         grid-template-columns: 1fr;
-        gap: 16px; /* Зменшено gap */
-        align-items: center;
+        gap: 32px;
+        align-items: start;
         height: 100%;
+        padding-top: 32px;
     }
     
     .hero-left-indicator {
-        left: var(--container-padding-mobile); /* Адаптивний відступ */
-        bottom: 20px; /* Зменшено відступ знизу на мобільних */
+        left: var(--container-padding-mobile);
+        bottom: 20px;
     }
     
     .scroll-indicator-text {
-        font-size: 9px; /* Мінімальний розмір на мобільних */
+        font-size: 9px;
         letter-spacing: 0.5px;
     }
     
-    .hero-center-section {
-        gap: 12px; /* Зменшено gap */
+    .hero-left-content {
+        gap: 16px;
         max-width: 100%;
-        text-align: center;
     }
     
-    .hero-title-split {
-        font-size: clamp(32px, 8vw, 56px); /* Зменшено розмір */
-        gap: 0.02em; /* Зменшено gap */
-        justify-content: center;
-        line-height: 0.85; /* Компактніше */
+    .hero-main-title {
+        font-size: clamp(28px, 8vw, 40px);
     }
     
-    .hero-meta {
-        gap: 3px; /* Зменшено gap */
-        align-items: center;
-        text-align: center;
+    .hero-subtitle {
+        font-size: clamp(11px, 3vw, 14px);
     }
     
-    .hero-tagline {
-        font-size: clamp(12px, 2.5vw, 15px); /* Зменшено розмір */
+    .hero-cards {
+        margin-top: 16px;
+        gap: 10px;
     }
     
-    .hero-copyright {
-        font-size: 10px; /* Зменшено розмір */
+    .hero-card {
+        padding: 14px 16px;
+        gap: 10px;
     }
     
-    .hero-cta-links {
-        gap: 8px; /* Зменшено gap */
-        margin-top: 12px;
-        align-items: center;
+    .card-icon {
+        width: 20px;
+        height: 20px;
     }
     
-    .cta-link {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
-        padding: 10px 16px; /* Компактніше */
-        font-size: 13px; /* Зменшено розмір */
+    .card-text {
+        font-size: 13px;
     }
     
-    .cta-link-icon {
-        width: 16px; /* Зменшено розмір */
-        height: 16px;
-        padding: 2px; /* Зменшено padding */
+    .card-stat {
+        font-size: 36px;
     }
     
-    .hero-right-meta {
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        gap: 10px; /* Зменшено gap */
+    .card-subtext {
+        font-size: 11px;
     }
     
-    .hero-stats-minimal {
-        flex-direction: row;
-        gap: 20px; /* Зменшено gap */
-        width: 100%;
-        justify-content: center;
+    .card-description {
+        font-size: 12px;
     }
     
-    .stat-minimal {
-        align-items: center;
-        gap: 2px; /* Зменшено gap */
+    .hero-right-content {
+        gap: 16px;
+        max-width: 100%;
+        margin-left: 0;
     }
     
-    .stat-number {
-        font-size: clamp(24px, 5vw, 36px); /* Зменшено розмір */
+    .hero-title-large {
+        font-size: clamp(32px, 9vw, 56px);
+        letter-spacing: -1px;
     }
     
-    .stat-label-small {
-        font-size: 10px; /* Зменшено розмір */
+    .hero-description {
+        font-size: clamp(11px, 3vw, 13px);
+    }
+    
+    .hero-tags {
+        margin-top: 16px;
+        gap: 6px;
+    }
+    
+    .hero-tag {
+        font-size: 8px;
+        padding: 5px 10px;
+    }
+    
+    .hero-tag-branding {
+        padding: 5px 10px;
+        gap: 4px;
+    }
+    
+    .hero-tag-branding svg {
+        width: 10px;
+        height: 10px;
     }
 }
 
