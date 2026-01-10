@@ -1430,24 +1430,17 @@ body.home .top-nav.scrolled .header-content-wrapper {
     height: 54px; /* Same height */
 }
 
-/* Header divider line - dark color, extends full width including hamburger, positioned at exact bottom */
+/* Header divider line - dark color, extends full viewport width, positioned at exact bottom of header */
 .header-divider {
-    width: 100vw; /* Full viewport width to include hamburger */
+    width: 100vw; /* Full viewport width to include hamburger and all content */
     height: 1px;
     background: #1D1D1D; /* Dark color like reference */
     margin: 0;
-    position: absolute;
-    bottom: 0; /* Exactly at bottom of 54px header-content-wrapper */
-    left: calc(-54px - ((100vw - 100%) / 2)); /* Account for hamburger and container margin */
-    z-index: 1;
-}
-
-/* Alternative simpler approach - extend from left edge of hamburger to right edge */
-@supports (left: calc(-54px)) {
-    .header-divider {
-        left: -54px; /* Back to hamburger start */
-        width: calc(100% + 54px + ((100vw - 100%) / 2) * 2); /* Extend to right edge */
-    }
+    position: fixed; /* Fixed to viewport */
+    bottom: calc(100vh - 54px); /* Exactly at bottom of 54px header (from top: 0) */
+    left: 0; /* Start from left edge of viewport */
+    z-index: 1001; /* Above header content but below hamburger if needed */
+    pointer-events: none; /* Don't interfere with clicks */
 }
 
 /* Divider stays in same position on scroll - no changes */
