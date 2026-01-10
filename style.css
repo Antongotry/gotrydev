@@ -1431,10 +1431,6 @@ body.home .top-nav.scrolled .header-content-wrapper {
 }
 
 /* Header divider line - dark color, extends full width, positioned at exact bottom of 54px header */
-.header-content-wrapper {
-    position: relative; /* For absolute positioning of divider */
-}
-
 .header-divider {
     width: calc(100% + 54px); /* Extend to include hamburger area */
     height: 1px;
