@@ -1520,20 +1520,19 @@ body.home .top-nav.scrolled .logo-text {
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: #6B46C1; /* Dark purple like Konpo */
+    background: #1D1D1D; /* Dark/black button like reference */
     color: #fff;
-    border-radius: 6px;
+    border-radius: 20px; /* More rounded, pill-shaped */
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: background 0.2s ease;
     border: none;
     cursor: pointer;
 }
 
 .nav-hire-btn:hover {
-    background: #5B21B6;
-    transform: translateY(-1px);
+    background: #2d2d2d;
 }
 
 .nav-hire-btn svg {
@@ -1828,14 +1827,7 @@ body.home .hero-section .wide-container {
     align-items: center;
     justify-content: flex-start;
     padding-top: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/* Sidebar appears first on load */
-.main-grid.loaded .header-side {
-    opacity: 1;
-    transition-delay: 0ms;
+    opacity: 1; /* Always visible - no animation */
 }
 
 /* Scroll Indicator - vertical line with dot at top */
@@ -1915,193 +1907,5 @@ body.home .hero-section .wide-container {
 }
 
 
-/* ============================================
-   LOAD ANIMATION - Staggered Appearance
-   ============================================ */
-
-/* Initial state - all elements hidden */
-.main-grid:not(.loaded) .title-line-1,
-.main-grid:not(.loaded) .title-line-2,
-.main-grid:not(.loaded) .hero-globe-wrapper,
-.main-grid:not(.loaded) .hero-description,
-.main-grid:not(.loaded) .projects-divider,
-.main-grid:not(.loaded) .project-card {
-    opacity: 0;
-    will-change: opacity, transform;
-}
-
-/* Hero Title Line 1 - appears first (0-100ms) */
-.main-grid:not(.loaded) .title-line-1 {
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.main-grid.loaded .title-line-1 {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transition-delay: 100ms;
-}
-
-/* Hero Title Line 2 - appears second (150-200ms) */
-.main-grid:not(.loaded) .title-line-2 {
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.main-grid.loaded .title-line-2 {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transition-delay: 200ms;
-}
-
-/* Globe Icon - appears third (250ms) */
-.main-grid:not(.loaded) .hero-globe-wrapper {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.main-grid.loaded .hero-globe-wrapper {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transition-delay: 250ms;
-}
-
-/* Hero Description - appears fourth (300ms) */
-.main-grid:not(.loaded) .hero-description {
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.main-grid.loaded .hero-description {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transition-delay: 300ms;
-}
-
-/* Projects Divider - appears fourth (350ms) */
-.main-grid:not(.loaded) .projects-divider {
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.6s ease;
-}
-
-.main-grid.loaded .projects-divider {
-    transform: scaleX(1);
-    transition: transform 0.6s ease;
-    transition-delay: 350ms;
-}
-
-/* Projects Grid - appears fifth (400ms) */
-.main-grid:not(.loaded) .projects-grid {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.main-grid.loaded .projects-grid {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    transition-delay: 400ms;
-}
-
-/* Project Cards - appear with stagger (400ms, 500ms, 600ms) */
-.main-grid:not(.loaded) .project-card {
-    transform: translateY(30px) scale(0.95);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.main-grid.loaded .project-card:nth-child(1) {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transition-delay: 400ms;
-}
-
-.main-grid.loaded .project-card:nth-child(2) {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transition-delay: 500ms;
-}
-
-.main-grid.loaded .project-card:nth-child(3) {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transition-delay: 600ms;
-}
-
-/* Header elements - appear with content */
-.main-grid:not(.loaded) .top-nav {
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.main-grid.loaded .top-nav {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transition-delay: 50ms;
-}
-
-/* Respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-    .main-grid:not(.loaded) *,
-    .main-grid.loaded * {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-        transition-delay: 0ms !important;
-    }
-}
-
-/* Responsive - adjust animation delays on mobile */
-@media (max-width: 768px) {
-    .main-grid.loaded .title-line-1 {
-        transition-delay: 50ms;
-    }
-    
-    .main-grid.loaded .title-line-2 {
-        transition-delay: 100ms;
-    }
-    
-    .main-grid.loaded .hero-description {
-        transition-delay: 150ms;
-    }
-    
-    .main-grid.loaded .projects-divider {
-        transition-delay: 200ms;
-    }
-    
-    .main-grid.loaded .projects-grid {
-        transition-delay: 250ms;
-    }
-    
-    .main-grid.loaded .project-card:nth-child(1) {
-        transition-delay: 300ms;
-    }
-    
-    .main-grid.loaded .project-card:nth-child(2) {
-        transition-delay: 350ms;
-    }
-    
-    .main-grid.loaded .project-card:nth-child(3) {
-        transition-delay: 400ms;
-    }
-    
-    .main-content {
-        margin-left: 0;
-    }
-    
-    .header-side {
-        display: none;
-    }
-}
+/* All animations removed - elements are always visible and static */
 

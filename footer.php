@@ -29,13 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         greetingText.textContent = greeting;
     }
     
-    // Add loaded class to main-grid for animations (when ready to implement)
-    if (mainGrid) {
-        // Delay to allow page to render first
-        setTimeout(function() {
-            mainGrid.classList.add('loaded');
-        }, 100);
-    }
+    // Animations removed - no loaded class needed
     
     // Header scroll behavior
     if (header) {
