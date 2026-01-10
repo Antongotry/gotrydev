@@ -1404,25 +1404,26 @@ body.home .top-nav .header-content-wrapper .wide-container {
    KONPO-STYLE DESIGN OVERRIDES
    ============================================ */
 
-/* Header - Konpo Style - Full Width with Hamburger, Fixed Height (never changes) */
+/* Header - Konpo Style - Simplified: Hamburger (left) | Logo | Spacer | Greeting + Button (right) */
 body.home .top-nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    background: transparent; /* Always transparent, no sticky background */
+    background: transparent; /* Always transparent */
     backdrop-filter: none;
     padding: 0;
-    height: 54px; /* Fixed height - never changes on scroll */
+    height: 54px; /* Fixed height - never changes */
     min-height: 54px;
     max-height: 54px;
-    transition: none; /* No transitions to prevent shrinking */
+    transition: none;
     border-bottom: 1px solid transparent;
     z-index: 1000;
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* Center vertically */
     box-sizing: border-box;
+    position: relative; /* For divider positioning */
 }
 
 /* No changes on scroll - header stays exactly same size */
@@ -1460,28 +1461,40 @@ body.home .header-logo .logo-img {
     object-fit: contain;
 }
 
-/* Header content wrapper - greeting and button, fixed height, full width */
-.header-content-wrapper {
-    flex: 1; /* Take remaining space */
-    margin-left: 0; /* No margin - logo handles spacing */
-    padding: 0;
-    height: 54px; /* Fixed height to match hamburger */
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    position: relative;
-    min-width: 0; /* Allow flex shrinking */
-    width: auto; /* Auto width - flex handles it */
-    overflow: visible; /* Allow content to extend */
-    justify-content: flex-end; /* Align content to right */
+/* Spacer - fills space between logo and right content */
+.header-spacer {
+    flex: 1; /* Takes all remaining space */
+    min-width: 0;
 }
 
-/* Wide container in header - specific styles if needed (already handled by body.home .top-nav .wide-container) */
+/* Right Content - Greeting + Button at right edge */
+.header-right {
+    flex-shrink: 0;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-right: clamp(40px, 5vw, 120px); /* Right padding - matches reference edge */
+    padding-left: clamp(40px, 5vw, 120px); /* Left padding for spacing from center */
+    box-sizing: border-box;
+}
 
-/* No changes on scroll - wrapper stays same size */
-body.home .top-nav.scrolled .header-content-wrapper {
-    padding: 0; /* Same padding */
-    height: 54px; /* Same height */
+/* Spacer - fills space between logo and right content */
+.header-spacer {
+    flex: 1; /* Takes all remaining space */
+    min-width: 0;
+}
+
+/* Right Content - Greeting + Button at right edge (no left padding, only right) */
+.header-right {
+    flex-shrink: 0;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-right: clamp(40px, 5vw, 120px); /* Right padding - matches reference edge */
+    padding-left: 0; /* No left padding - spacer handles spacing */
+    box-sizing: border-box;
 }
 
 /* Header divider line - dark color, extends full viewport width, positioned at exact bottom of 54px header */
@@ -1504,33 +1517,21 @@ body.home .top-nav.scrolled .header-divider {
     width: 100vw; /* Same width */
 }
 
-/* Hide right nav elements on scroll - only logo remains */
-body.home .top-nav.scrolled .nav-right {
+/* Hide right elements on scroll - only logo remains */
+body.home .top-nav.scrolled .header-right {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     pointer-events: none;
 }
 
-body.home .top-nav:not(.scrolled) .nav-right {
+body.home .top-nav:not(.scrolled) .header-right {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Nav wrapper - always align to right (logo is now separate in header-logo) */
-body.home .top-nav .nav-wrapper {
-    justify-content: flex-end !important; /* Always align to right */
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-left: auto; /* Push to right */
-}
-
-body.home .top-nav.scrolled .nav-wrapper {
-    justify-content: flex-end !important; /* Keep right alignment on scroll */
-}
+/* Old nav-wrapper styles removed - using simplified header-right instead */
 
 /* Logo image - SVG from URL */
 body.home .logo-link .logo-img {
@@ -1550,8 +1551,9 @@ body.home .top-nav.scrolled .logo-link .logo-img {
 .nav-greeting {
     font-size: 14px;
     color: #858488;
-    margin-right: 16px;
+    margin-right: 0; /* No margin - gap in header-right handles spacing */
     font-weight: 400;
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 .nav-hire-btn {

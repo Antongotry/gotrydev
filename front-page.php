@@ -9,9 +9,9 @@ get_header();
 
 <!-- Main Grid Container -->
 <div class="main-grid" id="main-grid">
-    <!-- Header Navigation - Full Width with Hamburger -->
+    <!-- Header Navigation - Simplified Structure -->
     <header class="top-nav" id="top-nav">
-        <!-- Hamburger Menu Button (left edge, part of header) -->
+        <!-- Hamburger - Left Edge -->
         <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
             <span class="hamburger-icon">
                 <span class="hamburger-line"></span>
@@ -20,30 +20,27 @@ get_header();
             </span>
         </button>
         
-        <!-- Logo - right after hamburger, before sidebar line -->
+        <!-- Logo - After Hamburger -->
         <div class="header-logo">
             <a href="/" class="logo-link">
                 <img src="https://antongotry.dev/wp-content/uploads/2026/01/dark-1d-logo.svg" alt="Gotry Logo" class="logo-img">
             </a>
         </div>
         
-        <!-- Header content - greeting and button -->
-        <div class="header-content-wrapper">
-            <div class="wide-container">
-                <div class="nav-wrapper">
-                    <!-- Right: Greeting + Hire Button -->
-                    <div class="nav-right">
-                        <span class="nav-greeting" id="greeting-text">Добрий вечір!</span>
-                        <a href="#contact" class="nav-hire-btn">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M7 17L17 7M7 7h10v10"/>
-                            </svg>
-                            <span>Замовити</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <!-- Spacer - fills space between logo and right content -->
+        <div class="header-spacer"></div>
+        
+        <!-- Right Content - Greeting + Button (Right Edge) -->
+        <div class="header-right">
+            <span class="nav-greeting" id="greeting-text">Добрий вечір!</span>
+            <a href="#contact" class="nav-hire-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17L17 7M7 7h10v10"/>
+                </svg>
+                <span>Замовити</span>
+            </a>
         </div>
+        
         <!-- Header divider line - positioned at bottom of entire header (top-nav) -->
         <div class="header-divider"></div>
     </header>
