@@ -1,17 +1,40 @@
 <?php
 /**
- * Front to the WordPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
- *
- * @package WordPress
+ * Main Template File
+ * Для всіх інших сторінок окрім головної
  */
 
-/**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
- */
-define( 'WP_USE_THEMES', true );
+get_header(); 
+?>
 
-/** Loads the WordPress Environment and Template */
-require __DIR__ . '/wp-blog-header.php';
+<main id="main" class="site-main">
+    <?php
+    if (have_posts()) :
+        while (have_posts()) :
+            the_post();
+            ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <header class="entry-header">
+                    <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+                </header>
+                
+                <div class="entry-content">
+                    <?php the_content(); ?>
+                </div>
+            </article>
+            <?php
+        endwhile;
+        
+        // Навігація по сторінках
+        the_posts_navigation();
+        
+    else :
+        ?>
+        <p><?php _e('No content found', 'gotry'); ?></p>
+        <?php
+    endif;
+    ?>
+</main>
+
+<?php get_footer(); ?>
+
