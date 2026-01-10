@@ -1423,12 +1423,14 @@ body.home .top-nav.scrolled {
     padding: 16px 0 0 0;
 }
 
-/* Header divider line - dark color like reference */
+/* Header divider line - dark color, extends full width including hamburger area */
 .header-divider {
-    width: 100%;
+    width: calc(100% + 54px); /* Extend to include hamburger area */
     height: 1px;
     background: #1D1D1D; /* Dark color like reference */
     margin-top: 24px;
+    margin-left: -54px; /* Back to start including hamburger */
+    position: relative;
 }
 
 body.home .top-nav.scrolled .header-divider {
