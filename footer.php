@@ -32,6 +32,52 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animations removed - no loaded class needed
     
     // Header scroll behavior - DISABLED - header is always static, no changes on scroll
+    
+    // Scroll Indicator - Dynamic dot movement based on scroll position
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    const scrollDot = document.querySelector('.scroll-dot-top');
+    
+    if (scrollIndicator && scrollDot) {
+        function updateScrollIndicator() {
+            // Get scroll position
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Calculate scroll percentage (0 to 1)
+            const scrollableHeight = documentHeight - windowHeight;
+            const scrollPercent = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
+            
+            // Move dot down along the line (0px to 214px to keep dot visible within 220px line)
+            const lineHeight = 220; // Height of scroll-line
+            const dotSize = 6; // Size of scroll dot
+            const maxMove = lineHeight - dotSize; // Maximum movement (214px) to keep dot visible
+            const dotPosition = scrollPercent * maxMove;
+            
+            // Update dot position (dot is absolutely positioned within scroll-indicator)
+            scrollDot.style.top = dotPosition + 'px';
+        }
+        
+        // Update on scroll with requestAnimationFrame for smooth performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateScrollIndicator();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true }); // Passive listener for better performance
+        
+        // Update on resize (content height might change)
+        window.addEventListener('resize', function() {
+            updateScrollIndicator();
+        }, { passive: true });
+        
+        // Initial update
+        updateScrollIndicator();
+    }
 });
 </script>
 

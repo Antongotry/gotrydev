@@ -1010,10 +1010,7 @@ body.home .wide-container {
     transform: translateX(-50%); /* Center the element within sidebar */
     width: 1px;
     height: 220px; /* Line goes down 220px */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    display: block; /* Block for absolute children positioning */
     z-index: 1;
     pointer-events: none; /* Don't interfere with clicks */
 }
@@ -1022,8 +1019,12 @@ body.home .wide-container {
     width: 1px;
     height: 220px; /* Fixed height - 220px down */
     background: #858488; /* Gray color */
-    margin-top: 8px; /* Space after dot */
+    margin-top: 0; /* No margin - dot moves along the line */
     flex-shrink: 0;
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Start at top of scroll-indicator */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
 }
 
 .scroll-dot {
@@ -1032,10 +1033,15 @@ body.home .wide-container {
     border: 2px solid #f5f3f7; /* Light background border */
     background: #1D1D1D; /* Dark dot */
     border-radius: 50%;
-    position: relative;
+    position: absolute; /* Absolute to allow movement within scroll-indicator */
+    top: 0; /* Start at top of scroll-indicator - will be updated by JS */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally only */
     z-index: 2;
     flex-shrink: 0;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    transition: top 0.15s ease-out; /* Smooth movement on scroll */
+    will-change: top; /* Optimize for animation */
 }
 
 .scroll-dot-top {
