@@ -1462,7 +1462,7 @@ body.home .header-logo .logo-img {
 
 /* Header content wrapper - greeting and button, fixed height, full width */
 .header-content-wrapper {
-    flex: 1;
+    flex: 1; /* Take remaining space */
     margin-left: 0; /* No margin - logo handles spacing */
     padding: 0;
     height: 54px; /* Fixed height to match hamburger */
@@ -1471,9 +1471,9 @@ body.home .header-logo .logo-img {
     box-sizing: border-box;
     position: relative;
     min-width: 0; /* Allow flex shrinking */
-    width: 100%; /* Full width */
-    max-width: 100%; /* No max-width constraint */
+    width: auto; /* Auto width - flex handles it */
     overflow: visible; /* Allow content to extend */
+    justify-content: flex-end; /* Align content to right */
 }
 
 /* Wide container in header - specific styles if needed (already handled by body.home .top-nav .wide-container) */
