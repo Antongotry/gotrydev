@@ -1012,25 +1012,29 @@ body.home .wide-container {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth animation */
 }
 
-/* Initial positions (2x2 grid centered) */
+/* Initial positions (2x2 grid centered) - dots start close together in center */
 .header-side .hamburger-logo-dots .logo-dot-1 {
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - 4px), calc(-50% - 4px)); /* Top-left relative to center */
 }
 
 .header-side .hamburger-logo-dots .logo-dot-2 {
-    top: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + 4px), calc(-50% - 4px)); /* Top-right relative to center */
 }
 
 .header-side .hamburger-logo-dots .logo-dot-3 {
-    bottom: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - 4px), calc(-50% + 4px)); /* Bottom-left relative to center */
 }
 
 .header-side .hamburger-logo-dots .logo-dot-4 {
-    bottom: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + 4px), calc(-50% + 4px)); /* Bottom-right relative to center */
 }
 
 /* Menu text - hidden by default, appears on click */
@@ -1050,31 +1054,29 @@ body.home .wide-container {
     transition: opacity 0.3s ease 0.2s; /* Fade in after dots start spreading */
 }
 
-/* Active state (on click): dots spread, text appears */
-.header-side .hamburger-menu.active .hamburger-logo-dots {
-    width: 54px; /* Full width of button */
-    height: 54px; /* Full height of button */
-    gap: 0;
-}
-
+/* Active state (on click): dots spread to corners, text appears */
 .header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-1 {
-    top: 6px;
-    left: 6px;
+    top: 12px;
+    left: 12px;
+    transform: translate(0, 0); /* Top-left corner */
 }
 
 .header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-2 {
-    top: 6px;
-    right: 6px;
+    top: 12px;
+    right: 12px;
+    transform: translate(0, 0); /* Top-right corner */
 }
 
 .header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-3 {
-    bottom: 6px;
-    left: 6px;
+    bottom: 12px;
+    left: 12px;
+    transform: translate(0, 0); /* Bottom-left corner */
 }
 
 .header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-4 {
-    bottom: 6px;
-    right: 6px;
+    bottom: 12px;
+    right: 12px;
+    transform: translate(0, 0); /* Bottom-right corner */
 }
 
 .header-side .hamburger-menu.active .hamburger-menu-text {
