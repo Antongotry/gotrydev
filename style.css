@@ -985,6 +985,46 @@ body.home .wide-container {
     height: 1px;
     background: #1D1D1D;
     display: block;
+    transition: opacity 0.2s ease;
+}
+
+/* Logo dots (2x2 grid) - hidden by default, shown on hover */
+.header-side .hamburger-logo-dots {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 6px; /* Space between rows */
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.header-side .hamburger-logo-dots .logo-dot-row {
+    display: flex;
+    gap: 6px; /* Space between dots in a row */
+    align-items: center;
+    justify-content: center;
+}
+
+.header-side .hamburger-logo-dots .logo-dot {
+    width: 6px;
+    height: 6px;
+    background: #1D1D1D; /* Dark color */
+    border-radius: 50%;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Hover effect: hide lines, show logo dots */
+.header-side .hamburger-menu:hover .hamburger-icon {
+    opacity: 0;
+}
+
+.header-side .hamburger-menu:hover .hamburger-logo-dots {
+    display: flex;
 }
 
 /* Right vertical line on sidebar that goes down from hamburger (starts at 54px from top) */
