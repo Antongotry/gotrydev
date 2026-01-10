@@ -1026,27 +1026,22 @@ body.home .wide-container {
     height: 9px;
     border-radius: 50%;
     margin-left: -12.5px; /* Center: half width (25px / 2 = 12.5px) */
-    margin-top: -3.75px; /* Adjust to center circle: line border (1.5px) center offset (0.75px) - circle half height (4.5px) = -3.75px */
+    margin-top: 2px; /* Small offset from top like in original */
     animation: atom 300ms linear 1;
-    width: 25px; /* Original size from example - ellipse that looks like circle when rotated */
+    width: 25px; /* Original size from example */
+    top: 0px; /* All circles start from top like in original */
     background: transparent;
-    transform-origin: 50% 50%; /* Rotate around exact center */
-    box-sizing: border-box; /* Include border in width/height calculations */
-    /* Keep original top values - don't override them */
 }
 
 .header-side .hamburger-menu:hover div:nth-child(1) {
-    /* top: 20px - keeps from base styles */
     transform: rotate(-33deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(2) {
-    /* top: 27px - keeps from base styles */
     transform: rotate(90deg);
 }
 
 .header-side .hamburger-menu:hover div:nth-child(3) {
-    /* top: 34px - keeps from base styles */
     transform: rotate(33deg);
 }
 
