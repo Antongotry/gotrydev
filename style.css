@@ -1222,14 +1222,14 @@ body.home .video-background {
     }
     
     .hero-left {
-        gap: 32px;
+        gap: 28px;
         width: 100%;
         max-width: 100%;
         padding-top: 0;
     }
     
     .hero-right {
-        gap: 24px;
+        gap: 20px;
         width: 100%;
         max-width: 100%;
         padding-left: 0;
