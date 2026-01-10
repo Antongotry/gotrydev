@@ -13,20 +13,15 @@ get_header();
     <div class="header-side" id="header-side">
         <!-- Hamburger Menu Button - Top of Sidebar -->
         <button class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
-            <span class="hamburger-icon">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </span>
-            <!-- Logo dots (2x2 grid) - visible by default, spread on click -->
-            <div class="hamburger-logo-dots">
-                <span class="logo-dot logo-dot-1"></span>
-                <span class="logo-dot logo-dot-2"></span>
-                <span class="logo-dot logo-dot-3"></span>
-                <span class="logo-dot logo-dot-4"></span>
+            <div class="menu-ic">
+                <div class="menu-circle"></div>
+                <div class="menu-circle"></div>
+                <div class="menu-circle menu-cir-ct"></div>
+                <div class="menu-circle"></div>
+                <div class="menu-circle"></div>
+                <div class="header-toggle-txt header-hover-txt">menu</div>
+                <div class="header-toggle-txt header-active-txt">close</div>
             </div>
-            <!-- Menu text - appears on click -->
-            <span class="hamburger-menu-text">menu</span>
         </button>
         
         <!-- Right vertical line that goes down from hamburger -->
