@@ -69,9 +69,11 @@ get_header();
                     
                     <!-- Dark Red Card -->
                     <div class="hero-card hero-card-red">
-                        <div class="card-icon star-icon">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        <div class="card-icon abstract-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                                <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4z"/>
+                                <path d="M12 8v8M8 12h8"/>
                             </svg>
                         </div>
                         <p class="card-text">Reload your brand.</p>
@@ -83,7 +85,15 @@ get_header();
             <!-- Right Content Block -->
             <div class="hero-right-content">
                 <h2 class="hero-title-large">CREATIVE<br>BRANDING<br>AGENCY.</h2>
-                <p class="hero-description">We craft bold identities that stand out. From strategy to visual DNA — we help brands redefine, not just refresh.</p>
+                <div class="hero-description-wrapper">
+                    <p class="hero-description">We craft bold identities that stand out. From strategy to visual DNA — we help brands redefine, not just refresh.</p>
+                    <div class="hero-arrow-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12h8M12 8l4 4-4 4"/>
+                        </svg>
+                    </div>
+                </div>
                 
                 <!-- Tags at bottom right -->
                 <div class="hero-tags">
