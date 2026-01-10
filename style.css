@@ -1325,8 +1325,13 @@ body.home .wide-container {
 
 /* Скрываем основные карточки проектов во время прелоадера */
 body:not(.preloader-complete) .projects-grid .project-card {
-    opacity: 0 !important;
-    visibility: hidden !important;
+    opacity: 0;
+    visibility: hidden;
+    /* Но оставляем их в layout для расчета позиций */
+    position: absolute;
+    left: -9999px;
+    width: 339px;
+    height: 530px;
 }
 
 body.preloader-complete .projects-grid .project-card {
