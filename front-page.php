@@ -16,6 +16,7 @@ get_header();
             <div></div>
             <div></div>
             <div></div>
+            <span class="hamburger-menu-text">МЕНЮ</span>
         </button>
         
         <!-- Right vertical line that goes down from hamburger -->
