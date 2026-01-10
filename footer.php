@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const scrollableHeight = documentHeight - windowHeight;
             const scrollPercent = scrollableHeight > 0 ? Math.min(scrollTop / scrollableHeight, 1) : 0;
             
-            // Move dot down along the line (0px to 214px to keep dot visible within 220px line)
+            // Move dot down along the line (0px to 213px to keep dot visible within 220px line)
             const lineHeight = 220; // Height of scroll-line
-            const dotSize = 6; // Size of scroll dot
-            const maxMove = lineHeight - dotSize; // Maximum movement (214px) to keep dot visible
+            const dotSize = 7; // Size of scroll dot (increased by 15% from 6px to 7px)
+            const maxMove = lineHeight - dotSize; // Maximum movement (213px) to keep dot visible
             const dotPosition = scrollPercent * maxMove;
             
             // Update dot position (dot is absolutely positioned within scroll-indicator)

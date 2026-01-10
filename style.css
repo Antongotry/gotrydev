@@ -1028,8 +1028,8 @@ body.home .wide-container {
 }
 
 .scroll-dot {
-    width: 6px;
-    height: 6px;
+    width: 7px; /* Increased by 15% from 6px (6 * 1.15 = 6.9 ≈ 7px) */
+    height: 7px; /* Increased by 15% from 6px (6 * 1.15 = 6.9 ≈ 7px) */
     border: 2px solid #f5f3f7; /* Light background border */
     background: #1D1D1D; /* Dark dot */
     border-radius: 50%;
