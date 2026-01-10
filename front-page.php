@@ -18,6 +18,17 @@ get_header();
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </span>
+            <!-- Logo dots (2x2 grid) - shown on hover -->
+            <div class="hamburger-logo-dots">
+                <div class="logo-dot-row">
+                    <span class="logo-dot"></span>
+                    <span class="logo-dot"></span>
+                </div>
+                <div class="logo-dot-row">
+                    <span class="logo-dot"></span>
+                    <span class="logo-dot"></span>
+                </div>
+            </div>
         </button>
         
         <!-- Right vertical line that goes down from hamburger -->
