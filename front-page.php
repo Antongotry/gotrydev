@@ -31,7 +31,8 @@ get_header();
                     <!-- Left: Logo -->
                     <div class="nav-left">
                         <a href="/" class="logo-link">
-                            <img src="https://antongotry.dev/wp-content/uploads/2026/01/dark-1d-logo.svg" alt="Gotry Logo" class="logo-img">
+                            <img src="https://antongotry.dev/wp-content/uploads/2026/01/dark-1d-logo.svg" alt="Gotry Logo" class="logo-img logo-img-full">
+                            <span class="logo-text">Gotry</span>
                         </a>
                     </div>
                     

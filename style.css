@@ -1402,17 +1402,42 @@ body.home .site-footer {
    ============================================ */
 
 /* Header - Konpo Style */
-.top-nav {
+body.home .top-nav {
     background: transparent;
     padding: 24px 0;
+    transition: background 0.3s ease, padding 0.3s ease;
 }
 
-.top-nav.scrolled {
+body.home .top-nav.scrolled {
     background: rgba(245, 243, 247, 0.95);
     backdrop-filter: blur(10px);
+    padding: 16px 0;
 }
 
-.logo-link {
+/* Hide right nav elements on scroll - only logo remains */
+body.home .top-nav.scrolled .nav-right {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+}
+
+body.home .top-nav:not(.scrolled) .nav-right {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Center logo on scroll */
+body.home .top-nav.scrolled .nav-wrapper {
+    justify-content: center;
+}
+
+body.home .top-nav:not(.scrolled) .nav-wrapper {
+    justify-content: space-between;
+}
+
+body.home .logo-link {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1420,6 +1445,48 @@ body.home .site-footer {
     color: #1D1D1D;
     font-weight: 500;
     font-size: 18px;
+    position: relative;
+}
+
+body.home .logo-img-full {
+    height: 32px;
+    width: auto;
+    display: block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+body.home .logo-text {
+    display: none;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    color: #1D1D1D;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* On scroll: hide logo image, show text */
+body.home .top-nav.scrolled .logo-img-full {
+    opacity: 0;
+    transform: translateX(-10px);
+    position: absolute;
+    pointer-events: none;
+}
+
+body.home .top-nav.scrolled .logo-text {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+body.home .top-nav:not(.scrolled) .logo-img-full {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+body.home .top-nav:not(.scrolled) .logo-text {
+    display: none;
+    opacity: 0;
+    transform: translateX(10px);
 }
 
 
