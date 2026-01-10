@@ -1086,27 +1086,10 @@ body.home .wide-container {
     transform: none;
 }
 
-/* Line 3: Bottom horizontal line (from left to middle-right, stops before right) */
-/* Also creates right vertical line via ::after pseudo-element */
+/* Line 3: Right vertical line (from top, stops before bottom) - uses vertical position */
 .header-side .hamburger-menu:hover div:nth-child(3) {
-    width: 36px; /* Same width as top line */
-    height: 0px;
-    border-bottom: 1px solid #1D1D1D;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    left: 6px;
-    bottom: 3px; /* At bottom */
-    top: auto;
-    transform: none;
-}
-
-/* Right vertical line - created via pseudo-element on 3rd div */
-.header-side .hamburger-menu:hover div:nth-child(3)::after {
-    content: '';
-    position: absolute;
     width: 0px;
-    height: 48px; /* Same as left line */
+    height: 30px; /* Height from top, not full - stops before bottom */
     border-right: 1px solid #1D1D1D;
     border-top: none;
     border-left: none;
@@ -1114,6 +1097,8 @@ body.home .wide-container {
     right: 6px; /* Offset from right edge */
     top: 3px;
     bottom: auto;
+    left: auto;
+    transform: none;
 }
 
 /* Menu text - appears inside the frame */
