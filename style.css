@@ -153,7 +153,37 @@ body.home .site-footer {
     display: none !important;
 }
 
-/* No background video - only UI elements */
+/* Video Background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    background: #1a0505;
+}
+
+body.home .video-background {
+    z-index: 0;
+}
+
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    display: block;
+    opacity: 1;
+    background: transparent;
+    will-change: transform;
+    transform: translateZ(0);
+}
 
 /* ============================================
    12-COLUMN GRID SYSTEM
@@ -209,6 +239,11 @@ body.home .site-footer {
     padding: 32px 0;
 }
 
+.top-nav.scrolled {
+    background: #ffffff;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
 .top-nav .wide-container {
     padding-top: 0;
     padding-bottom: 0;
@@ -225,12 +260,36 @@ body.home .site-footer {
     gap: 16px;
 }
 
-.logo-icon {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--color-text);
-    letter-spacing: -0.5px;
-    line-height: 1;
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 24px;
+}
+
+.logo-img {
+    height: 24px;
+    width: auto;
+    display: block;
+    transition: opacity var(--transition-base);
+}
+
+.logo-white {
+    opacity: 1;
+}
+
+.logo-dark {
+    opacity: 0;
+    position: absolute;
+}
+
+.top-nav.scrolled .logo-white {
+    opacity: 0;
+}
+
+.top-nav.scrolled .logo-dark {
+    opacity: 1;
+    position: relative;
 }
 
 .hamburger-menu {
@@ -251,6 +310,10 @@ body.home .site-footer {
     height: 1px;
     background: var(--color-text);
     transition: all var(--transition-fast);
+}
+
+.top-nav.scrolled .hamburger-line {
+    background: #210621;
 }
 
 .nav-center {
@@ -277,6 +340,10 @@ body.home .site-footer {
 
 .nav-link:hover {
     opacity: 0.7;
+}
+
+.top-nav.scrolled .nav-link {
+    color: #210621;
 }
 
 .nav-right {
@@ -310,6 +377,16 @@ body.home .site-footer {
     background: rgba(255, 255, 255, 0.05);
 }
 
+.top-nav.scrolled .social-icon {
+    border-color: rgba(33, 6, 33, 0.3);
+    color: #210621;
+}
+
+.top-nav.scrolled .social-icon:hover {
+    border-color: rgba(33, 6, 33, 0.6);
+    background: rgba(33, 6, 33, 0.05);
+}
+
 .social-icon svg {
     width: 14px;
     height: 14px;
@@ -330,7 +407,7 @@ body.home .site-footer {
     padding-top: 120px;
     padding-bottom: 80px;
     box-sizing: border-box;
-    background: #1a0505;
+    background: transparent;
 }
 
 .hero-section .wide-container {

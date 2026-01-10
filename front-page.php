@@ -8,13 +8,16 @@ get_header();
 ?>
 
 <!-- Header Navigation -->
-<header class="top-nav">
+<header class="top-nav" id="top-nav">
     <div class="wide-container">
         <div class="grid-12">
             <!-- Left: Logo + Hamburger -->
-            <div class="col-1 nav-left">
+            <div class="col-2 nav-left">
                 <div class="nav-logo">
-                    <span class="logo-icon">R</span>
+                    <a href="/" class="logo-link">
+                        <img src="https://antongotry.dev/wp-content/uploads/2026/01/logo-white.svg" alt="Logo" class="logo-img logo-white">
+                        <img src="https://antongotry.dev/wp-content/uploads/2026/01/dark-logo.svg" alt="Logo" class="logo-img logo-dark">
+                    </a>
                     <button class="hamburger-menu" aria-label="Menu">
                         <span class="hamburger-line"></span>
                         <span class="hamburger-line"></span>
@@ -52,6 +55,14 @@ get_header();
         </div>
     </div>
 </header>
+
+<!-- Video Background -->
+<div class="video-background" id="video-background">
+    <video id="bg-video" autoplay muted loop playsinline webkit-playsinline>
+        <source src="https://antongotry.dev/wp-content/uploads/2026/01/0_Blackhole_Astrophysics_1920x1080.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
 <!-- Hero Section -->
 <section class="hero-section" id="hero">
