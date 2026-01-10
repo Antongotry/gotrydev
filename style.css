@@ -1063,7 +1063,7 @@ body.home .wide-container {
 .header-side .hamburger-menu:hover div:nth-child(1) {
     width: 0px;
     height: 36px; /* Same length as horizontal lines */
-    border-left: 1px solid #1D1D1D;
+    border-left: 1.5px solid #1D1D1D; /* Thicker border - was 1px */
     border-top: none;
     border-right: none;
     border-bottom: none;
@@ -1077,7 +1077,7 @@ body.home .wide-container {
 .header-side .hamburger-menu:hover div:nth-child(2) {
     width: 36px; /* Same length as other lines */
     height: 0px;
-    border-top: 1px solid #1D1D1D;
+    border-top: 1.5px solid #1D1D1D; /* Thicker border - was 1px */
     border-left: none;
     border-right: none;
     border-bottom: none;
@@ -1091,7 +1091,7 @@ body.home .wide-container {
 .header-side .hamburger-menu:hover div:nth-child(3) {
     width: 36px; /* Same length as other lines */
     height: 0px;
-    border-bottom: 1px solid #1D1D1D;
+    border-bottom: 1.5px solid #1D1D1D; /* Thicker border - was 1px */
     border-left: none;
     border-right: none;
     border-top: none;
