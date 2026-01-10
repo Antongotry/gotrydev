@@ -1,4 +1,4 @@
-# Игнорировать всё кроме темы и плагина
+# Игнорировать всё кроме темы
 *
 !.gitignore
 !README.md
@@ -13,15 +13,15 @@
 !assets/**
 !USAGE.md
 !HOW-TO-COMMIT.md
-# Плагин universal-license-manager (только этот плагин!)
-!wp-content/
-!wp-content/plugins/
-# Исключаем index.php файлы (стандартные WordPress файлы)
-wp-content/index.php
-wp-content/plugins/index.php
-# Разрешаем только наш плагин
-!wp-content/plugins/universal-license-manager/
-!wp-content/plugins/universal-license-manager/**
+
+# Исключаем всё остальное (WordPress файлы, плагины и т.д.)
+wp-*
+xmlrpc.php
+license.txt
+readme.html
+wp-content/
+wp-admin/
+wp-includes/
 
 # Системные файлы
 .DS_Store
