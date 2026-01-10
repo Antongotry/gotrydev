@@ -7,8 +7,14 @@
 get_header(); 
 ?>
 
-<!-- Glass Distortion Background -->
-<div class="gradient-bg" id="gradient-bg"></div>
+<!-- Video Background -->
+<div class="video-background" id="video-background">
+    <video autoplay muted loop playsinline>
+        <source src="https://antongotry.dev/wp-content/uploads/2026/01/12.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+</div>
 
 <!-- Main Content -->
 <main class="hero-page">

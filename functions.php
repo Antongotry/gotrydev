@@ -5,30 +5,8 @@
 
 // Підключення стилів та скриптів
 function gotry_enqueue_styles() {
-    // Glass distortion стилі ТІЛЬКИ на головній (подключаем ПЕРВЫМИ)
-    if (is_front_page()) {
-        wp_enqueue_style('gotry-glass-distortion', 
-            get_template_directory_uri() . '/assets/css/glass-distortion.css',
-            array(), '2.0.1');
-    }
-    
-    // Основні стилі теми (подключаем ПОСЛЕ glass-distortion)
-    wp_enqueue_style('gotry-style', get_stylesheet_uri(), 
-        is_front_page() ? array('gotry-glass-distortion') : array(), 
-        '2.0.0');
-    
-    // Скрипты ТІЛЬКИ на головній
-    if (is_front_page()) {
-        // THREE.js library
-        wp_enqueue_script('threejs', 
-            'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js',
-            array(), '0.160.0', false);
-        
-        // Glass distortion (без heartbeat)
-        wp_enqueue_script('gotry-glass-three', 
-            get_template_directory_uri() . '/assets/js/glass-distortion.js',
-            array('threejs'), '2.0.1', true);
-    }
+    // Основні стилі теми
+    wp_enqueue_style('gotry-style', get_stylesheet_uri(), array(), '2.1.0');
 }
 add_action('wp_enqueue_scripts', 'gotry_enqueue_styles');
 
