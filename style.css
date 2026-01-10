@@ -100,7 +100,7 @@ Tags: landing, web-development, glassmorphism, modern
 ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    transition: background 0.2s ease;
+    transition: none; /* No transitions - static */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -1474,13 +1474,7 @@ body.home .top-nav .header-right {
     pointer-events: none; /* Don't interfere with clicks */
 }
 
-/* Divider stays in same position on scroll - no changes */
-body.home .top-nav.scrolled .header-divider {
-    bottom: 0; /* Same position */
-    width: 100vw; /* Same width */
-}
-
-/* Hide right elements on scroll handled above in .header-right definition */
+/* No scroll behavior - divider always static */
 
 /* Old nav-wrapper styles removed - using simplified header-right instead */
 
@@ -1492,10 +1486,7 @@ body.home .logo-link .logo-img {
     object-fit: contain;
 }
 
-/* Logo stays same on scroll */
-body.home .top-nav.scrolled .logo-link .logo-img {
-    height: 24px;
-}
+/* Logo always static - no scroll behavior */
 
 
 
@@ -1524,7 +1515,7 @@ body.home .top-nav.scrolled .logo-link .logo-img {
 }
 
 .nav-hire-btn:hover {
-    background: #2d2d2d;
+    background: #1D1D1D; /* No hover effect - static */
 }
 
 .nav-hire-btn svg {
