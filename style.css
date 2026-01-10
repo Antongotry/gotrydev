@@ -1053,7 +1053,7 @@ body.home .wide-container {
     margin-left: -11px; /* Reset to default center (22px / 2 = 11px) */
     margin-top: 0;
     width: 22px; /* Same width as default state */
-    background: transparent;
+    background: #1D1D1D; /* Same background as default state - makes line thicker */
     box-sizing: border-box;
     transition: all 300ms cubic-bezier(0.61, 0.01, 0.42, 1);
 }
@@ -1066,6 +1066,7 @@ body.home .wide-container {
     border-top: none;
     border-right: none;
     border-bottom: none;
+    background: #1D1D1D; /* Same background as default - makes line thicker */
     margin-left: 0; /* Reset margin */
     left: 16px; /* Center: (54px - 22px) / 2 = 16px */
     top: 16px; /* Center vertically: (54px - 22px) / 2 = 16px */
@@ -1081,6 +1082,7 @@ body.home .wide-container {
     border-left: none;
     border-right: none;
     border-bottom: none;
+    background: #1D1D1D; /* Same background as default - makes line thicker */
     margin-left: 0; /* Reset margin */
     left: 16px; /* Align with vertical line start */
     top: 16px; /* Align with top of vertical line */
@@ -1096,6 +1098,7 @@ body.home .wide-container {
     border-left: none;
     border-right: none;
     border-top: none;
+    background: #1D1D1D; /* Same background as default - makes line thicker */
     margin-left: 0; /* Reset margin */
     left: 16px; /* Align with vertical line start */
     bottom: 16px; /* Align with bottom of vertical line: 54px - 16px - 22px = 16px */
