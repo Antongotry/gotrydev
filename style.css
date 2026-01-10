@@ -1043,26 +1043,7 @@ body.home .wide-container {
 /* Hover state: disabled - no hover effect on hamburger */
 
 /* Active state (on click): disabled for now - menu will open later */
-/* For now, clicking does nothing - icon stays in hover state */
-.header-side .hamburger-menu:active:hover div,
-.header-side .hamburger-menu:active div {
-    /* Keep hover state when clicked - no changes */
-}
-
-.header-side .hamburger-menu:active:hover div:nth-child(1),
-.header-side .hamburger-menu:active div:nth-child(1) {
-    transform: translate(-50%, -50%) rotate(-33deg); /* Keep hover transform */
-}
-
-.header-side .hamburger-menu:active:hover div:nth-child(2),
-.header-side .hamburger-menu:active div:nth-child(2) {
-    transform: translate(-50%, -50%) rotate(90deg); /* Keep hover transform */
-}
-
-.header-side .hamburger-menu:active:hover div:nth-child(3),
-.header-side .hamburger-menu:active div:nth-child(3) {
-    transform: translate(-50%, -50%) rotate(33deg); /* Keep hover transform */
-}
+/* For now, clicking does nothing - icon stays in default state */
 
 /* Animations */
 @keyframes atom {
