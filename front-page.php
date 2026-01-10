@@ -50,16 +50,20 @@ get_header();
         <div class="hero-main-wrapper">
             <!-- Left Content Block -->
             <div class="hero-left-content">
-                <h1 class="hero-main-title">SOURCE OF BOLD IDEAS/</h1>
+                <h1 class="hero-main-title">SOURCE<br>OF BOLD<br>IDEAS/</h1>
                 <p class="hero-subtitle">Where brands are reborn and boundaries are erased.</p>
                 
                 <div class="hero-cards">
                     <!-- White Card -->
                     <div class="hero-card hero-card-white">
                         <div class="card-icon">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="12" y1="5" x2="12" y2="19"/>
-                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="2" x2="12" y2="22"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <polyline points="8 4 4 8 8 12"/>
+                                <polyline points="16 4 20 8 16 12"/>
+                                <polyline points="8 20 4 16 8 12"/>
+                                <polyline points="16 20 20 16 16 12"/>
                             </svg>
                         </div>
                         <p class="card-text">Brands that lead forward.</p>
@@ -70,10 +74,8 @@ get_header();
                     <!-- Dark Red Card -->
                     <div class="hero-card hero-card-red">
                         <div class="card-icon abstract-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-                                <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4z"/>
-                                <path d="M12 8v8M8 12h8"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.5">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <p class="card-text">Reload your brand.</p>
@@ -99,13 +101,13 @@ get_header();
                 <div class="hero-tags">
                     <span class="hero-tag">DIGITAL CAMPAIGNS</span>
                     <span class="hero-tag">CONTENT</span>
-                    <span class="hero-tag">CREATIVE STRATEGY</span>
                     <span class="hero-tag hero-tag-branding">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                         </svg>
                         BRANDING
                     </span>
+                    <span class="hero-tag">CREATIVE STRATEGY</span>
                 </div>
             </div>
         </div>
