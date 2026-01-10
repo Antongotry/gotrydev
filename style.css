@@ -1560,20 +1560,28 @@ body.home .hero-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 0 80px;
+    padding: 140px 0 80px;
     position: relative;
-    padding-top: 200px; /* Space for fixed header */
+}
+
+body.home .hero-section .wide-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: clamp(40px, 5vw, 120px);
+    padding-right: clamp(40px, 5vw, 120px);
 }
 
 .hero-content {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .hero-main-title {
