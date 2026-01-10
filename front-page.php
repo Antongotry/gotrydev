@@ -18,22 +18,6 @@ get_header();
 
 <!-- Hero Section -->
 <section class="hero-section" id="hero">
-    <!-- Code Background для lens-effect -->
-    <div class="hero-background" id="heroBackground">
-        <pre class="code-background"><code><span class="code-keyword">function</span> <span class="code-function">createWebsite</span>(<span class="code-param">client</span>) {
-    <span class="code-keyword">const</span> <span class="code-var">design</span> = <span class="code-function">design</span>();
-    <span class="code-keyword">const</span> <span class="code-var">code</span> = <span class="code-function">develop</span>(design);
-    <span class="code-keyword">const</span> <span class="code-var">website</span> = <span class="code-function">deploy</span>(code);
-    <span class="code-keyword">return</span> website;
-}
-
-<span class="code-comment">// HTML / CSS / JS</span>
-<span class="code-comment">// Адаптив + Швидкість + SEO</span>
-<span class="code-comment">// Від 500 $</span></code></pre>
-    </div>
-    
-    <!-- Lens overlay для інтерактивного ефекту -->
-    <div class="hero-lens" id="heroLens"></div>
     
     <!-- Hero Content -->
     <div class="container">

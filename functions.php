@@ -48,20 +48,7 @@ function gotry_enqueue_styles() {
         true
     );
     
-    // JavaScript для lens-effect (тільки на головній сторінці)
-    if (is_front_page()) {
-        $lens_version = file_exists(get_stylesheet_directory() . '/assets/js/lens-effect.js')
-            ? filemtime(get_stylesheet_directory() . '/assets/js/lens-effect.js')
-            : '3.1.0';
-        
-        wp_enqueue_script(
-            'gotry-lens-effect',
-            get_template_directory_uri() . '/assets/js/lens-effect.js',
-            array('lenis'), // Залежність від Lenis
-            $lens_version,
-            true // В footer
-        );
-    }
+    // Lens-effect прибрано для оптимізації
 }
 add_action('wp_enqueue_scripts', 'gotry_enqueue_styles');
 

@@ -22,10 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Убираем черный фон с body
         document.body.style.background = 'transparent';
         
+        // Оптимізація відео для плавності
+        video.preload = 'auto';
+        video.playsInline = true;
+        video.muted = true;
+        
         // Принудительно запускаем видео
         video.play().catch(function(error) {
             console.log('Video autoplay failed:', error);
-            // Показываем видео даже если автозапуск не работает
             video.style.opacity = '1';
             // Повторная попытка после взаимодействия пользователя
             document.addEventListener('click', function() {
@@ -33,23 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }, { once: true });
         });
         
-        // Уповільнюємо відео в 2 рази (playbackRate = 0.5)
+        // Событие когда видео загружено
         video.addEventListener('loadeddata', function() {
-            video.playbackRate = 0.5; // Уповільнюємо в 2 рази
             video.style.opacity = '1';
             videoContainer.style.background = 'transparent';
         });
         
         // Событие когда видео начинает играть
         video.addEventListener('playing', function() {
-            video.playbackRate = 0.5; // Переконаємося, що швидкість застосована
             video.style.opacity = '1';
         });
-        
-        // Якщо відео вже грає, застосуємо швидкість
-        if (video.readyState >= 2) {
-            video.playbackRate = 0.5;
-        }
     }
 });
 </script>
