@@ -1009,7 +1009,7 @@ body.home .wide-container {
     display: block;
     flex-shrink: 0;
     position: absolute; /* Absolute for individual positioning */
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth animation */
+    transition: opacity 0.3s ease; /* Smooth fade out */
 }
 
 /* Initial positions (2x2 grid centered) - dots start close together in center */
@@ -1037,7 +1037,7 @@ body.home .wide-container {
     transform: translate(calc(-50% + 4px), calc(-50% + 4px)); /* Bottom-right relative to center */
 }
 
-/* Menu text - hidden by default, appears on click */
+/* Menu text - hidden by default, appears on hover */
 .header-side .hamburger-menu-text {
     position: absolute;
     top: 50%;
@@ -1051,36 +1051,16 @@ body.home .wide-container {
     opacity: 0;
     pointer-events: none;
     z-index: 3;
-    transition: opacity 0.3s ease 0.2s; /* Fade in after dots start spreading */
+    transition: opacity 0.3s ease; /* Smooth fade in */
 }
 
-/* Hover state: dots spread to corners, text appears */
-.header-side .hamburger-menu:hover .hamburger-logo-dots .logo-dot-1 {
-    top: 12px;
-    left: 12px;
-    transform: translate(0, 0); /* Top-left corner */
-}
-
-.header-side .hamburger-menu:hover .hamburger-logo-dots .logo-dot-2 {
-    top: 12px;
-    right: 12px;
-    transform: translate(0, 0); /* Top-right corner */
-}
-
-.header-side .hamburger-menu:hover .hamburger-logo-dots .logo-dot-3 {
-    bottom: 12px;
-    left: 12px;
-    transform: translate(0, 0); /* Bottom-left corner */
-}
-
-.header-side .hamburger-menu:hover .hamburger-logo-dots .logo-dot-4 {
-    bottom: 12px;
-    right: 12px;
-    transform: translate(0, 0); /* Bottom-right corner */
+/* Hover state: dots fade out, text appears */
+.header-side .hamburger-menu:hover .hamburger-logo-dots .logo-dot {
+    opacity: 0; /* Dots disappear on hover */
 }
 
 .header-side .hamburger-menu:hover .hamburger-menu-text {
-    opacity: 1;
+    opacity: 1; /* Text appears on hover */
 }
 
 /* Right vertical line on sidebar that goes down from hamburger (starts at 54px from top) */
