@@ -1430,22 +1430,28 @@ body.home .top-nav.scrolled .header-content-wrapper {
     height: 54px; /* Same height */
 }
 
-/* Header divider line - dark color, extends full width, fixed position */
+/* Header divider line - dark color, extends full width, positioned at exact bottom of 54px header */
+.header-content-wrapper {
+    position: relative; /* For absolute positioning of divider */
+}
+
 .header-divider {
     width: calc(100% + 54px); /* Extend to include hamburger area */
     height: 1px;
     background: #1D1D1D; /* Dark color like reference */
-    margin-top: 0; /* No top margin, positioned at bottom of header */
+    margin: 0;
     margin-left: -54px; /* Back to start including hamburger */
     position: absolute;
-    bottom: 0;
+    bottom: 0; /* Exactly at bottom of 54px header-content-wrapper */
     left: 0;
+    z-index: 1;
 }
 
-/* Divider stays in same position on scroll */
+/* Divider stays in same position on scroll - no changes */
 body.home .top-nav.scrolled .header-divider {
-    margin-top: 0; /* Same position */
-    bottom: 0;
+    bottom: 0; /* Same position */
+    margin: 0;
+    margin-left: -54px;
 }
 
 /* Hide right nav elements on scroll - only logo remains */
