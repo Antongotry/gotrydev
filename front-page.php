@@ -16,6 +16,12 @@ get_header();
     <div class="video-overlay"></div>
 </div>
 
+<!-- Foreground Object Layer (для об'єкта поверх відео, як щупальця восьминога) -->
+<div class="hero-foreground-layer" id="heroForegroundLayer">
+    <!-- Тут буде об'єкт (3D модель, зображення, SVG) який накладається поверх відео -->
+    <!-- z-index буде між відео (z-1) та контентом (z-10) -->
+</div>
+
 <!-- Hero Section (як на референсі) -->
 <section class="hero-section" id="hero">
     <div class="container">
@@ -37,23 +43,23 @@ get_header();
                 </h1>
                 
                 <div class="hero-meta">
-                    <p class="hero-tagline">Створюю сучасні веб-сайти від ідеї до запуску</p>
+                    <p class="hero-tagline">Веб-сайти від ідеї до запуску</p>
                     <p class="hero-copyright">© 2026 Gotry</p>
                 </div>
                 
-                <!-- CTA Links (як на Lenis) -->
+                <!-- CTA Links (як на Lenis - коротші) -->
                 <div class="hero-cta-links">
                     <a href="#contact" class="cta-link" data-analytics="cta-hero-contact">
                         <span class="cta-link-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M3 3h8v8H3zM13 13h8v8h-8zM3 13h8v8H3zM13 3h8v8h-8z"/>
                             </svg>
                         </span>
-                        <span class="cta-link-text">Отримати консультацію</span>
+                        <span class="cta-link-text">Консультація</span>
                     </a>
                     <a href="https://t.me/notarikon" class="cta-link" target="_blank" rel="noopener" data-analytics="cta-hero-telegram">
                         <span class="cta-link-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                             </svg>
                         </span>
