@@ -71,8 +71,8 @@ get_header();
             <!-- Left Side: Slogan + Cards -->
             <div class="hero-left">
                 <div class="hero-slogan">
-                    <h1 class="hero-main-title">КОД<br>ЗУСТРІЧАЄ<br>ДИЗАЙН/</h1>
-                    <p class="hero-subtitle">Де ідеї стають пікселями, а пікселі стають досвідом.</p>
+                    <h1 class="hero-main-title">ГРАВІТАЦІЯ<br>ДИЗАЙНУ/</h1>
+                    <p class="hero-subtitle">Де ваші ідеї отримують новий вимір. Виводимо бізнес на орбіту сучасних технологій.</p>
                 </div>
                 
                 <!-- Cards positioned at bottom left -->
@@ -81,15 +81,16 @@ get_header();
                     <div class="hero-card hero-card-white">
                         <div class="card-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                <line x1="12" y1="17" x2="12" y2="21"/>
+                                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
                             </svg>
                         </div>
                         <div class="card-content">
-                            <p class="card-text">Сайти, які працюють.</p>
+                            <p class="card-text">Політ нормальний.</p>
                             <div class="card-stat">100+</div>
-                            <p class="card-subtext">Проєктів реалізовано.</p>
+                            <p class="card-subtext">Успішних запусків.</p>
                         </div>
                     </div>
                     
@@ -101,7 +102,7 @@ get_header();
                                 <polyline points="8 6 2 12 8 18"/>
                             </svg>
                         </div>
-                        <p class="card-text">Дизайн у код.</p>
+                        <p class="card-text">Запуск у орбіту.</p>
                     </div>
                 </div>
             </div>
@@ -109,11 +110,11 @@ get_header();
             <!-- Right Side: Main Title + Description + Tags -->
             <div class="hero-right">
                 <!-- Main Title - Right Center/Above Center -->
-                <h2 class="hero-title-large">ВЕБ-СТУДІЯ<br>РОЗРОБКИ.</h2>
+                <h2 class="hero-title-large">ШВИДКІСТЬ<br>КОДУ.</h2>
                 
                 <!-- Description with Arrow Icon -->
                 <div class="hero-description-wrapper">
-                    <p class="hero-description">Повний цикл створення веб-сайтів від концепції до запуску. Дизайн, розробка або ідеальна верстка — ми перетворюємо бачення на функціональну реальність.</p>
+                    <p class="hero-description">Створюємо веб-простір, де кожна деталь має значення. Дизайн, що притягує погляди, та розробка, що працює як годинник. Ваш запуск починається тут.</p>
                     <div class="hero-arrow-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
@@ -128,12 +129,12 @@ get_header();
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                         </svg>
-                        <span>ДИЗАЙН</span>
+                        <span>ЗАПУСК</span>
                     </div>
                     <div class="hero-tags">
-                        <span class="hero-tag">ДИЗАЙН + КОД</span>
-                        <span class="hero-tag">ВЕРСТКА</span>
-                        <span class="hero-tag">АДАПТИВНІСТЬ</span>
+                        <span class="hero-tag">ДИЗАЙН</span>
+                        <span class="hero-tag">РОЗРОБКА</span>
+                        <span class="hero-tag">ОРБІТА</span>
                     </div>
                 </div>
             </div>
