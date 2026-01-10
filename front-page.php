@@ -18,17 +18,15 @@ get_header();
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </span>
-            <!-- Logo dots (2x2 grid) - shown on hover -->
+            <!-- Logo dots (2x2 grid) - visible by default, spread on click -->
             <div class="hamburger-logo-dots">
-                <div class="logo-dot-row">
-                    <span class="logo-dot"></span>
-                    <span class="logo-dot"></span>
-                </div>
-                <div class="logo-dot-row">
-                    <span class="logo-dot"></span>
-                    <span class="logo-dot"></span>
-                </div>
+                <span class="logo-dot logo-dot-1"></span>
+                <span class="logo-dot logo-dot-2"></span>
+                <span class="logo-dot logo-dot-3"></span>
+                <span class="logo-dot logo-dot-4"></span>
             </div>
+            <!-- Menu text - appears on click -->
+            <span class="hamburger-menu-text">menu</span>
         </button>
         
         <!-- Right vertical line that goes down from hamburger -->

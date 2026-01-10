@@ -973,11 +973,7 @@ body.home .wide-container {
 }
 
 .header-side .hamburger-icon {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    align-items: center;
-    justify-content: center;
+    display: none; /* Hidden by default - dots are visible instead */
 }
 
 .header-side .hamburger-line {
@@ -985,28 +981,24 @@ body.home .wide-container {
     height: 1px;
     background: #1D1D1D;
     display: block;
-    transition: opacity 0.2s ease;
 }
 
-/* Logo dots (2x2 grid) - hidden by default, shown on hover */
+/* Logo dots (2x2 grid) - visible by default, spread on click */
 .header-side .hamburger-logo-dots {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    gap: 6px; /* Space between rows */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 6px; /* Space between dots */
+    width: 18px; /* Total width: 6px dot + 6px gap + 6px dot = 18px */
+    height: 18px; /* Total height: 6px dot + 6px gap + 6px dot = 18px */
     align-items: center;
     justify-content: center;
-    z-index: 3;
-}
-
-.header-side .hamburger-logo-dots .logo-dot-row {
-    display: flex;
-    gap: 6px; /* Space between dots in a row */
-    align-items: center;
-    justify-content: center;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth animation */
 }
 
 .header-side .hamburger-logo-dots .logo-dot {
@@ -1016,15 +1008,77 @@ body.home .wide-container {
     border-radius: 50%;
     display: block;
     flex-shrink: 0;
+    position: absolute; /* Absolute for individual positioning */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth animation */
 }
 
-/* Hover effect: hide lines, show logo dots */
-.header-side .hamburger-menu:hover .hamburger-icon {
+/* Initial positions (2x2 grid centered) */
+.header-side .hamburger-logo-dots .logo-dot-1 {
+    top: 0;
+    left: 0;
+}
+
+.header-side .hamburger-logo-dots .logo-dot-2 {
+    top: 0;
+    right: 0;
+}
+
+.header-side .hamburger-logo-dots .logo-dot-3 {
+    bottom: 0;
+    left: 0;
+}
+
+.header-side .hamburger-logo-dots .logo-dot-4 {
+    bottom: 0;
+    right: 0;
+}
+
+/* Menu text - hidden by default, appears on click */
+.header-side .hamburger-menu-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    font-weight: 300;
+    color: #1D1D1D;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
     opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.3s ease 0.2s; /* Fade in after dots start spreading */
 }
 
-.header-side .hamburger-menu:hover .hamburger-logo-dots {
-    display: flex;
+/* Active state (on click): dots spread, text appears */
+.header-side .hamburger-menu.active .hamburger-logo-dots {
+    width: 54px; /* Full width of button */
+    height: 54px; /* Full height of button */
+    gap: 0;
+}
+
+.header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-1 {
+    top: 6px;
+    left: 6px;
+}
+
+.header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-2 {
+    top: 6px;
+    right: 6px;
+}
+
+.header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-3 {
+    bottom: 6px;
+    left: 6px;
+}
+
+.header-side .hamburger-menu.active .hamburger-logo-dots .logo-dot-4 {
+    bottom: 6px;
+    right: 6px;
+}
+
+.header-side .hamburger-menu.active .hamburger-menu-text {
+    opacity: 1;
 }
 
 /* Right vertical line on sidebar that goes down from hamburger (starts at 54px from top) */

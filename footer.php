@@ -33,6 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Header scroll behavior - DISABLED - header is always static, no changes on scroll
     
+    // Hamburger menu click handler - toggle active state for dots animation
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    }
+    
     // Scroll Indicator - Dynamic dot movement based on scroll position
     const scrollIndicator = document.querySelector('.scroll-indicator');
     const scrollDot = document.querySelector('.scroll-dot-top');
