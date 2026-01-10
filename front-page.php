@@ -23,20 +23,10 @@ get_header();
         <div class="header-content-wrapper">
             <div class="wide-container">
                 <div class="nav-wrapper">
-                    <!-- Left: Logo with dots -->
+                    <!-- Left: Logo -->
                     <div class="nav-left">
                         <a href="/" class="logo-link">
-                            <span class="logo-dots">
-                                <span class="dot-row">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </span>
-                                <span class="dot-row">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </span>
-                            </span>
-                            <span class="logo-text">Gotry</span>
+                            <img src="https://antongotry.dev/wp-content/uploads/2026/01/dark-1d-logo.svg" alt="Gotry Logo" class="logo-img">
                         </a>
                     </div>
                     

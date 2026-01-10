@@ -288,16 +288,7 @@ body.home .site-footer {
     box-sizing: border-box;
 }
 
-.logo-img {
-    height: 24px;
-    width: auto;
-    display: block;
-    transition: opacity 0.3s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-}
+/* Old logo-img styles removed - using new SVG logo */
 
 .logo-white {
     opacity: 1;
@@ -1418,8 +1409,8 @@ body.home .top-nav.scrolled .header-content-wrapper {
 }
 
 body.home .top-nav.scrolled {
-    background: rgba(245, 243, 247, 0.95);
-    backdrop-filter: blur(10px);
+    background: transparent; /* Always transparent, no sticky background */
+    backdrop-filter: none;
     padding: 16px 0 0 0;
 }
 
@@ -1471,54 +1462,23 @@ body.home .nav-left {
 body.home .logo-link {
     display: flex;
     align-items: center;
-    gap: 12px;
     text-decoration: none;
     color: #1D1D1D;
-    font-weight: 500;
-    font-size: 18px;
     position: relative;
+    height: 24px;
 }
 
-/* Logo dots - 2x2 grid like colon */
-.logo-dots {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    align-items: center;
-    justify-content: center;
-}
-
-.dot-row {
-    display: flex;
-    gap: 4px;
-}
-
-.dot {
-    width: 4px;
-    height: 4px;
-    background: #1D1D1D;
-    border-radius: 50%;
+/* Logo image - SVG from URL */
+body.home .logo-link .logo-img {
+    height: 24px;
+    width: auto;
     display: block;
+    object-fit: contain;
 }
 
-.logo-text {
-    font-weight: 500;
-    font-size: 18px;
-    letter-spacing: -0.3px;
-    color: #1D1D1D;
-}
-
-/* On scroll: logo stays same, text stays */
-body.home .top-nav.scrolled .logo-link {
-    gap: 12px;
-}
-
-body.home .top-nav.scrolled .logo-dots {
-    opacity: 1;
-}
-
-body.home .top-nav.scrolled .logo-text {
-    opacity: 1;
+/* Logo stays same on scroll */
+body.home .top-nav.scrolled .logo-link .logo-img {
+    height: 24px;
 }
 
 
