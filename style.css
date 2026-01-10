@@ -254,6 +254,12 @@ body.home .site-footer {
     height: 100%;
 }
 
+/* Override for home page header - full width, no max-width constraint */
+body.home .top-nav .header-content-wrapper .wide-container {
+    max-width: none; /* Remove max-width to prevent white gap */
+    width: 100%;
+}
+
 /* Override for home page header - use padding instead of margin to avoid double spacing */
 /* Override for home page header - full width, no max-width, proper padding */
 body.home .top-nav .header-content-wrapper .wide-container {
@@ -1452,7 +1458,7 @@ body.home .header-logo .logo-img {
     object-fit: contain;
 }
 
-/* Header content wrapper - greeting and button, fixed height */
+/* Header content wrapper - greeting and button, fixed height, full width */
 .header-content-wrapper {
     flex: 1;
     margin-left: 0; /* No margin - logo handles spacing */
@@ -1463,6 +1469,9 @@ body.home .header-logo .logo-img {
     box-sizing: border-box;
     position: relative;
     min-width: 0; /* Allow flex shrinking */
+    width: 100%; /* Full width */
+    max-width: 100%; /* No max-width constraint */
+    overflow: visible; /* Allow content to extend */
 }
 
 /* Wide container in header - specific styles if needed (already handled by body.home .top-nav .wide-container) */
@@ -1507,30 +1516,14 @@ body.home .top-nav:not(.scrolled) .nav-right {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Center logo on scroll */
+/* Nav wrapper - always align to right (logo is now separate in header-logo) */
+body.home .top-nav .nav-wrapper {
+    justify-content: flex-end; /* Always align to right */
+    width: 100%;
+}
+
 body.home .top-nav.scrolled .nav-wrapper {
-    justify-content: center;
-}
-
-body.home .top-nav:not(.scrolled) .nav-wrapper {
-    justify-content: space-between;
-}
-
-/* Align logo with scroll indicator dot */
-body.home .nav-left {
-    display: flex;
-    align-items: center;
-    height: 24px;
-    padding-top: 0;
-}
-
-body.home .logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #1D1D1D;
-    position: relative;
-    height: 24px;
+    justify-content: flex-end; /* Keep right alignment on scroll */
 }
 
 /* Logo image - SVG from URL */
