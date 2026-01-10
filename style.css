@@ -1829,7 +1829,7 @@ body.home .hero-section .wide-container {
     opacity: 1; /* Always visible - no animation */
 }
 
-/* Hamburger Menu Button - at the very left edge, forms square with right line */
+/* Hamburger Menu Button - at the very left edge, 54x54px square */
 .hamburger-menu {
     width: 54px;
     height: 54px;
@@ -1840,19 +1840,23 @@ body.home .hero-section .wide-container {
     padding: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0;
     flex-shrink: 0;
+    margin-bottom: 0;
 }
 
-/* Hamburger icon - 3 lines */
+/* Hamburger icon - 3 lines, positioned on the left */
 .hamburger-icon {
     width: 18px;
     height: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
+    position: absolute;
+    left: 18px; /* Center horizontally in 54px block */
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 2;
 }
 
@@ -1861,10 +1865,9 @@ body.home .hero-section .wide-container {
     height: 1px;
     background: #1D1D1D;
     display: block;
-    transition: all 0.3s ease;
 }
 
-/* Right line that forms square with hamburger */
+/* Right vertical line that forms square with hamburger block */
 .hamburger-line-right {
     position: absolute;
     right: 0;
