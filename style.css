@@ -468,13 +468,14 @@ body.home .top-nav .header-content-wrapper .wide-container {
    ============================================ */
 
 /* Header - Konpo Style - Simplified: Hamburger (left) | Logo | Spacer | Greeting + Button (right) */
+/* Header - Inside Main Content Area, Fixed at top right of viewport */
 body.home .top-nav {
     position: fixed !important; /* Force fixed - NEVER changes */
     top: 0 !important;
-    left: 0 !important;
+    left: 54px !important; /* Start after sidebar (54px) */
     right: 0 !important;
-    width: 100vw !important; /* Full viewport width */
-    max-width: 100vw !important; /* Prevent overflow */
+    width: calc(100vw - 54px) !important; /* Full viewport width minus sidebar */
+    max-width: calc(100vw - 54px) !important; /* Prevent overflow */
     background: transparent !important; /* Always transparent - NEVER changes */
     backdrop-filter: none !important;
     padding: 0 !important;
@@ -483,7 +484,7 @@ body.home .top-nav {
     min-height: 54px !important;
     max-height: 54px !important;
     transition: none !important; /* No transitions */
-    border-bottom: 1px solid transparent !important;
+    border-bottom: 1px solid #1D1D1D !important; /* Dark divider line */
     z-index: 1000 !important;
     display: flex !important;
     align-items: center !important; /* Center vertically */
@@ -545,15 +546,15 @@ body.home .top-nav .header-right {
     display: flex; /* Always visible - static */
 }
 
-/* Header divider line - dark color, extends full viewport width, positioned at exact bottom of 54px header */
+/* Header divider line - dark color, extends full header width (not full viewport, only main-content area) */
 .header-divider {
-    width: 100vw; /* Full viewport width to include hamburger and all content */
+    width: 100%; /* Full width of top-nav (which is calc(100vw - 54px)) */
     height: 1px;
     background: #1D1D1D; /* Dark color like reference */
     margin: 0;
     position: absolute;
     bottom: 0; /* Exactly at bottom of 54px header */
-    left: 0; /* Start from left edge of viewport */
+    left: 0; /* Start from left edge of top-nav */
     right: 0;
     z-index: 1;
     pointer-events: none; /* Don't interfere with clicks */
@@ -915,14 +916,14 @@ body.home .wide-container {
     position: relative;
 }
 
-/* Left Sidebar - Below Header, 54px width, exactly touching header */
+/* Left Sidebar - Fixed left side, 54px width, full height from top */
 .header-side {
     flex: 0 0 54px;
     width: 54px;
-    min-height: calc(100vh - 54px); /* Full height minus header */
+    min-height: 100vh;
     position: fixed;
     left: 0;
-    top: 54px; /* Exactly at header bottom - no gap */
+    top: 0; /* Start from very top of viewport */
     z-index: 999;
     background: transparent;
     display: flex;
@@ -930,73 +931,73 @@ body.home .wide-container {
     align-items: center;
     justify-content: flex-start;
     padding-top: 0;
-    margin-top: 0; /* No gap - exactly touching header */
+    margin-top: 0;
     opacity: 1; /* Always visible - no animation */
 }
 
-/* Right vertical line on sidebar that goes down from header divider */
-.sidebar-right-line {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background: #1D1D1D;
-    z-index: 1;
-}
-
-/* Hamburger Menu Button - Part of Header, Left Edge, 54x54px with Right Border */
-/* Hamburger Menu Button - Part of Header, Left Edge, 54x54px with Right Border (scoped to home page only) */
-body.home .hamburger-menu {
+/* Hamburger Menu - Top of Sidebar (54px height) */
+.header-side .hamburger-menu {
     width: 54px;
     height: 54px;
     position: relative;
+    border-right: 1px solid #1D1D1D;
     background: transparent;
-    border: none;
-    border-right: 1px solid #1D1D1D; /* Right border to form square */
-    cursor: pointer;
-    padding: 0;
+    border-top: none;
+    border-left: none;
+    border-bottom: 1px solid #1D1D1D;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
     flex-shrink: 0;
     z-index: 2;
-    box-sizing: border-box;
 }
 
-/* Hamburger icon - 3 lines, centered */
-body.home .hamburger-icon {
-    width: 18px;
-    height: 12px;
+.header-side .hamburger-icon {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    z-index: 2;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
 }
 
-body.home .hamburger-line {
-    width: 100%;
+.header-side .hamburger-line {
+    width: 18px;
     height: 1px;
     background: #1D1D1D;
     display: block;
 }
 
+/* Right vertical line on sidebar that goes down from hamburger (starts at 54px from top) */
+.sidebar-right-line {
+    position: absolute;
+    right: 0;
+    top: 54px; /* Start below hamburger (54px height) */
+    width: 1px;
+    height: calc(100vh - 54px); /* Full height minus hamburger height */
+    background: #1D1D1D;
+    z-index: 1;
+}
+
+/* Old hamburger styles removed - hamburger is now in header-side, styled above */
+
 /* Scroll Indicator - vertical line with dot at top, in sidebar */
 /* Scroll Indicator - centered on screen, top at 50vh, line goes down 220px */
-.scroll-indicator {
-    position: fixed; /* Fixed position to stay centered */
-    left: 50%; /* Center horizontally */
-    top: 50vh; /* Center vertically - top of indicator */
-    transform: translateX(-50%); /* Center the element */
+/* Scroll Indicator - Inside Sidebar, centered horizontally within sidebar */
+.header-side .scroll-indicator {
+    position: absolute; /* Absolute within sidebar */
+    left: 50%; /* Center horizontally within 54px sidebar */
+    top: 50vh; /* Center vertically - top dot at vertical center */
+    transform: translateX(-50%); /* Center the element within sidebar */
     width: 1px;
     height: 220px; /* Line goes down 220px */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    z-index: 999;
+    z-index: 1;
     pointer-events: none; /* Don't interfere with clicks */
 }
 
@@ -1026,13 +1027,15 @@ body.home .hamburger-line {
 
 /* Main Content Area - flex: 1 to fill remaining space */
 /* Main Content Area - Below Header */
+/* Main Content Area - Right Side (Working Area) - Starts after sidebar */
 .main-content {
     flex: 1;
-    width: 100%;
+    width: calc(100vw - 54px); /* Full width minus sidebar */
     min-height: 100vh;
     margin-left: 54px; /* Space for sidebar */
-    margin-top: 54px; /* Space for header */
-    padding-top: 0;
+    margin-top: 0; /* No top margin - header is fixed inside */
+    padding-top: 54px; /* Space for fixed header inside main-content */
+    position: relative;
 }
 
 /* Header styles moved to Konpo section above */
