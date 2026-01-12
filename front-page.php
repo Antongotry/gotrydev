@@ -399,6 +399,55 @@ get_header();
                 </div>
             </div>
         </section>
+        
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="wide-container">
+                <h2 class="contact-title">Let's work together</h2>
+                <div class="contact-divider"></div>
+                <div class="contact-wrapper">
+                    <!-- Left: Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" method="post" action="">
+                            <div class="contact-form-field">
+                                <label for="contact-name" class="contact-form-label">Name</label>
+                                <input type="text" id="contact-name" name="name" class="contact-form-input" required>
+                            </div>
+                            <div class="contact-form-field">
+                                <label for="contact-email" class="contact-form-label">Email</label>
+                                <input type="email" id="contact-email" name="email" class="contact-form-input" required>
+                            </div>
+                            <div class="contact-form-field">
+                                <label for="contact-message" class="contact-form-label">Message</label>
+                                <textarea id="contact-message" name="message" class="contact-form-textarea" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="contact-form-submit">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 17L17 7M7 7h10v10"/>
+                                </svg>
+                                <span>Send message</span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Right: Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <span class="contact-info-label">Email</span>
+                            <a href="mailto:hello@antongotry.dev" class="contact-info-link">hello@antongotry.dev</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="contact-info-label">Telegram</span>
+                            <a href="https://t.me/notarikon" target="_blank" rel="noopener noreferrer" class="contact-info-link">@notarikon</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="contact-info-label">Location</span>
+                            <span class="contact-info-text">Ukraine</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 
