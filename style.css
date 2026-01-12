@@ -1023,6 +1023,7 @@ body.home .wide-container {
     padding-right: 0;
     box-sizing: border-box;
     position: relative;
+    overflow: visible;
 }
 
 .services-title {
@@ -1040,7 +1041,9 @@ body.home .wide-container {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding-bottom: 200px;
+    padding-bottom: 600px;
+    overflow: visible;
+    min-height: 2000px;
 }
 
 .service-card {
@@ -1055,22 +1058,22 @@ body.home .wide-container {
 
 .service-card:nth-child(1) {
     z-index: 1;
-    top: 24px;
+    top: 120px;
 }
 
 .service-card:nth-child(2) {
     z-index: 2;
-    top: 24px;
+    top: 120px;
 }
 
 .service-card:nth-child(3) {
     z-index: 3;
-    top: 24px;
+    top: 120px;
 }
 
 .service-card:nth-child(4) {
     z-index: 4;
-    top: 24px;
+    top: 120px;
 }
 
 
