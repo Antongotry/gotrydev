@@ -199,202 +199,204 @@ get_header();
                     </div>
                     </div>
                 </section>
-                
-                <!-- Services Section -->
-                <section class="services-section">
-                    <h2 class="services-title">Services</h2>
-                    <div class="services-cards-stack">
-                        <!-- Card 1: Product Design -->
-                        <div class="service-card">
-                            <div class="service-card-inner">
-                                <div class="service-card-header">
-                                    <h3 class="service-card-title">Product Design</h3>
-                                    <button class="service-card-action-btn" aria-label="Hire us">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="service-card-divider"></div>
-                                <div class="service-card-content">
-                                    <p class="service-card-description">Good design gets downloads. Great design gets daily use. We design software products that build habits and drive growth, at scale.</p>
-                                    <div class="service-card-footer">
-                                        <div class="service-card-pattern">
-                                            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="20" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="60" cy="20" r="3" fill="#9B51E0"/>
-                                                <circle cx="80" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="100" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="20" cy="40" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="40" r="3" fill="#9B51E0"/>
-                                                <circle cx="60" cy="40" r="3" fill="#9B51E0"/>
-                                                <circle cx="80" cy="40" r="3" fill="#9B51E0"/>
-                                                <circle cx="100" cy="40" r="3" fill="#E0D9ED"/>
-                                                <circle cx="20" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="60" r="3" fill="#9B51E0"/>
-                                                <circle cx="60" cy="60" r="3" fill="#9B51E0"/>
-                                                <circle cx="80" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="100" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="20" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="60" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="80" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="100" cy="80" r="3" fill="#E0D9ED"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section - Moved outside hero-section for sticky to work -->
+        <section class="services-section">
+            <div class="wide-container">
+                <h2 class="services-title">Services</h2>
+                <div class="services-cards-stack">
+                    <!-- Card 1: Product Design -->
+                    <div class="service-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Product Design</h3>
+                                <button class="service-card-action-btn" aria-label="Hire us">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
                             </div>
-                        </div>
-                        
-                        <!-- Card 2: Design Systems -->
-                        <div class="service-card">
-                            <div class="service-card-inner">
-                                <div class="service-card-header">
-                                    <h3 class="service-card-title">Design Systems</h3>
-                                    <button class="service-card-action-btn" aria-label="Hire us">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <div class="service-card-divider"></div>
+                            <div class="service-card-content">
+                                <p class="service-card-description">Good design gets downloads. Great design gets daily use. We design software products that build habits and drive growth, at scale.</p>
+                                <div class="service-card-footer">
+                                    <div class="service-card-pattern">
+                                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="20" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="60" cy="20" r="3" fill="#9B51E0"/>
+                                            <circle cx="80" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="100" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="20" cy="40" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="40" r="3" fill="#9B51E0"/>
+                                            <circle cx="60" cy="40" r="3" fill="#9B51E0"/>
+                                            <circle cx="80" cy="40" r="3" fill="#9B51E0"/>
+                                            <circle cx="100" cy="40" r="3" fill="#E0D9ED"/>
+                                            <circle cx="20" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="60" r="3" fill="#9B51E0"/>
+                                            <circle cx="60" cy="60" r="3" fill="#9B51E0"/>
+                                            <circle cx="80" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="100" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="20" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="60" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="80" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="100" cy="80" r="3" fill="#E0D9ED"/>
                                         </svg>
-                                    </button>
-                                </div>
-                                <div class="service-card-divider"></div>
-                                <div class="service-card-content">
-                                    <p class="service-card-description">Growth creates chaos and inefficiencies. We build scalable design systems that put all teams on the same page so you have one source of truth, not ten sources of wrong.</p>
-                                    <div class="service-card-footer">
-                                        <div class="service-card-pattern">
-                                            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="20" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="60" cy="20" r="3" fill="#9B51E0"/>
-                                                <circle cx="80" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="100" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="20" cy="40" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="40" r="3" fill="#9B51E0"/>
-                                                <circle cx="60" cy="40" r="3" fill="#9B51E0"/>
-                                                <circle cx="80" cy="40" r="3" fill="#9B51E0"/>
-                                                <circle cx="100" cy="40" r="3" fill="#E0D9ED"/>
-                                                <circle cx="20" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="60" r="3" fill="#9B51E0"/>
-                                                <circle cx="60" cy="60" r="3" fill="#9B51E0"/>
-                                                <circle cx="80" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="100" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="20" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="60" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="80" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="100" cy="80" r="3" fill="#E0D9ED"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Card 3: Brand Design -->
-                        <div class="service-card">
-                            <div class="service-card-inner">
-                                <div class="service-card-header">
-                                    <h3 class="service-card-title">Brand Design</h3>
-                                    <button class="service-card-action-btn" aria-label="Hire us">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="service-card-divider"></div>
-                                <div class="service-card-content">
-                                    <p class="service-card-description">Credibility takes years. We design it overnight. Your brand should define categories, speak to your audience, and build trust that converts.</p>
-                                    <div class="service-card-footer">
-                                        <div class="service-card-pattern">
-                                            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="20" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="60" cy="20" r="3" fill="#9B51E0"/>
-                                                <circle cx="80" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="100" cy="20" r="3" fill="#E0D9ED"/>
-                                                <circle cx="20" cy="40" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="40" r="3" fill="#9B51E0"/>
-                                                <circle cx="60" cy="40" r="3" fill="#9B51E0"/>
-                                                <circle cx="80" cy="40" r="3" fill="#9B51E0"/>
-                                                <circle cx="100" cy="40" r="3" fill="#E0D9ED"/>
-                                                <circle cx="20" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="60" r="3" fill="#9B51E0"/>
-                                                <circle cx="60" cy="60" r="3" fill="#9B51E0"/>
-                                                <circle cx="80" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="100" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="20" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="40" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="60" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="80" cy="80" r="3" fill="#E0D9ED"/>
-                                                <circle cx="100" cy="80" r="3" fill="#E0D9ED"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Card 4: Website Design -->
-                        <div class="service-card">
-                            <div class="service-card-inner">
-                                <div class="service-card-header">
-                                    <h3 class="service-card-title">Website Design</h3>
-                                    <button class="service-card-action-btn" aria-label="Hire us">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="service-card-divider"></div>
-                                <div class="service-card-content">
-                                    <p class="service-card-description">Your website should do more than look good and load fast. Build credibility, earn clicks, and drive conversion. Awards? Just a bonus.</p>
-                                    <div class="service-card-footer">
-                                        <button class="service-card-learn-btn">
-                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                            <span>Learn more</span>
-                                        </button>
-                                        <div class="service-card-pattern">
-                                            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="15" cy="15" r="3" fill="#E0D9ED"/>
-                                                <circle cx="30" cy="15" r="3" fill="#E0D9ED"/>
-                                                <circle cx="45" cy="15" r="3" fill="#9B51E0"/>
-                                                <circle cx="60" cy="15" r="3" fill="#E0D9ED"/>
-                                                <circle cx="75" cy="15" r="3" fill="#9B51E0"/>
-                                                <circle cx="90" cy="15" r="3" fill="#E0D9ED"/>
-                                                <circle cx="105" cy="15" r="3" fill="#E0D9ED"/>
-                                                <circle cx="15" cy="30" r="3" fill="#E0D9ED"/>
-                                                <circle cx="30" cy="30" r="3" fill="#9B51E0"/>
-                                                <circle cx="45" cy="30" r="3" fill="#9B51E0"/>
-                                                <circle cx="60" cy="30" r="3" fill="#9B51E0"/>
-                                                <circle cx="75" cy="30" r="3" fill="#E0D9ED"/>
-                                                <circle cx="90" cy="30" r="3" fill="#9B51E0"/>
-                                                <circle cx="105" cy="30" r="3" fill="#E0D9ED"/>
-                                                <circle cx="15" cy="45" r="3" fill="#E0D9ED"/>
-                                                <circle cx="30" cy="45" r="3" fill="#9B51E0"/>
-                                                <circle cx="45" cy="45" r="3" fill="#9B51E0"/>
-                                                <circle cx="60" cy="45" r="3" fill="#E0D9ED"/>
-                                                <circle cx="75" cy="45" r="3" fill="#9B51E0"/>
-                                                <circle cx="90" cy="45" r="3" fill="#E0D9ED"/>
-                                                <circle cx="105" cy="45" r="3" fill="#E0D9ED"/>
-                                                <circle cx="15" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="30" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="45" cy="60" r="3" fill="#9B51E0"/>
-                                                <circle cx="60" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="75" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="90" cy="60" r="3" fill="#E0D9ED"/>
-                                                <circle cx="105" cy="60" r="3" fill="#E0D9ED"/>
-                                            </svg>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                    
+                    <!-- Card 2: Design Systems -->
+                    <div class="service-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Design Systems</h3>
+                                <button class="service-card-action-btn" aria-label="Hire us">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="service-card-divider"></div>
+                            <div class="service-card-content">
+                                <p class="service-card-description">Growth creates chaos and inefficiencies. We build scalable design systems that put all teams on the same page so you have one source of truth, not ten sources of wrong.</p>
+                                <div class="service-card-footer">
+                                    <div class="service-card-pattern">
+                                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="20" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="60" cy="20" r="3" fill="#9B51E0"/>
+                                            <circle cx="80" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="100" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="20" cy="40" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="40" r="3" fill="#9B51E0"/>
+                                            <circle cx="60" cy="40" r="3" fill="#9B51E0"/>
+                                            <circle cx="80" cy="40" r="3" fill="#9B51E0"/>
+                                            <circle cx="100" cy="40" r="3" fill="#E0D9ED"/>
+                                            <circle cx="20" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="60" r="3" fill="#9B51E0"/>
+                                            <circle cx="60" cy="60" r="3" fill="#9B51E0"/>
+                                            <circle cx="80" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="100" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="20" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="60" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="80" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="100" cy="80" r="3" fill="#E0D9ED"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3: Brand Design -->
+                    <div class="service-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Brand Design</h3>
+                                <button class="service-card-action-btn" aria-label="Hire us">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="service-card-divider"></div>
+                            <div class="service-card-content">
+                                <p class="service-card-description">Credibility takes years. We design it overnight. Your brand should define categories, speak to your audience, and build trust that converts.</p>
+                                <div class="service-card-footer">
+                                    <div class="service-card-pattern">
+                                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="20" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="60" cy="20" r="3" fill="#9B51E0"/>
+                                            <circle cx="80" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="100" cy="20" r="3" fill="#E0D9ED"/>
+                                            <circle cx="20" cy="40" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="40" r="3" fill="#9B51E0"/>
+                                            <circle cx="60" cy="40" r="3" fill="#9B51E0"/>
+                                            <circle cx="80" cy="40" r="3" fill="#9B51E0"/>
+                                            <circle cx="100" cy="40" r="3" fill="#E0D9ED"/>
+                                            <circle cx="20" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="60" r="3" fill="#9B51E0"/>
+                                            <circle cx="60" cy="60" r="3" fill="#9B51E0"/>
+                                            <circle cx="80" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="100" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="20" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="40" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="60" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="80" cy="80" r="3" fill="#E0D9ED"/>
+                                            <circle cx="100" cy="80" r="3" fill="#E0D9ED"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4: Website Design -->
+                    <div class="service-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Website Design</h3>
+                                <button class="service-card-action-btn" aria-label="Hire us">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="service-card-divider"></div>
+                            <div class="service-card-content">
+                                <p class="service-card-description">Your website should do more than look good and load fast. Build credibility, earn clicks, and drive conversion. Awards? Just a bonus.</p>
+                                <div class="service-card-footer">
+                                    <button class="service-card-learn-btn">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span>Learn more</span>
+                                    </button>
+                                    <div class="service-card-pattern">
+                                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="15" cy="15" r="3" fill="#E0D9ED"/>
+                                            <circle cx="30" cy="15" r="3" fill="#E0D9ED"/>
+                                            <circle cx="45" cy="15" r="3" fill="#9B51E0"/>
+                                            <circle cx="60" cy="15" r="3" fill="#E0D9ED"/>
+                                            <circle cx="75" cy="15" r="3" fill="#9B51E0"/>
+                                            <circle cx="90" cy="15" r="3" fill="#E0D9ED"/>
+                                            <circle cx="105" cy="15" r="3" fill="#E0D9ED"/>
+                                            <circle cx="15" cy="30" r="3" fill="#E0D9ED"/>
+                                            <circle cx="30" cy="30" r="3" fill="#9B51E0"/>
+                                            <circle cx="45" cy="30" r="3" fill="#9B51E0"/>
+                                            <circle cx="60" cy="30" r="3" fill="#9B51E0"/>
+                                            <circle cx="75" cy="30" r="3" fill="#E0D9ED"/>
+                                            <circle cx="90" cy="30" r="3" fill="#9B51E0"/>
+                                            <circle cx="105" cy="30" r="3" fill="#E0D9ED"/>
+                                            <circle cx="15" cy="45" r="3" fill="#E0D9ED"/>
+                                            <circle cx="30" cy="45" r="3" fill="#9B51E0"/>
+                                            <circle cx="45" cy="45" r="3" fill="#9B51E0"/>
+                                            <circle cx="60" cy="45" r="3" fill="#E0D9ED"/>
+                                            <circle cx="75" cy="45" r="3" fill="#9B51E0"/>
+                                            <circle cx="90" cy="45" r="3" fill="#E0D9ED"/>
+                                            <circle cx="105" cy="45" r="3" fill="#E0D9ED"/>
+                                            <circle cx="15" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="30" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="45" cy="60" r="3" fill="#9B51E0"/>
+                                            <circle cx="60" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="75" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="90" cy="60" r="3" fill="#E0D9ED"/>
+                                            <circle cx="105" cy="60" r="3" fill="#E0D9ED"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
