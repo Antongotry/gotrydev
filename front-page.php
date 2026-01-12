@@ -122,6 +122,60 @@ get_header();
                         </div>
                     </div>
                 </div>
+                
+                <!-- About/Credibility Section -->
+                <section class="about-credibility-section">
+                    <div class="about-headline">
+                        <span class="headline-main">Lean, fast, and ruthless about world-class standards, Gotry is built for companies that define categor</span><span class="headline-fade">ies.</span>
+                    </div>
+                    <div class="about-tagline">The design studio with actual agency.</div>
+                    <div class="about-divider"></div>
+                    <div class="about-content">
+                        <p class="about-paragraph">
+                            Since 2020, I've partnered with <span class="about-link">Startups</span>, <span class="about-link">Agencies</span>, <span class="about-link">Freelance Clients</span>, handled full-code development for <span class="about-link">SaaS Products</span>, designed and built <span class="about-link">Brand Systems</span>, created products with <span class="about-link">No-code Tools</span> and <span class="about-link">Custom Solutions</span>.
+                        </p>
+                        <p class="about-paragraph">
+                            Actively used by clients and widely loved by my collective mothers, my work has been recognized by the folks from <span class="about-link">Awwwards</span> and <span class="about-link">CSS Design Awards</span>, survived the critics at <span class="about-link">Product Hunt</span>, talked about in the obscure corners of <span class="about-link">HackerNews</span>, featured on <span class="about-link">Behance</span> and smiled from the top of <span class="about-link">Dribbble</span>.
+                        </p>
+                        <p class="about-paragraph-short">I live at the intersection of design, code and product.</p>
+                    </div>
+                    <div class="about-logos">
+                        <div class="about-logo-item">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="4" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M12 16L16 12L20 16M16 12V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>Full-code</span>
+                        </div>
+                        <div class="about-logo-item">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M16 10V16L20 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>No-code</span>
+                        </div>
+                        <div class="about-logo-item">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="8" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M12 12H20M12 16H20M12 20H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>Product</span>
+                        </div>
+                        <div class="about-logo-item">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 6L20 12H28L22 17L24 24L16 20L8 24L10 17L4 12H12L16 6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Brand</span>
+                        </div>
+                        <div class="about-logo-item">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M16 8V16L20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>Web</span>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
     </div>
