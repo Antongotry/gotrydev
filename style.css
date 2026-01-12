@@ -1287,12 +1287,11 @@ body.home .wide-container {
     
     .service-card {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
     
     .service-card:nth-child(2) {
-        transform: translateY(-6px) translateX(8px);
-        margin-top: -6px;
+        margin-top: 0;
     }
     
     
