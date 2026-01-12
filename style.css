@@ -1492,7 +1492,7 @@ body.home .wide-container {
 
 /* Footer */
 .site-footer-main {
-    width: 100%;
+    width: calc(100% - 54px); /* Full width minus sidebar - same as main-content */
     margin-left: 54px; /* Space for sidebar - same as main-content */
     padding: 48px 0;
     background: #f5f3f7;
@@ -1754,6 +1754,7 @@ body.home .wide-container {
     }
     
     .site-footer-main {
+        width: 100%; /* Full width on mobile */
         margin-left: 0; /* No sidebar on mobile */
         padding: 32px 0;
     }
