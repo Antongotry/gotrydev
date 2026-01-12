@@ -140,39 +140,60 @@ get_header();
                         <p class="about-paragraph-short">I live at the intersection of design, code and product.</p>
                     </div>
                     <div class="about-logos">
+                        <!-- FWA Logo -->
                         <div class="about-logo-item">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="4" y="4" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M12 16L16 12L20 16M16 12V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <svg width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 2H6V22H2V2Z" fill="currentColor"/>
+                                <path d="M6 2H12V6H6V2Z" fill="currentColor"/>
+                                <path d="M6 10H12V14H6V10Z" fill="currentColor"/>
+                                <path d="M16 2H24V6H16V2Z" fill="currentColor"/>
+                                <path d="M16 10H24V14H16V10Z" fill="currentColor"/>
+                                <path d="M16 14H24V18H16V14Z" fill="currentColor"/>
+                                <path d="M28 2H36V6H28V2Z" fill="currentColor"/>
+                                <path d="M28 10H36V14H28V10Z" fill="currentColor"/>
+                                <path d="M28 14H36V18H28V14Z" fill="currentColor"/>
                             </svg>
-                            <span>Full-code</span>
                         </div>
+                        <!-- Awwwards Logo (W.) -->
                         <div class="about-logo-item">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M16 10V16L20 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <text x="4" y="24" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="currentColor">W.</text>
                             </svg>
-                            <span>No-code</span>
                         </div>
+                        <!-- Webby Awards Logo (Globe with stripes) -->
                         <div class="about-logo-item">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="8" y="8" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M12 12H20M12 16H20M12 20H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                                <ellipse cx="16" cy="16" rx="11" ry="5.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                                <ellipse cx="16" cy="16" rx="11" ry="5.5" stroke="currentColor" stroke-width="1.2" fill="none" transform="rotate(90 16 16)"/>
+                                <circle cx="16" cy="16" r="1.5" fill="currentColor"/>
                             </svg>
-                            <span>Product</span>
                         </div>
+                        <!-- Apple Logo -->
                         <div class="about-logo-item">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 6L20 12H28L22 17L24 24L16 20L8 24L10 17L4 12H12L16 6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                                <path d="M21.2 6.4C20.6 6.8 19.6 7.4 18.6 7.3C18.4 5.7 19 4.4 19.4 3.6C20.2 2.6 21.2 2 21.8 2C22.8 2 23.6 2.6 24.2 2.6C24.7 2.6 25.8 1.8 27 2C28.1 2.2 29 2.8 29.5 3.6C28.4 4.2 27.6 5.2 27.6 6.4C27.6 7.6 28.4 8.6 29.4 9.2C28.9 9.8 28.3 10.5 27.4 11.4C26.2 12.5 25.2 13.8 23.8 13.8C22.8 13.8 22.2 13.2 21 13.2C19.7 13.2 19 13.8 18 13.8C16.6 13.8 15.6 12.5 14.5 11.4C13.1 10 11.8 8.4 12.2 6.6C12.4 5.2 13.2 4.2 14.2 3.6C15.3 3 16.4 3.4 17 3.6C17.4 3.4 18.6 2.8 20 2.8C20.4 2.8 20.9 2.9 21.2 3.2C21.8 3.4 22.6 4.2 23 5C22.6 5.2 22 5.8 21.2 6.4Z" fill="currentColor"/>
+                                <path d="M22.8 16.4C22.6 18.6 24.4 20.4 26.6 20.6C26.8 22.8 24.9 24.7 22.8 24.9C20.6 25.1 18.8 23.3 18.8 21.1C19.6 18.9 21.4 17.1 22.8 16.4Z" fill="currentColor"/>
                             </svg>
-                            <span>Brand</span>
                         </div>
+                        <!-- CSS Design Awards Logo (Comb) -->
+                        <div class="about-logo-item">
+                            <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="4" width="8" height="24" rx="0.5" fill="currentColor"/>
+                                <rect x="9" y="6" width="6" height="1.5" fill="none" stroke="currentColor" stroke-width="0.3" opacity="0.3"/>
+                                <rect x="9" y="9" width="6" height="1.5" fill="none" stroke="currentColor" stroke-width="0.3" opacity="0.3"/>
+                                <rect x="9" y="12" width="6" height="1.5" fill="none" stroke="currentColor" stroke-width="0.3" opacity="0.3"/>
+                                <rect x="9" y="15" width="6" height="1.5" fill="none" stroke="currentColor" stroke-width="0.3" opacity="0.3"/>
+                                <rect x="9" y="18" width="6" height="1.5" fill="none" stroke="currentColor" stroke-width="0.3" opacity="0.3"/>
+                                <rect x="9" y="21" width="6" height="1.5" fill="none" stroke="currentColor" stroke-width="0.3" opacity="0.3"/>
+                                <rect x="9" y="24" width="6" height="1.5" fill="none" stroke="currentColor" stroke-width="0.3" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <!-- Chevron/Arrow Logo -->
                         <div class="about-logo-item">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M16 8V16L20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M10 12L16 6L22 12M10 20L16 26L22 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Web</span>
                         </div>
                     </div>
                 </section>
