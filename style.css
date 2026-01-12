@@ -1042,38 +1042,41 @@ body.home .wide-container {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding-bottom: 600px;
+    padding-bottom: 800px;
     overflow: visible;
+    display: block;
 }
 
 .service-card {
     position: sticky;
     width: 100%;
     margin-bottom: 0;
+    margin-top: 0;
     background: #f5f3f7;
     border: 1px solid #1D1D1D;
     border-radius: 8px;
     box-shadow: none;
+    will-change: transform;
 }
 
 .service-card:nth-child(1) {
     z-index: 1;
-    top: 120px;
+    top: 100px;
 }
 
 .service-card:nth-child(2) {
     z-index: 2;
-    top: 120px;
+    top: 100px;
 }
 
 .service-card:nth-child(3) {
     z-index: 3;
-    top: 120px;
+    top: 100px;
 }
 
 .service-card:nth-child(4) {
     z-index: 4;
-    top: 120px;
+    top: 100px;
 }
 
 
