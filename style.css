@@ -615,15 +615,14 @@ body.home .logo-link .logo-img {
 body.home .hero-section {
     background: #f5f3f7;
     width: 100%; /* Full width of main-content, no overflow */
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: auto;
+    display: block;
     padding: 140px 0 80px;
     position: relative;
     margin: 0; /* No margin */
     box-sizing: border-box;
     overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-y: visible;
 }
 
 /* Wide container for home page - aligns with logo left edge and symmetric right padding */
@@ -639,6 +638,7 @@ body.home .wide-container {
     /* Right padding symmetric to logo padding (clamp(16px, 2vw, 24px)) - creates logical symmetry */
     padding-right: clamp(16px, 2vw, 24px); /* Symmetric to logo padding */
     box-sizing: border-box;
+    overflow: visible;
 }
 
 .hero-content {
@@ -1024,6 +1024,7 @@ body.home .wide-container {
     box-sizing: border-box;
     position: relative;
     overflow: visible;
+    display: block;
 }
 
 .services-title {
