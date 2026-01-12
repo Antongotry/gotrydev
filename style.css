@@ -1349,9 +1349,10 @@ body.home .wide-container {
 /* Main Flexbox Layout */
 .main-grid {
     display: flex;
-    min-height: 100vh;
+    min-height: auto;
     width: 100%;
-    position: relative;
+    position: static;
+    overflow: visible;
 }
 
 /* Left Sidebar - Fixed left side, 54px width, full height from top */
