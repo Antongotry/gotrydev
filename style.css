@@ -638,6 +638,7 @@ body.home .wide-container {
     padding-right: clamp(16px, 2vw, 24px); /* Symmetric to logo padding */
     box-sizing: border-box;
     overflow: visible;
+    position: static;
 }
 
 .hero-content {
