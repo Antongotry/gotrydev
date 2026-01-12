@@ -1079,19 +1079,19 @@ body.home .wide-container {
 .service-card:nth-child(2) {
     z-index: 2;
     top: 24px;
-    margin-top: -480px; /* Отступ для эффекта гармошки - карточка видна частично */
+    margin-top: -450px; /* Отступ для эффекта гармошки - видна часть предыдущей карточки */
 }
 
 .service-card:nth-child(3) {
     z-index: 3;
     top: 24px;
-    margin-top: -480px; /* Отступ для эффекта гармошки */
+    margin-top: -450px; /* Отступ для эффекта гармошки */
 }
 
 .service-card:nth-child(4) {
     z-index: 4;
     top: 24px;
-    margin-top: -480px; /* Отступ для эффекта гармошки */
+    margin-top: -450px; /* Отступ для эффекта гармошки */
 }
 
 
