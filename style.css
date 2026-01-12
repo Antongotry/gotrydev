@@ -1040,37 +1040,46 @@ body.home .wide-container {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
 }
 
 .service-card {
     position: relative;
-    width: calc(100% - 32px);
+    width: calc(100% - 48px);
     margin-bottom: 0;
-    background: #fff;
+    background: transparent;
+    border: 1px solid #1D1D1D;
     border-radius: 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
 }
 
 .service-card:nth-child(1) {
-    z-index: 3;
+    z-index: 4;
     transform: translateY(0) translateX(0);
     margin-left: 0;
 }
 
 .service-card:nth-child(2) {
-    z-index: 2;
+    z-index: 3;
     transform: translateY(-12px) translateX(16px);
     margin-left: 0;
     margin-top: -12px;
 }
 
 .service-card:nth-child(3) {
-    z-index: 1;
+    z-index: 2;
     transform: translateY(-24px) translateX(32px);
     margin-left: 0;
     margin-top: -24px;
 }
+
+.service-card:nth-child(4) {
+    z-index: 1;
+    transform: translateY(-36px) translateX(48px);
+    margin-left: 0;
+    margin-top: -36px;
+}
+
 
 .service-card-inner {
     padding: 48px 56px;
@@ -1150,6 +1159,7 @@ body.home .wide-container {
     align-items: flex-end;
     margin-top: 40px;
     position: relative;
+    min-height: 60px;
 }
 
 .service-card-learn-btn {
@@ -1159,7 +1169,7 @@ body.home .wide-container {
     padding: 12px 24px;
     background: #1D1D1D;
     color: #fff;
-    border: none;
+    border: 1px solid #1D1D1D;
     border-radius: 8px;
     font-size: 15px;
     font-weight: 500;
@@ -1287,10 +1297,6 @@ body.home .wide-container {
         margin-top: -6px;
     }
     
-    .service-card:nth-child(3) {
-        transform: translateY(-12px) translateX(16px);
-        margin-top: -12px;
-    }
     
     .service-card-inner {
         padding: 32px 24px;
