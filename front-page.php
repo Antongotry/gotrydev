@@ -448,7 +448,100 @@ get_header();
                 </div>
             </div>
         </section>
+        
+        <!-- Social Links / Credentials Grid Section -->
+        <section class="social-links-section">
+            <div class="wide-container">
+                <div class="social-links-grid">
+                    <!-- Awwwards -->
+                    <a href="https://www.awwwards.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                        <div class="social-link-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="4" y="24" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="currentColor">W.</text>
+                            </svg>
+                        </div>
+                        <span class="social-link-text">Awwwards</span>
+                    </a>
+                    
+                    <!-- Clutch -->
+                    <a href="https://clutch.co" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                        <div class="social-link-icon">
+                            <span class="social-link-label">Client Reviews</span>
+                        </div>
+                        <span class="social-link-text">Clutch</span>
+                    </a>
+                    
+                    <!-- Instagram -->
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                        <div class="social-link-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="8" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                <circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                <circle cx="22" cy="10" r="1" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="social-link-text">Instagram</span>
+                    </a>
+                    
+                    <!-- Dribbble -->
+                    <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                        <div class="social-link-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                <circle cx="16" cy="8" r="2" fill="currentColor"/>
+                                <circle cx="22" cy="12" r="2" fill="currentColor"/>
+                                <circle cx="20" cy="20" r="2" fill="currentColor"/>
+                                <circle cx="12" cy="22" r="2" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="social-link-text">Dribbble</span>
+                    </a>
+                    
+                    <!-- Substack -->
+                    <a href="https://substack.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                        <div class="social-link-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="10" width="16" height="2" fill="currentColor"/>
+                                <rect x="8" y="14" width="12" height="2" fill="currentColor"/>
+                                <rect x="8" y="18" width="16" height="2" fill="currentColor"/>
+                                <path d="M20 14L24 18L20 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <span class="social-link-text">Substack</span>
+                    </a>
+                    
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                        <div class="social-link-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="10" width="5" height="12" fill="currentColor"/>
+                                <circle cx="8.5" cy="7" r="2" fill="currentColor"/>
+                                <rect x="14" y="10" width="5" height="12" fill="currentColor"/>
+                                <path d="M14 14C14 12.5 15 11 16.5 11C18 11 19 12.5 19 14V22H21V14C21 11 19 9 16.5 9C14 9 12 11 12 14V22H14V14Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="social-link-text">LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
+
+<!-- Footer -->
+<footer class="site-footer-main">
+    <div class="wide-container">
+        <div class="footer-content">
+            <div class="footer-copyright">
+                <span>2026 © Gotry</span>
+            </div>
+            <div class="footer-links">
+                <a href="#credentials" class="footer-link">Our Credentials</a>
+                <a href="#terms" class="footer-link">Terms & Conditions</a>
+                <a href="#privacy" class="footer-link">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <?php get_footer(); ?>

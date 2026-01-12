@@ -1397,6 +1397,154 @@ body.home .wide-container {
     letter-spacing: -0.01em;
 }
 
+/* Social Links / Credentials Grid Section */
+.social-links-section {
+    margin-top: 160px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+    position: static;
+    overflow: visible;
+    display: block;
+}
+
+.social-links-section .wide-container {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: clamp(16px, 2vw, 24px);
+    padding-right: clamp(16px, 2vw, 24px);
+    box-sizing: border-box;
+    overflow: visible;
+    position: static;
+}
+
+.social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    width: 100%;
+    background: #f5f3f7;
+    border: 1px solid #1D1D1D;
+    border-radius: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.social-link-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    text-decoration: none;
+    color: #1D1D1D;
+    border-right: 1px solid #E5E7EB;
+    transition: none;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.social-link-item:last-child {
+    border-right: none;
+}
+
+.social-link-item:hover {
+    background: rgba(29, 29, 29, 0.02);
+}
+
+.social-link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: #1D1D1D;
+    min-height: 32px;
+}
+
+.social-link-icon svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+.social-link-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #858488;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.social-link-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1D1D1D;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+/* Footer */
+.site-footer-main {
+    width: 100%;
+    padding: 48px 0;
+    background: #f5f3f7;
+    border-top: 1px solid #1D1D1D;
+    box-sizing: border-box;
+}
+
+.site-footer-main .wide-container {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: clamp(16px, 2vw, 24px);
+    padding-right: clamp(16px, 2vw, 24px);
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-copyright {
+    font-size: 14px;
+    font-weight: 400;
+    color: #858488;
+    letter-spacing: -0.01em;
+}
+
+.footer-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.footer-link {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1D1D1D;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: none;
+    letter-spacing: -0.01em;
+}
+
+.footer-link:hover {
+    opacity: 0.6;
+}
+
 /* Responsive - Konpo Style */
 @media (max-width: 768px) {
     .hero-section {
@@ -1565,6 +1713,64 @@ body.home .wide-container {
     .contact-info-link,
     .contact-info-text {
         font-size: clamp(15px, 2vw, 17px);
+    }
+    
+    .social-links-section {
+        margin-top: 100px;
+        padding-bottom: 60px;
+    }
+    
+    .social-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        border-radius: 8px;
+    }
+    
+    .social-link-item {
+        padding: 32px 16px;
+        border-right: 1px solid #E5E7EB;
+        border-bottom: 1px solid #E5E7EB;
+    }
+    
+    .social-link-item:nth-child(2n) {
+        border-right: none;
+    }
+    
+    .social-link-item:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+    
+    .social-link-icon {
+        margin-bottom: 12px;
+    }
+    
+    .social-link-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .social-link-text {
+        font-size: 13px;
+    }
+    
+    .site-footer-main {
+        padding: 32px 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+    
+    .footer-copyright,
+    .footer-link {
+        font-size: 13px;
     }
 }
 /* Logo image style removed - using dots structure now */
