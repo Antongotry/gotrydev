@@ -618,7 +618,7 @@ body.home .hero-section {
     min-height: auto;
     display: block;
     padding: 140px 0 80px;
-    position: relative;
+    position: static;
     margin: 0; /* No margin */
     box-sizing: border-box;
     overflow: visible;
@@ -1021,7 +1021,7 @@ body.home .wide-container {
     padding-left: 0;
     padding-right: 0;
     box-sizing: border-box;
-    position: relative;
+    position: static;
     overflow: visible;
     display: block;
 }
@@ -1037,11 +1037,11 @@ body.home .wide-container {
 }
 
 .services-cards-stack {
-    position: relative;
+    position: static;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding-bottom: 800px;
+    padding-bottom: 1000px;
     overflow: visible;
     display: block;
 }
@@ -1585,14 +1585,14 @@ body.home .wide-container {
 .main-content {
     flex: 1;
     width: auto; /* Auto width - margin-left and right edge handle it */
-    min-height: 100vh;
+    min-height: auto;
     margin-left: 54px; /* Space for sidebar */
     margin-right: 0; /* No right margin - stretch to edge */
     margin-top: 54px; /* Space for fixed header (54px height) */
     padding-top: 0; /* No padding - margin handles spacing */
     padding-left: 0; /* No padding - wide-container handles it */
     padding-right: 0; /* No padding - wide-container handles it */
-    position: relative;
+    position: static;
     box-sizing: border-box;
     overflow: visible;
 }
