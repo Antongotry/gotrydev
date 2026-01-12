@@ -621,8 +621,7 @@ body.home .hero-section {
     position: relative;
     margin: 0; /* No margin */
     box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal overflow */
-    overflow-y: visible;
+    overflow: visible;
 }
 
 /* Wide container for home page - aligns with logo left edge and symmetric right padding */
@@ -1595,8 +1594,7 @@ body.home .wide-container {
     padding-right: 0; /* No padding - wide-container handles it */
     position: relative;
     box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal overflow */
-    overflow-y: visible; /* Allow vertical scroll for sticky */
+    overflow: visible;
 }
 
 /* Header styles moved to Konpo section above - no wide-container in header anymore */
