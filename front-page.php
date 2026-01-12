@@ -130,16 +130,17 @@ get_header();
                     </div>
                     <div class="about-tagline">The design studio with actual agency.</div>
                     <div class="about-divider"></div>
-                    <div class="about-content">
-                        <p class="about-paragraph">
-                            Since 2020, I've partnered with <span class="about-link">Startups</span>, <span class="about-link">Agencies</span>, <span class="about-link">Freelance Clients</span>, handled full-code development for <span class="about-link">SaaS Products</span>, designed and built <span class="about-link">Brand Systems</span>, created products with <span class="about-link">No-code Tools</span> and <span class="about-link">Custom Solutions</span>.
-                        </p>
-                        <p class="about-paragraph">
-                            Actively used by clients and widely loved by my collective mothers, my work has been recognized by the folks from <span class="about-link">Awwwards</span> and <span class="about-link">CSS Design Awards</span>, survived the critics at <span class="about-link">Product Hunt</span>, talked about in the obscure corners of <span class="about-link">HackerNews</span>, featured on <span class="about-link">Behance</span> and smiled from the top of <span class="about-link">Dribbble</span>.
-                        </p>
-                        <p class="about-paragraph-short">I live at the intersection of design, code and product.</p>
-                    </div>
-                    <div class="about-logos">
+                    <div class="about-content-wrapper">
+                        <div class="about-content">
+                            <p class="about-paragraph">
+                                Since 2020, I've partnered with <span class="about-link">Startups</span>, <span class="about-link">Agencies</span>, <span class="about-link">Freelance Clients</span>, handled full-code development for <span class="about-link">SaaS Products</span>, designed and built <span class="about-link">Brand Systems</span>, created products with <span class="about-link">No-code Tools</span> and <span class="about-link">Custom Solutions</span>.
+                            </p>
+                            <p class="about-paragraph">
+                                Actively used by clients and widely loved by my collective mothers, my work has been recognized by the folks from <span class="about-link">Awwwards</span> and <span class="about-link">CSS Design Awards</span>, survived the critics at <span class="about-link">Product Hunt</span>, talked about in the obscure corners of <span class="about-link">HackerNews</span>, featured on <span class="about-link">Behance</span> and smiled from the top of <span class="about-link">Dribbble</span>.
+                            </p>
+                            <p class="about-paragraph-short">I live at the intersection of design, code and product.</p>
+                        </div>
+                        <div class="about-logos">
                         <!-- FWA Logo -->
                         <div class="about-logo-item">
                             <svg width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -195,6 +196,7 @@ get_header();
                                 <path d="M10 12L16 6L22 12M10 20L16 26L22 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
+                    </div>
                     </div>
                 </section>
             </div>
